@@ -17,9 +17,10 @@ class PasienController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(PasiensDataTable $dataTable, Request $request)
+    public function index()
     {
-        return $dataTable->addScope(new PasienScope($request))->render('pasiens.index');
+        $pasiens = Pasien::orderBy('id', 'DESC')->paginate(11);
+        return view('pasiens.index', compact('pasiens'));
     }
 
     /**
@@ -96,7 +97,8 @@ class PasienController extends Controller
             'keterangan' => 'required|max:255',
         ]);
         $pasien->update($request->all());
-        return redirect()->route('pasiens.index')->with('success', 'Data Pasien telah di update');
+        Alert::success('Berhasil', 'Data Berhasil di simpan');
+        return redirect('pasiens.index');
     }
 
     /**
@@ -108,6 +110,7 @@ class PasienController extends Controller
     public function destroy(Pasien $pasien)
     {
         $pasien->delete();
-        return redirect()->route('pasiens.index')->with('success', 'data pasien telah dihapus');
+        Alert::success('Berhasil', 'Data Berhasil di hapus');
+        return redirect('pasiens.index');
     }
 }

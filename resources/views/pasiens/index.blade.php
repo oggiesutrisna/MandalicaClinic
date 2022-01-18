@@ -15,22 +15,47 @@
         @endif
     </div>
     <div class="card-body">
-        {{$dataTable->table()}}
+        <table class="table table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Pasien</th>
+                    <th>No Handphone</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Alamat</th>
+                    <th>No Telp</th>
+                    <th>Aksi</th>
+                </tr>
+                @forelse ($pasiens as $pas)
+                <tbody>
+                    <tr>
+                        <td>{{ $pas->id }}</td>
+                        <td>{{ $pas->nama }}</td>
+                        <td>{{ $pas->nohp }}</td>
+                        <td>{{ $pas->ttl }}</td>
+                        <td>{{ $pas->jeniskelamin }}</td>
+                        <td>{{ $pas->dateappointment }}</td>
+                        <td>{{ $pas->jenisappointment }}</td>
+                        <td>{{ $pas->keterangan }}</td>
+                        <td>
+                            <a href="{{ route('pasiens.edit', $pas->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                            <form action="{{ route('pasiens.destroy', $pas->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                            </form>
+                        </td>
+                    @empty
+                    <td>
+                        <div class="alert alert-danger">
+                            Data Pasien Kosong
+                        </div>
+                    </td>
+                    @endforelse
+                </tr>
+                </tbody>
+            </thead>
+        </table>
     </div>
 </div>
-
-@push('scripts')
-
-<script src="{{asset('assets-backend/plugins/datatables/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('assets-backend/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{asset('assets-backend/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
-<script src="{{asset('assets-backend/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
-
-<script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
-
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.1/css/buttons.dataTables.min.css">
-
-{!! $dataTable->scripts() !!}
-
-@endpush
 @endsection
