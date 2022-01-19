@@ -14,7 +14,15 @@ class PasienFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nama' => $this->faker->name,
+            'nohp' => $this->faker->phoneNumber(),
+            'ttl' => $this->faker->date,
+            'jeniskelamin' => $this->faker->randomElement(['Laki-laki', 'Perempuan']),
+            'dateappointment' => $this->faker->date,
+            'jenisappointment' => $this->faker->randomElement(['Swab PCR', 'Swab Antigen', 'Konsultasi Dokter']),
+            'keterangan' => $this->faker->text(),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }

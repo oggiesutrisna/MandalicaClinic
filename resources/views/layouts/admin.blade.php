@@ -13,6 +13,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ asset('assets-backend/plugins/sweetalert2/sweetalert2.min.css') }}">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{asset('assets-backend/plugins/fontawesome-free/css/all.min.css')}}">
 
@@ -25,7 +27,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('assets-backend/css/adminlte.min.css')}}">
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition layout-fixed layout-footer-fixed sidebar-mini">
 <div class="wrapper">
 
   <!-- Navbar -->
@@ -75,19 +77,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- REQUIRED SCRIPTS -->
 
+<script src="{{ asset('assets-backend/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+
 <!-- jQuery -->
 <script src="{{asset('assets-backend/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{asset('assets-backend/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('assets-backend/js/adminlte.min.js')}}"></script>
-
-<script src="{{asset('assets-backend/plugins/datatables/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('assets-backend/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{asset('assets-backend/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
-<script src="{{asset('assets-backend/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
-<script src="{{asset('assets-backend/plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
-<script src="{{asset('assets-backend/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
 
 </body>
 </html>

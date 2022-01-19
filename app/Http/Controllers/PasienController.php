@@ -30,7 +30,7 @@ class PasienController extends Controller
      */
     public function create()
     {
-        return view('pasiens.create', compact('pasiens'));
+        return view('pasiens.create');
     }
 
     /**
@@ -50,8 +50,9 @@ class PasienController extends Controller
             'jenisappointment' => 'required|max:255',
             'keterangan' => 'required|max:255',
         ]);
+
         Pasien::create($validasipasien);
-        Alert::success('Data Pasien Berhasil Ditambahkan', 'Selamat');
+        Alert::success('Data Pasien Berhasil Ditambahkan', 'Tunggu untuk info selanjutnya dari kami!');
         return view('welcome');
     }
 
@@ -74,7 +75,7 @@ class PasienController extends Controller
      */
     public function edit(Pasien $pasien)
     {
-        return view('pasiens.edit', compact('pasiens'));
+        return view('pasiens.edit', compact('pasien'));
     }
 
     /**
@@ -87,18 +88,19 @@ class PasienController extends Controller
     public function update(Request $request, Pasien $pasien)
     {
         $request->validate([
-            'nama' => 'required|max:255',
-            'email' => 'required|max:255',
-            'nohp' => 'required|max:12',
-            'ttl' => 'required|max:255',
-            'jeniskelamin' => 'required|max:255',
-            'dateappoint' => 'required|max:255',
-            'jenisappointment' => 'required|max:255',
-            'keterangan' => 'required|max:255',
+            'nama' => 'max:255',
+            'email' => 'max:255',
+            'nohp' => 'max:12',
+            'ttl' => 'max:255',
+            'jeniskelamin' => 'max:255',
+            'dateappoint' => 'max:255',
+            'jenisappointment' => 'max:255',
+            'keterangan' => 'max:255'
         ]);
+
         $pasien->update($request->all());
         Alert::success('Berhasil', 'Data Berhasil di simpan');
-        return redirect('pasiens.index');
+        return redirect()->route('pasiens.index');
     }
 
     /**
@@ -110,7 +112,24 @@ class PasienController extends Controller
     public function destroy(Pasien $pasien)
     {
         $pasien->delete();
-        Alert::success('Berhasil', 'Data Berhasil di hapus');
-        return redirect('pasiens.index');
+        toast('[Berhasil], Data Berhasil Di Hapus');
+        return redirect()->route('pasiens.index');
+    }
+
+    public function storePasien(Request $request)
+    {
+        $validasipasien = $request->validate([
+            'nama' => 'required|max:255',
+            'nohp' => 'required|max:255',
+            'ttl' => 'required|max:255',
+            'jeniskelamin' => 'required|max:255',
+            'dateappointment' => 'required|max:255',
+            'jenisappointment' => 'required|max:255',
+            'keterangan' => 'required|max:255',
+        ]);
+
+        Pasien::create($validasipasien);
+        Alert::success('Data Pasien Berhasil Ditambahkan', 'Tunggu untuk info selanjutnya dari kami!');
+        return redirect()->route('pasiens.index');
     }
 }
