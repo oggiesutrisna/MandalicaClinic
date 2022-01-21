@@ -2,6 +2,16 @@
 @section('title') Dashboard @endsection
 @section('content')
 
+
+<div class="callout callout-success">
+    <h5>
+        Welcome to Praktek Dokter Mandalica 🚀 Super User
+    </h5>
+    <p>
+        Dashboard ini kami menyebutnya Super User adalah salah satu fitur yang bisa digunakan untuk melihat data-data yang ada di aplikasi ini. Dibawah ini merupakan data appointment pasien dan lain sebagainya.
+    </p>
+</div>
+
 <div class="row">
     <!-- ./col -->
     <div class="col-lg-3 col-6">

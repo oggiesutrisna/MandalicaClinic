@@ -26,4 +26,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // resource
 Route::resource('pasiens', PasienController::class);
 
-Route::get('pasiens.getState', [PasienController::class, 'getState'])->name('getState');
+Route::get('pasiens.pasienStore', [PasienController::class, 'pasienStore'])->name('pasiens.pasienStore');
+
+
+

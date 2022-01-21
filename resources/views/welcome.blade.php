@@ -251,7 +251,7 @@
 
         <div class="section-title">
           <h2>Kontak</h2>
-          <p>Masih ada yang perlu ditanyakan? Langsung kontak kami yang sudah tertera di bawah untuk keterangan lebih lanjuts</p>
+          <p>Masih ada yang perlu ditanyakan? Langsung kontak kami yang sudah tertera di bawah untuk keterangan lebih lanjut</p>
         </div>
       </div>
 
@@ -265,19 +265,19 @@
                 <div class="address">
                   <i class="bi bi-geo-alt"></i>
                   <h4>Location:</h4>
-                  <p>A108 Adam Street, New York, NY 535022</p>
+                  <p>Dusun Kuta III, Desa Kuta, Kecamatan Pujut, Kabupaten Lombok Tengah</p>
                 </div>
 
                 <div class="email">
                   <i class="bi bi-envelope"></i>
                   <h4>Email:</h4>
-                  <p>info@example.com</p>
+                  <p>mandalicaclinic@gmail.com</p>
                 </div>
 
                 <div class="phone">
                   <i class="bi bi-phone"></i>
                   <h4>Call:</h4>
-                  <p>+1 5589 55488 55s</p>
+                  <p>+62 812 371 203 03 </p>
                 </div>
 
               </div>
@@ -308,17 +308,6 @@
             </p>
           </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
@@ -337,14 +326,14 @@
 
       <div class="me-md-auto text-center text-md-start">
         <div class="copyright">
-          &copy; Copyright <strong><span>Praktek Dokter Mandalica</span></strong>. All Rights Reserved
+          &copy; Copyright 2022 <strong><span>Praktek Dokter Mandalica</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
           <!-- You can delete the links only if you purchased the pro version. -->
           <!-- Licensing information: https://bootstrapmade.com/license/ -->
           <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
-          Built with 💖 by <a href="twitter.com/@oggiesutrisna">Syntak</a>
+          Built with 💖 by <a href="https://twitter.com/@oggiesutrisna">Oggie Sutrisna</a>
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">

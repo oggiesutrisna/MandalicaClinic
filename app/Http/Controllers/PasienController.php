@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\DataTables\PasiensDataTable;
-use App\DataTables\Scopes\PasienScope;
 use App\Models\Pasien;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
-use Yajra\DataTables\DataTables as DataTables;
 
 class PasienController extends Controller
 {
@@ -64,7 +61,7 @@ class PasienController extends Controller
      */
     public function show(Pasien $pasien)
     {
-        return view('pasiens.show', compact('pasiens'));
+        return view('pasiens.show', compact('pasien'));
     }
 
     /**
@@ -99,7 +96,7 @@ class PasienController extends Controller
         ]);
 
         $pasien->update($request->all());
-        Alert::success('Berhasil', 'Data Berhasil di simpan');
+        Alert::success('Berhasil', 'Data Berhasil di Simpan');
         return redirect()->route('pasiens.index');
     }
 
@@ -112,24 +109,7 @@ class PasienController extends Controller
     public function destroy(Pasien $pasien)
     {
         $pasien->delete();
-        toast('[Berhasil], Data Berhasil Di Hapus');
-        return redirect()->route('pasiens.index');
-    }
-
-    public function storePasien(Request $request)
-    {
-        $validasipasien = $request->validate([
-            'nama' => 'required|max:255',
-            'nohp' => 'required|max:255',
-            'ttl' => 'required|max:255',
-            'jeniskelamin' => 'required|max:255',
-            'dateappointment' => 'required|max:255',
-            'jenisappointment' => 'required|max:255',
-            'keterangan' => 'required|max:255',
-        ]);
-
-        Pasien::create($validasipasien);
-        Alert::success('Data Pasien Berhasil Ditambahkan', 'Tunggu untuk info selanjutnya dari kami!');
-        return redirect()->route('pasiens.index');
+        toast('Berhasil', 'Data anda telah berhasil di hapus');
+        return redirect()->back();
     }
 }

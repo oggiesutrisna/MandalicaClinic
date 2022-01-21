@@ -2,9 +2,16 @@
 @section('title') Data Appointment Pasien @endsection
 @section('content')
 
-<div class="card">
-    <div class="card-header">
-        @if ($errors->any())
+<div class="callout callout-success">
+    <h5>
+        Total Pasien : <b>{{ DB::table('pasiens')->count() }}</b>
+    </h5>
+    <p>
+        ketika pasien sudah mendaftar appointment, identitas lengkap dari pasien akan terlihat disini. Dan juga untuk status dari pasiennya apakah sudah ditangani atau belum akan terlihat disini juga. Untuk format dari pasien buat appointment (Tahun - Bulan - Tanggal masih menggunakan format US) Data pasien sudah <b>terenkripsi</b> dan tidak dapat diakses oleh orang lain. Setiap pasien memiliki QR Code disini ketika di scan akan memperlihatkan identitas pasien secara lengkap.
+    </p>
+</div>
+
+@if ($errors->any())
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -13,6 +20,9 @@
             </ul>
         </div>
         @endif
+
+<div class="card">
+    <div class="card-header">
         <div class="card-tools">
             {{$pasiens->links()}}
         </div>
@@ -22,42 +32,55 @@
             <thead>
                 <tr>
                     <th>Aksi</th>
+                    <th>QR</th>
                     <th>No</th>
                     <th>Nama Pasien</th>
+                    <th>Tanggal Buat Appointment</th>
                     <th>No Handphone</th>
                     <th>Tempat, Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
                     <th>Tanggal Appointment</th>
                     <th>Jenis Appointment</th>
-                    <th>Alamat</th>
+                    <th>Keterangan</th>
                 </tr>
                 @forelse ($pasiens as $pas)
                 <tbody>
                     <tr>
                         <td>
-                            <a href="{{ route('pasiens.edit', $pas->id) }}" class="btn btn-warning btn-sm">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <form action="{{ route('pasiens.destroy', $pas->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button onclick="deletePasien()" type="submit" class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </form>
+                            <div class="btn-group">
+                                <a href="{{ route('pasiens.show', $pas->id) }}" class="btn btn-primary">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                                <a href="{{ route('pasiens.edit', $pas->id) }}" class="btn btn-warning">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <form action="{{ route('pasiens.destroy', $pas->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button onclick="deletePasien()" type="SUBMIT" class="btn btn-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="card px-2 py-2">
+                                {{ (QrCode::encoding('utf-8')->size(100)->generate(route('pasiens.show', $pas->id))) }}
+                            </div>
                         </td>
                         <td>{{ $pas->id }}</td>
                         <td>{{ $pas->nama }}</td>
+                        <td>{{ $pas->created_at }}</td>
                         <td>{{ $pas->nohp }}</td>
-                        <td>{{ $pas->ttl }}</td>
-                        <td>{{ $pas->jeniskelamin }}</td>
-                        <td>{{ $pas->dateappointment }}</td>
-                        <td>{{ $pas->jenisappointment }}</td>
-                        <td>{{ $pas->keterangan }}</td>
+                        <td>{{ $pas->ttl }} </td>
+                        <td>{{ $pas->jeniskelamin }} </td>
+                        <td>{{ $pas->dateappointment }} </td>
+                        <td>{{ $pas->jenisappointment }} </td>
+                        <td>{{ $pas->keterangan }} </td>
                     @empty
                     <td colspan="10" class="text-center">
                         <div class="alert alert-danger">
-                            Data Kosong
+                            Data Pasien Kosong
                         </div>
                     </td>
                     @endforelse
