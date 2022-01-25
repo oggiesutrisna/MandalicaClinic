@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PasienController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -28,5 +29,4 @@ Route::resource('pasiens', PasienController::class);
 
 Route::get('pasiens.pasienStore', [PasienController::class, 'pasienStore'])->name('pasiens.pasienStore');
 
-
-
+Route::resource('blogs', BlogController::class);

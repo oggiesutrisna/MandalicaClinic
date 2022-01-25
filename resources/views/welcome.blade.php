@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Praktek Dokter Mandalica</title>
+  <title>Praktek Dokter Bersama Mandalica</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -32,22 +32,15 @@
   <!-- Template Main CSS File -->
   <link href="{{asset('assets-frontend/css/style.css')}}" rel="stylesheet">
 
-
 </head>
-
 <body>
 
   <!-- ======= Top Bar ======= -->
   <div id="topbar" class="d-flex align-items-center fixed-top">
     <div class="container d-flex justify-content-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope"></i> <a href="mailto:mandalicaclinic@gmail.com"> Email Us </a>
-        <i class="bi bi-phone"></i> Contact Us : +62 857-8-878-878
-      </div>
-      <div class="d-none d-lg-flex social-links align-items-center">
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="{{route('login')}}" class="#"><i class="fas fa-sign-in-alt"></i></a>
+        <i class="bi bi-envelope"></i> <a href="mailto:mandalicaclinic@gmail.com"> Contact Us </a>
+        <i class="bi bi-phone"></i><a href="https://wa.me/send?phone=6282298298911">Call Center Mandalica</a>
       </div>
     </div>
   </div>
@@ -63,10 +56,9 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="nav-link" href="{{route('login')}}">Admin Login</a></li>
+          <li><a class="nav-link" href="{{ route('login')}}">Admin Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -79,15 +71,15 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container">
-      <h1>Siap Melayani anda.</h1>
-      <h2>Ready for anything ready for oncalls</h2>
-      <a href="#about" class="btn-get-started scrollto">GET STARTED</a>
+      <h1 style="text-shadow: 2px 2px 4px #000000;">Layanan 24 Jam</h1>
+      <h2 style="text-shadow: 2px 2px 2px #FFF;">Tes Swab Antigen dan PCR hingga Konsultasi Dokter</h2>
+      <a href="#about" class="btn-get-started scrollto" style="box-shadow: 2px 2px 4px #000000;">Buat Appointment</a>
     </div>
   </section><!-- End Hero -->
 
   <main id="main">
     @include('sweetalert::alert')
-    <section class="throwerror">
+    <section class="throw-error">
         @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -204,7 +196,7 @@
               <div class="validate"></div>
             </div>
             <div class="col-md-4 form-group mt-3 mt-md-0">
-              <input type="text" class="form-control" name="ttl" id="ttl" placeholder="Tempat Tanggal Lahir" data-rule="ttl" data-msg="Format : Tempat, Tanggal Lahir - Bulan Lahir - Tahun Lahir" required>
+              <input type="datetime-picker" class="form-control" name="ttl" id="ttl" placeholder="Tempat Tanggal Lahir" data-rule="ttl" data-msg="Format : Tempat, Tanggal Lahir - Bulan Lahir - Tahun Lahir" required>
               <div class="validate"></div>
             </div>
             <div class="col-md-4 form-group mt-3 mt-md-0">
@@ -214,7 +206,7 @@
           </div>
           <div class="row">
             <div class="col-md-4 form-group mt-3">
-              <input type="datetime" name="dateappointment" class="form-control datepicker" id="date" placeholder="Tanggal Appointment" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+              <input type="datetime-local" name="dateappointment" class="form-control datepicker" id="date" placeholder="Tanggal Appointment" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
               <div class="validate"></div>
             </div>
             <div class="col-md-4 form-group mt-3">
@@ -256,7 +248,7 @@
       </div>
 
       <div>
-        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1393.6894924488104!2d116.27472754989766!3d-8.88432631619669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcda9d023837449%3A0x5030bfbcaf7dc00!2sKuta%2C%20Pujut%2C%20Central%20Lombok%20Regency%2C%20West%20Nusa%20Tenggara!5e0!3m2!1sen!2sid!4v1643002631596!5m2!1sen!2sid" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
 
       <div class="container">
@@ -300,11 +292,11 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>Praktek Dokter Mandalica</h3>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+                Dusun Kuta III, Desa Kuta,  <br>
+                Kecamatan Pujut,<br>
+              Kabupaten Lombok Tengah<br><br>
+              <strong>Phone:</strong> <a href="https://wa.me/send?phone=6282298298911">Call Center Mandalica</a><br>
+              <strong>Email:</strong>mailto:mandalicaclinic@gmail.com<br>
             </p>
           </div>
 
@@ -329,16 +321,8 @@
           &copy; Copyright 2022 <strong><span>Praktek Dokter Mandalica</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
           Built with 💖 by <a href="https://twitter.com/@oggiesutrisna">Oggie Sutrisna</a>
         </div>
-      </div>
-      <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
       </div>
     </div>
   </footer><!-- End Footer -->

@@ -46,6 +46,7 @@ class PasienController extends Controller
             'dateappointment' => 'required|max:255',
             'jenisappointment' => 'required|max:255',
             'keterangan' => 'required|max:255',
+            'status' => 'max:255',
         ]);
 
         Pasien::create($validasipasien);
@@ -92,7 +93,8 @@ class PasienController extends Controller
             'jeniskelamin' => 'max:255',
             'dateappoint' => 'max:255',
             'jenisappointment' => 'max:255',
-            'keterangan' => 'max:255'
+            'keterangan' => 'max:255',
+            'status' => 'max:255',
         ]);
 
         $pasien->update($request->all());

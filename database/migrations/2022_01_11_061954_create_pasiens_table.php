@@ -22,6 +22,7 @@ class CreatePasiensTable extends Migration
             $table->string('dateappointment');
             $table->string('jenisappointment');
             $table->string('keterangan');
+            $table->string('status')->default('belum di follow up');
             $table->timestamps();
         });
     }

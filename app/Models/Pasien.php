@@ -14,8 +14,9 @@ class Pasien extends Model
         'ttl',
         'jeniskelamin',
         'dateappointment',
-        'jenisappointment' ,
-        'keterangan'
+        'jenisappointment',
+        'keterangan',
+        'status',
     ];
 
     use HasFactory;

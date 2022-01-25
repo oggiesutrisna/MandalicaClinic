@@ -7,12 +7,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mandalica CPanel</title>
+  <title>Mandalica SU</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{asset('assets-backend/plugins/summernote/summernote-bs4.min.css')}}">
 
   <link rel="stylesheet" href="{{ asset('assets-backend/plugins/sweetalert2/sweetalert2.min.css') }}">
   <!-- Font Awesome Icons -->
@@ -85,6 +87,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('assets-backend/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('assets-backend/js/adminlte.min.js')}}"></script>
+
+<script src="{{asset('assets-backend/plugins/summernote/summernote-bs4.min.js')}}"></script>
 
 </body>
 </html>

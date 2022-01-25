@@ -7,7 +7,14 @@
         Total Pasien : <b>{{ DB::table('pasiens')->count() }}</b>
     </h5>
     <p>
-        ketika pasien sudah mendaftar appointment, identitas lengkap dari pasien akan terlihat disini. Dan juga untuk status dari pasiennya apakah sudah ditangani atau belum akan terlihat disini juga. Untuk format dari pasien buat appointment (Tahun - Bulan - Tanggal masih menggunakan format US) Data pasien sudah <b>terenkripsi</b> dan tidak dapat diakses oleh orang lain. Setiap pasien memiliki QR Code disini ketika di scan akan memperlihatkan identitas pasien secara lengkap.
+        ketika pasien sudah mendaftar appointment,
+        identitas lengkap dari pasien akan terlihat disini.
+        Dan juga untuk status dari pasiennya apakah sudah ditangani
+        atau belum akan terlihat disini juga. Untuk format dari pasien
+        buat appointment (Tahun - Bulan - Tanggal masih menggunakan format US) Data pasien
+        sudah <b>terenkripsi</b> dan tidak dapat diakses oleh orang lain.
+        Setiap pasien memiliki QR Code disini ketika di scan akan memperlihatkan
+        identitas pasien secara lengkap.
     </p>
 </div>
 
@@ -19,7 +26,7 @@
                 @endforeach
             </ul>
         </div>
-        @endif
+@endif
 
 <div class="card">
     <div class="card-header">

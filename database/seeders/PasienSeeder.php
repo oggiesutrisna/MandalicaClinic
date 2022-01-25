@@ -14,6 +14,6 @@ class PasienSeeder extends Seeder
      */
     public function run()
     {
-        Pasien::factory()->count(10)->create();
+        Pasien::factory()->count(1)->create();
     }
 }
