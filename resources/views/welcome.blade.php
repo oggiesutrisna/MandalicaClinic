@@ -39,8 +39,13 @@
   <div id="topbar" class="d-flex align-items-center fixed-top">
     <div class="container d-flex justify-content-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope"></i> <a href="mailto:mandalicaclinic@gmail.com"> Contact Us </a>
-        <i class="bi bi-phone"></i><a href="https://wa.me/send?phone=6282298298911">Call Center Mandalica</a>
+        <i class="bi bi-envelope"></i> <a href="mailto:mandalicaclinic@gmail.com">
+            <h6>Contact Us</h6>
+        </a>
+        <i class="bi bi-phone"></i>
+        <a href="https://wa.me/send?phone=6282298298911">
+            <h6>Call Center Mandalica</h6>
+        </a>
       </div>
     </div>
   </div>

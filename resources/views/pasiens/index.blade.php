@@ -72,7 +72,7 @@
                         </td>
                         <td>
                             <div class="card px-2 py-2">
-                                {{ (QrCode::encoding('utf-8')->size(100)->generate(route('pasiens.show', $pas->id))) }}
+                                <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate(route('pasiens.show',$pas->id)))!!}" alt="QR Code" width="100px" height="100px">
                             </div>
                         </td>
                         <td>{{ $pas->id }}</td>

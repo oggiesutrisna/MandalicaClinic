@@ -13,6 +13,7 @@
             </ul>
         </div>
 @endif
+
     </div>
     <form action="{{route('blogs.store')}}">
         <div class="card-body">
@@ -25,7 +26,7 @@
                 <input type="text" name='tags' class="form-control" placeholder="Tags" required>
             </div>
             <div class="form-group">
-                <textarea style="display:none;" name="deskripsi" class="summernote" id="summernote">
+                <textarea name="deskripsi" class="summernote" id="summernote">
                     Buat sebuah text
                 </textarea>
             </div>
@@ -39,9 +40,10 @@
 </div>
 
 @push('scripts')
+<script src="{{asset('assets-backend/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <script>
     $(function() {
-        $('#summernote').summernote()
+        $('.summernote').summernote()
     })
 </script>
 @endpush

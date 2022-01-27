@@ -4,10 +4,10 @@
 
 <div class="callout callout-success">
     <h5>
-        Total Pasien : <b>{{ DB::table('pasiens')->count() }}</b>
+        Total Blog : <b>{{ DB::table('blogs')->count() }}</b>
     </h5>
     <p>
-        Sesi blog ini dalam masih tahap beta. Beberapa fitur di dalam blog ini masih dalam pengerjaan.
+        Fitur blog merupakan fitur yang standar di setiap project yang bisa digunakan untuk membuat artikel dan akan di post menggunakaan fitur blog disini.
     </p>
 </div>
 
@@ -21,6 +21,8 @@
             </ul>
         </div>
 @endif
+
+
     <div class="card-header">
         <a href="{{ route('blogs.create') }}" class="btn btn-primary">
             <i class="fa fa-plus"></i> Buat Artikel
