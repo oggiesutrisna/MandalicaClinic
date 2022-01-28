@@ -18,7 +18,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-
   <!-- Vendor CSS Files -->
   <link href="{{asset('assets-frontend/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
   <link href="{{asset('assets-frontend/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
@@ -39,10 +38,9 @@
   <div id="topbar" class="d-flex align-items-center fixed-top">
     <div class="container d-flex justify-content-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope"></i> <a href="mailto:mandalicaclinic@gmail.com">
+          <a href="mailto:mandalicaclinic@gmail.com">
             <h6>Contact Us</h6>
         </a>
-        <i class="bi bi-phone"></i>
         <a href="https://wa.me/send?phone=6282298298911">
             <h6>Call Center Mandalica</h6>
         </a>

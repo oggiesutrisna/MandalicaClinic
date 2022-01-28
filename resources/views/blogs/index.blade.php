@@ -22,7 +22,6 @@
         </div>
 @endif
 
-
     <div class="card-header">
         <a href="{{ route('blogs.create') }}" class="btn btn-primary">
             <i class="fa fa-plus"></i> Buat Artikel
