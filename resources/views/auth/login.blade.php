@@ -9,8 +9,8 @@
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('assets-backend/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- icheck bootstrap -->
@@ -27,7 +27,7 @@
       <a href="/" class="h1"><b>Admin </b>Login</a>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Sign in to start your Journey</p>
+      <p class="login-box-msg">Sign in to become a SuperUser</p>
 
       <form action="{{route('login')}}" method="POST">
         @csrf

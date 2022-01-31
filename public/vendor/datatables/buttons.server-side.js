@@ -16,7 +16,7 @@
     };
     
     var _getVisibleColumns = function () {
-
+        
         var visible_columns = [];
         $.each(DataTable.settings[0].aoColumns, function (key, col) {
             if (col.bVisible) {

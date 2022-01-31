@@ -1,7 +1,7 @@
 <aside class="main-sidebar main-sidebar-custom sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{route('home')}}" class="brand-link">
-      <img src="{{asset('assets-backend/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <a href="{{ route('home') }}" class="brand-link">
+      <img src="{{ asset('assets-backend/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">SuperUser</span>
     </a>
 
@@ -16,8 +16,6 @@
           <a href="#" class="d-block">{{ Auth::user()->name }}</a>
         </div>
       </div>
-
-      <!-- SidebarSearch Form -->
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -35,14 +33,6 @@
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Pasien
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{route('blogs.index')}}" class="nav-link {{request()->routeIs('blogs.index') ? 'active' : '' }}">
-              <i class="nav-icon fas fa-book"></i>
-              <p>
-                Blog (Beta)
               </p>
             </a>
           </li>

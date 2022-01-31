@@ -39,8 +39,9 @@
     <div class="container d-flex justify-content-between">
       <div class="contact-info d-flex align-items-center">
           <a href="mailto:mandalicaclinic@gmail.com">
-            <h6>Contact Us</h6>
+            <h6>Contact Us </h6>
         </a>
+        <h6>&nbsp;|&nbsp;</h6>
         <a href="https://wa.me/send?phone=6282298298911">
             <h6>Call Center Mandalica</h6>
         </a>

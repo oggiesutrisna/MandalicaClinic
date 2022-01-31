@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PasienController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -21,12 +20,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // resource
 Route::resource('pasiens', PasienController::class);
-
-Route::get('pasiens.pasienStore', [PasienController::class, 'pasienStore'])->name('pasiens.pasienStore');
-
-Route::resource('blogs', BlogController::class);
