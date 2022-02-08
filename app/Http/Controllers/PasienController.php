@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePasienRequest;
+use App\Http\Requests\UpdatePasienRequest;
 use App\Models\Pasien;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -36,37 +38,16 @@ class PasienController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePasienRequest $request)
     {
-        $validasipasien = $request->validate([
-            'nama' => 'required|max:255',
-            'nohp' => 'required|max:255',
-            'ttl' => 'required|max:255',
-            'jeniskelamin' => 'required|max:255',
-            'dateappointment' => 'required|max:255',
-            'jenisappointment' => 'required|max:255',
-            'keterangan' => 'required|max:255',
-            'status' => 'required|max:255',
-        ]);
-
-        Pasien::create($validasipasien);
+        Pasien::create($request->validated());
         Alert::success('Data Pasien Berhasil Ditambahkan', 'Tunggu untuk info selanjutnya dari kami!');
         return view('welcome');
     }
 
-    public function storePasien(Request $request)
+    public function storePasien(StorePasienRequest $request)
     {
-        $setorvalidasi = $request->validate([
-            'nama' => 'required|max:255',
-            'nohp' => 'required|max:255',
-            'ttl' => 'required|max:255',
-            'jeniskelamin' => 'required|max:255',
-            'dateappointment' => 'required|max:255',
-            'jenisappointment' => 'required|max:255',
-            'keterangan' => 'required|max:255',
-            'status' => 'required|max:255',
-        ]);
-        Pasien::create($setorvalidasi);
+        Pasien::create($request->validated());
         Alert::success('Berhasil', 'Data Pasien berhasil ditambahkan');
         return view('pasiens.index');
     }
@@ -100,21 +81,9 @@ class PasienController extends Controller
      * @param  \App\Models\Pasien  $pasien
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pasien $pasien)
+    public function update(UpdatePasienRequest $request, Pasien $pasien)
     {
-        $request->validate([
-            'nama' => 'max:255',
-            'email' => 'max:255',
-            'nohp' => 'max:12',
-            'ttl' => 'max:255',
-            'jeniskelamin' => 'max:255',
-            'dateappoint' => 'max:255',
-            'jenisappointment' => 'max:255',
-            'keterangan' => 'max:255',
-            'status' => 'max:255',
-        ]);
-
-        $pasien->update($request->all());
+        $pasien->update($request->validated());
         Alert::success('Berhasil', 'Data Berhasil di Simpan');
         return redirect()->route('pasiens.index');
     }
