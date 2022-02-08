@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreBlogRequest;
+use App\Http\Requests\UpdateBlogRequest;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -35,20 +37,13 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreBlogRequest $request)
     {
-        $validasiblogs = $request->validate([
-            'judul' => 'required|max:255',
-            'deskripsi' => 'required|max:255',
-            'tag' => 'required|max:255',
-            'gambar' => 'required|max:2048',
-        ]);
-
         if ($request->file('gambar')) {
-            $validasiblogs['gambar'] = $request->file('gambar')->store('images');
+            $request['gambar'] = $request->file('gambar')->store('images');
         }
 
-        Blog::create($validasiblogs);
+        Blog::create($request->validated());
         Alert::success('Berhasil', 'Data Blog anda telah berhasil ditambahkan',);
         return view('blogs.index');
     }
@@ -82,14 +77,8 @@ class BlogController extends Controller
      * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
+    public function update(UpdateBlogRequest $request, Blog $blog)
     {
-        $request->validate([
-            'judul' => 'max:255',
-            'deskripsi' => 'max:255',
-            'tag' => 'max:255',
-        ]);
-
         // Image isn't included because image can't be replaced with new one. New bug i guess
         $blog->update($request->all());
         Alert::success('Berhasil', 'Artikel Anda Berhasil di Edit');
