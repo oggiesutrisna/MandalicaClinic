@@ -40,15 +40,12 @@
                 <tr>
                     <th>Aksi</th>
                     <th>QR</th>
-                    <th>No</th>
                     <th>Nama Pasien</th>
-                    <th>Tanggal Buat Appointment</th>
                     <th>No Handphone</th>
                     <th>Tempat, Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
                     <th>Tanggal Appointment</th>
                     <th>Jenis Appointment</th>
-                    <th>Keterangan</th>
                 </tr>
                 @forelse ($pasiens as $pas)
                 <tbody>
@@ -75,19 +72,16 @@
                                 <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate(route('pasiens.show',$pas->id)))!!}" alt="QR Code" width="100px" height="100px">
                             </div>
                         </td>
-                        <td>{{ $pas->id }}</td>
                         <td>{{ $pas->nama }}</td>
-                        <td>{{ $pas->created_at }}</td>
                         <td>{{ $pas->nohp }}</td>
-                        <td>{{ $pas->ttl }} </td>
+                        <td>{{ $pas->ttl }}</td>
                         <td>{{ $pas->jeniskelamin }} </td>
                         <td>{{ $pas->dateappointment }} </td>
                         <td>{{ $pas->jenisappointment }} </td>
-                        <td>{{ $pas->keterangan }} </td>
                     @empty
                     <td colspan="10" class="text-center">
                         <div class="alert alert-danger">
-                            Data Pasien Kosong
+                            Data Pasien Kosong / Bersih (?)
                         </div>
                     </td>
                     @endforelse

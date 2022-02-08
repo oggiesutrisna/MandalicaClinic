@@ -10,8 +10,8 @@ class Blog extends Model
     protected $fillable = [
         'judul',
         'deskripsi',
-        'gambar',
         'tags',
+        'gambar',
     ];
     use HasFactory;
 }

@@ -11,7 +11,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
+
+<!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('assets-backend/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- icheck bootstrap -->
   <link rel="stylesheet" href="{{asset('assets-backend/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
@@ -47,20 +48,19 @@
             </span>
           @enderror
         </div>
-        <div class="row">
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="Submit" class="btn btn-danger btn-block">Sign In</button>
-          </div>
-          <!-- /.col -->
+
+        <div class="card-footer">
+            <div>
+                <button type="Submit" class="btn btn-danger btn-block">Sign In</button>
+                <br />
+                <a class="btn btn-success btn-block" data-toggle="modal" data-target="#modal-danger">Forgot Password</a>
+              </div>
         </div>
+      <!-- /.col -->
+      <!-- /.col -->
       </form>
 
       <!-- /.social-auth-links -->
-
-      <p class="mb-1">
-        <a class="btn btn-success" data-toggle="modal" data-target="#modal-danger">Forget Password</a>
-      </p>
     </div>
     <!-- /.card-body -->
   </div>

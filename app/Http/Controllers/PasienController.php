@@ -54,6 +54,23 @@ class PasienController extends Controller
         return view('welcome');
     }
 
+    public function storePasien(Request $request)
+    {
+        $setorvalidasi = $request->validate([
+            'nama' => 'required|max:255',
+            'nohp' => 'required|max:255',
+            'ttl' => 'required|max:255',
+            'jeniskelamin' => 'required|max:255',
+            'dateappointment' => 'required|max:255',
+            'jenisappointment' => 'required|max:255',
+            'keterangan' => 'required|max:255',
+            'status' => 'required|max:255',
+        ]);
+        Pasien::create($setorvalidasi);
+        Alert::success('Berhasil', 'Data Pasien berhasil ditambahkan');
+        return view('pasiens.index');
+    }
+
     /**
      * Display the specified resource.
      *

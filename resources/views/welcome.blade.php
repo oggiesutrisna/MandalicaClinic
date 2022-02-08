@@ -31,6 +31,12 @@
   <!-- Template Main CSS File -->
   <link href="{{asset('assets-frontend/css/style.css')}}" rel="stylesheet">
 
+  {{-- Whatsapp Floating Widgets HTML by demoonkevin : https://codepen.io/demoonkevin/pen/MvPEpV --}}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a href="https://wa.me/send?phone=6282298298911" class="float" target="_blank">
+<i class="fa fa-whatsapp my-float"></i>
+</a>
+
 </head>
 <body>
 
@@ -132,8 +138,8 @@
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-images"></i>
-                    <h4>24/7 Pelayanan Call Center </h4>
-                    <p>24/7 Call Center 24 Jam</p>
+                    <h4>Pelayanan Call Center 24 Jam </h4>
+                    <p>Pelayanan Call Center 24 Jam loh, kapanpun dan dimanapun anda bisa membuat appointment</p>
                   </div>
                 </div>
               </div>
@@ -192,38 +198,42 @@
           <p>Ingin Swab Antigen tanpa harus ribet? Buat Appointment sekarang juga</p>
         </div>
 
-        <form action="{{route('pasiens.store')}}" method="POST" enctype="multipart/formdata" role="form">
+        <form action="{{route('pasiens.store')}}" method="POST" role="form">
             @csrf
           <div class="row">
             <div class="col-md-4 form-group">
-              <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama Lengkap Anda" data-msg="Please enter at least 4 chars" required>
+                <label for="nama">Nama Anda</label>
+              <input type="text" name="nama" class="form-control" id="nama" placeholder="example : Nyoman" data-msg="Please enter at least 4 chars" required>
               <div class="validate"></div>
             </div>
             <div class="col-md-4 form-group mt-3 mt-md-0">
-              <input type="datetime-picker" class="form-control" name="ttl" id="ttl" placeholder="Tempat Tanggal Lahir" data-rule="ttl" data-msg="Format : Tempat, Tanggal Lahir - Bulan Lahir - Tahun Lahir" required>
+                <label for="date">Date</label>
+              <input type="date" class="form-control" name="ttl" id="ttl" placeholder="Tempat Tanggal Lahir" data-rule="ttl" data-msg="Format : Tempat, Tanggal Lahir - Bulan Lahir - Tahun Lahir" required>
               <div class="validate"></div>
             </div>
             <div class="col-md-4 form-group mt-3 mt-md-0">
+                <label for="nohp">Nomor Handphone</label>
               <input type="text" class="form-control" name="nohp" id="nohp" placeholder="Nomor Handphone Aktif" data-rule="minlen:4" data-msg="Nomor Handphone anda harus aktif" required>
               <div class="validate"></div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-4 form-group mt-3">
+                <label for="dateappointment">Tanggal Appointment</label>
               <input type="datetime-local" name="dateappointment" class="form-control datepicker" id="date" placeholder="Tanggal Appointment" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
               <div class="validate"></div>
             </div>
             <div class="col-md-4 form-group mt-3">
+                <label for="jeniskelamin">Jenis Kelamin</label>
               <select name="jeniskelamin" id="jeniskelamin" class="form-select" required>
-                <option value="">Jenis Kelamin</option>
                 <option value="Laki-Laki">Laki - Laki</option>
                 <option value="Perempuan">Perempuan</option>
               </select>
               <div class="validate"></div>
             </div>
             <div class="col-md-4 form-group mt-3">
+                <label for="jenisappointment">Jenis Appointment</label>
               <select name="jenisappointment" id="jenisapppointment" class="form-select" required>
-                <option value="">Jenis Pemeriksaan</option>
                 <option value="Swab Antigen">Swab Antigen</option>
                 <option value="Swab PCR">Swab PCR</option>
                 <option value="Konsultasi Dokter">Konsultasi Dokter</option>
@@ -233,7 +243,8 @@
           </div>
 
           <div class="form-group mt-3">
-            <textarea class="form-control" name="keterangan" id="keterangan" rows="5" placeholder="Keterangan Lainnya (Required)"></textarea>
+            <label for="keterangan">Keterangan</label>
+            <textarea class="form-control" name="keterangan" id="keterangan" rows="5" placeholder="Keterangan Lainnya (diperlukan)"></textarea>
             <div class="validate"></div>
           </div> <br>
           <div class="text-center"><button type="submit" class="btn btn-danger">Buat Appointment</button></div>
@@ -267,7 +278,9 @@
                 <div class="email">
                   <i class="bi bi-envelope"></i>
                   <h4>Email:</h4>
-                  <p>mandalicaclinic@gmail.com</p>
+                  <a href="mailto:mandalicaclinic@gmail.com" class="">
+                    <p>Praktek Dokter Mandalica</p>
+                  </a>
                 </div>
 
                 <div class="phone">
@@ -300,7 +313,7 @@
                 Kecamatan Pujut,<br>
               Kabupaten Lombok Tengah<br><br>
               <strong>Phone:</strong> <a href="https://wa.me/send?phone=6282298298911">Call Center Mandalica</a><br>
-              <strong>Email:</strong>mailto:mandalicaclinic@gmail.com<br>
+              <strong>Email:</strong><a href="mailto:mandalicaclinic@gmail.com">Praktek Dokter Mandalica</a> <br>
             </p>
           </div>
 

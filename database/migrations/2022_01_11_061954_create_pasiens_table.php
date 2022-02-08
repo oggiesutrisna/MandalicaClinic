@@ -19,9 +19,9 @@ class CreatePasiensTable extends Migration
             $table->string('nohp');
             $table->string('ttl');
             $table->string('jeniskelamin');
-            $table->string('dateappointment');
-            $table->string('jenisappointment');
-            $table->string('keterangan');
+            $table->string('dateappointment')->default('tidak dipilih');
+            $table->string('jenisappointment')->default('tidak dipilih');
+            $table->string('keterangan')->default('tidak mencantumkan keterangan');
             $table->string('status')->default('belum di follow up');
             $table->timestamps();
         });

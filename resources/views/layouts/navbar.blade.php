@@ -10,6 +10,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{route('pasiens.create')}}" class="nav-link">Buat Data Pasien</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{route('blogs.create')}}" class="nav-link">Buat Blog</a>
+      </li>
     </ul>
 
     <!-- Right navbar links -->
