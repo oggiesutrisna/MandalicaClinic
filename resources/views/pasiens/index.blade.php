@@ -31,7 +31,7 @@
 <div class="card">
     <div class="card-header">
         <div class="card-tools">
-            {{$pasiens->links()}}
+            @include('partials.flash-message')
         </div>
     </div>
     <div class="card-body table-responsive p-0" style="height:500px;">
@@ -52,7 +52,7 @@
                     <tr>
                         <td>
                             <div class="btn-group">
-                                <a href="{{ route('pasiens.show', $pas->id) }}" class="btn btn-primary">
+                                <a href="{{ route('scanPasien' , $pas->id) }}" class="btn btn-primary">
                                     <i class="fas fa-search"></i>
                                 </a>
                                 <a href="{{ route('pasiens.edit', $pas->id) }}" class="btn btn-warning">
@@ -69,7 +69,7 @@
                         </td>
                         <td>
                             <div class="card px-2 py-2">
-                                <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate(route('pasiens.show',$pas->id)))!!}" alt="QR Code" width="100px" height="100px">
+                                <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate(route('scanPasien',$pas->id)))!!}" alt="QR Code" width="100px" height="100px">
                             </div>
                         </td>
                         <td>{{ $pas->nama }}</td>
@@ -95,7 +95,7 @@
     </div>
 </div>
 <script>
-    function deletePasien(id) {
+    function deletePasien($id) {
         swal.fire({
                 title: "Apakah anda yakin",
                 text: "Setelah di dihapus, data tidak akan pernah kembali!",

@@ -10,16 +10,21 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class PasienController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, Pasien $pasiens)
     {
         $pasiens = Pasien::orderBy('id', 'DESC')->paginate(11);
         return view('pasiens.index', compact('pasiens'));
+    }
+
+    public function pasienIndex(Request $request, Pasien $pasiens)
+    {
+        $pasiens = Pasien::orderBy('id', 'DESC')->paginate(3);
+        return view('home', compact('pasiens'));
     }
 
     /**
@@ -38,6 +43,7 @@ class PasienController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(StorePasienRequest $request)
     {
         Pasien::create($request->validated());
@@ -49,7 +55,7 @@ class PasienController extends Controller
     {
         Pasien::create($request->validated());
         Alert::success('Berhasil', 'Data Pasien berhasil ditambahkan');
-        return view('pasiens.index');
+        return redirect()->route('pasiens.index');
     }
 
     /**

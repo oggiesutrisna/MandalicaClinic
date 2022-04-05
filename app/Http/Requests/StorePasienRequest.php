@@ -24,14 +24,14 @@ class StorePasienRequest extends FormRequest
     public function rules()
     {
         return [
-            'nama' => 'required|max:255',
-            'nohp' => 'required|max:255',
-            'ttl' => 'required|max:255',
-            'jeniskelamin' => 'required|max:255',
-            'dateappointment' => 'required|max:255',
-            'jenisappointment' => 'required|max:255',
-            'keterangan' => 'required|max:255',
-            'status' => 'required|max:255',
+            'nama' => 'max:255',
+            'nohp' => 'max:255',
+            'ttl' => 'max:255',
+            'jeniskelamin' => 'max:255',
+            'dateappointment' => 'max:255',
+            'jenisappointment' => 'max:255',
+            'keterangan' => 'max:255',
+            'status' => 'max:255',
         ];
     }
 }

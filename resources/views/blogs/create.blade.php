@@ -17,7 +17,7 @@
     </div>
 
     <div class="card-body">
-        <form action="{{route('blogs.store')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="judul">
@@ -35,20 +35,20 @@
                 <label for="gambar">
                     Gambar
                 </label>
-                <input type="file" name="gambar" class="form-control" required>
+                <input type="file" name="gambar" accept="image/*" id="gambar" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="judul">
-                    Label
+                    Tag
                 </label>
                 <input type="text" name="tag" placeholder="Bali, Vacation" class="form-control">
             </div>
         </div>
         <div class="card-footer">
-            <button class="btn btn-primary" type="submit">
+            <button class="btn btn-primary" type="SUBMIT">
                 Post Artikel Anda
             </button>
-            <a href="{{route('blogs.index')}}" class="btn btn-success">
+            <a href="{{ route('blogs.index') }}" class="btn btn-success">
                 Kembali
             </a>
         </div>

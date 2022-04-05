@@ -13,5 +13,9 @@ class Blog extends Model
         'tags',
         'gambar',
     ];
+
+    protected $guarded = [
+        'id',
+    ];
     use HasFactory;
 }

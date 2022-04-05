@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreBlogRequest;
 use App\Http\Requests\UpdateBlogRequest;
 use App\Models\Blog;
 use Illuminate\Http\Request;
@@ -10,15 +9,22 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class BlogController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $blogs = Blog::orderBy('id', 'DESC')->paginate(11);
+        $blogs = Blog::orderBy('updated_at', 'DESC')->paginate(5);
         return view('blogs.index', compact('blogs'));
+    }
+
+    public function blogindex(Request $request)
+    {
+        $blogs = Blog::orderBy('updated_at', 'Desc')->paginate(3);
+        return view('home', compact('blogs'));
     }
 
     /**
@@ -37,15 +43,25 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBlogRequest $request)
+    public function store(Request $request)
     {
+        $validasidata = $request->validate([
+            'judul' => 'required|max:255',
+            'deskripsi' => 'required|max:255',
+            'tag' => 'required|max:255',
+            'gambar' => 'required|image|max:2048',
+        ]);
+
         if ($request->file('gambar')) {
-            $request['gambar'] = $request->file('gambar')->store('images');
+            $validasidata['gambar'] = $request->file('gambar')->store('images');
         }
 
-        Blog::create($request->validated());
-        Alert::success('Berhasil', 'Data Blog anda telah berhasil ditambahkan',);
-        return view('blogs.index');
+        // Creating data to database from the input user
+        Blog::create($validasidata);
+        // Alert when completes
+        Alert::success('Berhasil', 'Artikel anda telah berhasil ditambahkan');
+        // When the task is completed, it automatically redirect to the index of the blog.
+        return redirect()->route('blogs.index');
     }
 
     /**
@@ -67,7 +83,7 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        return view('blogs.edit', compact('blogs'));
+        return view('blogs.edit', compact('blog'));
     }
 
     /**
@@ -79,9 +95,8 @@ class BlogController extends Controller
      */
     public function update(UpdateBlogRequest $request, Blog $blog)
     {
-        // Image isn't included because image can't be replaced with new one. New bug i guess
         $blog->update($request->all());
-        Alert::success('Berhasil', 'Artikel Anda Berhasil di Edit');
+        Alert::success('Berhasil', 'Artikel anda berhasil di edit');
         return redirect()->route('blogs.index');
     }
 
@@ -94,7 +109,12 @@ class BlogController extends Controller
     public function destroy(Blog $blog)
     {
         $blog->delete();
-        toast('Berhasil', 'Artikel anda berhasil dihapus');
+        Alert::success('Berhasil', 'Artikel anda berhasil dihapus');
         return redirect()->back();
+    }
+
+    public function showBlog(Blog $blog)
+    {
+        return view('blogs.showBlogs', compact('blogs'));
     }
 }
