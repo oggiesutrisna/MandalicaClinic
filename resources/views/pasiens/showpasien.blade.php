@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Mandalica Clinic</title>
+    <title>Mandalica Clinic Official Website</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets-view/modules/bootstrap/css/bootstrap.min.css') }}">
@@ -110,14 +110,16 @@
 
                                 <div class="form-group text-center">
                                     <a type="submit" href="/" class="btn btn-lg btn-round btn-danger">
-                                        Back To Home
+                                        Back to Home
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="simple-footer"> <br>
                             <p>
-                                Copyright &copy; 2022 Mandalica Clinic
+                                Copyright &copy; 2022 Mandalica Clinic | Empowers from <a
+                                    href="https://www.unicare-clinic.com">Unicare</a> Created and Built with ❤ by <a
+                                    href="https://twitter.com/@oggiesutrisna">Oggie Sutrisna</a>
                             </p>
                         </div>
                     </div>

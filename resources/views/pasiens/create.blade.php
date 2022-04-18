@@ -4,6 +4,15 @@
 @endsection
 @section('content')
 
+    <div class="callout callout-success">
+        <h5>Buat Appointment Pasien secara manual</h5>
+        <p>
+            Ini adalah session buat appointment secara manual, fitur ini digunakan jikalau pasien gagal dalam membuat
+            appointment di halaman utama, maka Admin yang bertanggung jawab bisa menggunakan ini untuk backup. Caranya
+            hampir sama, hanya saja pilih pasien yang akan di appointment dan pilih tanggal appointment.
+        </p>
+    </div>
+
     <div class="card">
         <div class="card-header">
             @if ($errors->any())
@@ -92,6 +101,7 @@
                     <textarea name="keterangan" id="keterangan" cols="30" rows="10" class="form-control"></textarea>
                 </div>
         </div>
+        {{-- Card Body --}}
         <div class="card-footer">
             <button type="submit" class="btn btn-primary">
                 Buat Data Pasien

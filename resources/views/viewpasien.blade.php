@@ -110,14 +110,16 @@
 
                                 <div class="form-group text-center">
                                     <a type="submit" href="/" class="btn btn-lg btn-round btn-danger">
-                                        Back To Home
+                                        {{ __('Back To Home') }}
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="simple-footer"> <br>
                             <p>
-                                Copyright &copy; 2022 Mandalica Clinic
+                                Copyright &copy; 2022 Mandalica Clinic | Empowers from <a
+                                    href="https://www.unicare-clinic.com">Unicare</a> Created and Built with ❤ by <a
+                                    href="https://twitter.com/@oggiesutrisna">Oggie Sutrisna</a> Part of Syntak
                             </p>
                         </div>
                     </div>

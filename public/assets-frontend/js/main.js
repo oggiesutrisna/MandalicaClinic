@@ -1,6 +1,6 @@
 /**
-* Template Name: Medilab - v4.7.0
-* Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+* Template Name: Ninestars - v4.7.0
+* Template URL: https://bootstrapmade.com/ninestars-free-bootstrap-3-theme-for-creative/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
@@ -75,29 +75,6 @@
   }
 
   /**
-   * Toggle .header-scrolled class to #header when page is scrolled
-   */
-  let selectHeader = select('#header')
-  let selectTopbar = select('#topbar')
-  if (selectHeader) {
-    const headerScrolled = () => {
-      if (window.scrollY > 100) {
-        selectHeader.classList.add('header-scrolled')
-        if (selectTopbar) {
-          selectTopbar.classList.add('topbar-scrolled')
-        }
-      } else {
-        selectHeader.classList.remove('header-scrolled')
-        if (selectTopbar) {
-          selectTopbar.classList.remove('topbar-scrolled')
-        }
-      }
-    }
-    window.addEventListener('load', headerScrolled)
-    onscroll(document, headerScrolled)
-  }
-
-  /**
    * Back to top button
    */
   let backtotop = select('.back-to-top')
@@ -162,34 +139,65 @@
   });
 
   /**
-   * Preloader
+   * Porfolio isotope and filter
    */
-  let preloader = select('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove()
-    });
-  }
+  window.addEventListener('load', () => {
+    let portfolioContainer = select('.portfolio-container');
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.portfolio-item',
+        layoutMode: 'fitRows'
+      });
 
-  /**
-   * Initiate glightbox 
-   */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
+      let portfolioFilters = select('#portfolio-flters li', true);
+
+      on('click', '#portfolio-flters li', function(e) {
+        e.preventDefault();
+        portfolioFilters.forEach(function(el) {
+          el.classList.remove('filter-active');
+        });
+        this.classList.add('filter-active');
+
+        portfolioIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+        portfolioIsotope.on('arrangeComplete', function() {
+          AOS.refresh()
+        });
+      }, true);
+    }
+
   });
 
   /**
-   * Initiate Gallery Lightbox 
+   * Initiate portfolio lightbox 
    */
-  const galelryLightbox = GLightbox({
-    selector: '.galelry-lightbox'
+  const portfolioLightbox = GLightbox({
+    selector: '.portfolio-lightbox'
   });
 
   /**
-   * Testimonials slider
+   * Portfolio details slider
    */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
+  new Swiper('.portfolio-details-slider', {
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    }
+  });
+
+  /**
+   * Clients Slider
+   */
+  new Swiper('.clients-slider', {
+    speed: 400,
     loop: true,
     autoplay: {
       delay: 5000,
@@ -203,15 +211,34 @@
     },
     breakpoints: {
       320: {
-        slidesPerView: 1,
-        spaceBetween: 20
-      },
-
-      1200: {
         slidesPerView: 2,
-        spaceBetween: 20
+        spaceBetween: 40
+      },
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 60
+      },
+      640: {
+        slidesPerView: 4,
+        spaceBetween: 80
+      },
+      992: {
+        slidesPerView: 6,
+        spaceBetween: 120
       }
     }
+  });
+
+  /**
+   * Animation on scroll
+   */
+  window.addEventListener('load', () => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false
+    });
   });
 
 })()

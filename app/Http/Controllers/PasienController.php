@@ -15,16 +15,10 @@ class PasienController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, Pasien $pasiens)
+    public function index(Request $request)
     {
         $pasiens = Pasien::orderBy('id', 'DESC')->paginate(11);
         return view('pasiens.index', compact('pasiens'));
-    }
-
-    public function pasienIndex(Request $request, Pasien $pasiens)
-    {
-        $pasiens = Pasien::orderBy('id', 'DESC')->paginate(3);
-        return view('home', compact('pasiens'));
     }
 
     /**
@@ -32,6 +26,7 @@ class PasienController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
         return view('pasiens.create');
@@ -51,7 +46,7 @@ class PasienController extends Controller
         return view('welcome');
     }
 
-    public function storePasien(StorePasienRequest $request)
+    public function storepasien(StorePasienRequest $request)
     {
         Pasien::create($request->validated());
         Alert::success('Berhasil', 'Data Pasien berhasil ditambahkan');
@@ -68,6 +63,7 @@ class PasienController extends Controller
     {
         return view('pasiens.show', compact('pasien'));
     }
+
 
     /**
      * Show the form for editing the specified resource.

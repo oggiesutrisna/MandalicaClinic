@@ -1,10 +1,11 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PasienController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ShowPasienController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,14 +22,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('showpasien/{id}', function(Pasien $pasien) {
+//     return view('pasiens.showpasien', compact('pasien'));
+// });
 
-// Resources with Auth Systems
-Route::group(['middleware', 'auth'], function() {
-    Route::get('pasienIndex', [PasienController::class, 'pasienIndex'])->name('pasienIndex');
-    Route::get('blogindex', [BlogController::class, 'blogindex'])->name('blogindex');
+Route::get('/blogs/post/{id}', [BlogController::class, 'showBlog'])->name('showBlog');
+Route::get('/', [BlogController::class, 'indexBlog'])->name('indexBlog');
+
+Auth::routes();
+Route::put('storecontact', [ContactController::class, 'storecontact'])->name('setorcontact');
+
+Route::group(['middleware', 'auth'], function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('pasiens', PasienController::class);
     Route::resource('blogs', BlogController::class);
+    Route::resource('contacts', ContactController::class);
     Route::put('storePasien', [PasienController::class, 'storePasien'])->name('setorPasien');
 });

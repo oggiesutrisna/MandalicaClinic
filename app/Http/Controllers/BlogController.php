@@ -15,16 +15,23 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index(Request $request)
     {
-        $blogs = Blog::orderBy('updated_at', 'DESC')->paginate(5);
+        $blogs = Blog::orderBy('id', 'DESC')->paginate(5);
         return view('blogs.index', compact('blogs'));
     }
 
-    public function blogindex(Request $request)
+    public function indexBlog(Blog $blogs)
     {
-        $blogs = Blog::orderBy('updated_at', 'Desc')->paginate(3);
-        return view('home', compact('blogs'));
+        $blogs = Blog::all();
+        return view('welcome', ['blogs' => $blogs]);
+    }
+
+    public function showBlog(Blog $blogs)
+    {
+        $blogs = Blog::where('id', $blogs)->first();
+        return view('blogs.showBlogs', compact('blogs'));
     }
 
     /**
@@ -56,11 +63,8 @@ class BlogController extends Controller
             $validasidata['gambar'] = $request->file('gambar')->store('images');
         }
 
-        // Creating data to database from the input user
         Blog::create($validasidata);
-        // Alert when completes
         Alert::success('Berhasil', 'Artikel anda telah berhasil ditambahkan');
-        // When the task is completed, it automatically redirect to the index of the blog.
         return redirect()->route('blogs.index');
     }
 
@@ -111,10 +115,5 @@ class BlogController extends Controller
         $blog->delete();
         Alert::success('Berhasil', 'Artikel anda berhasil dihapus');
         return redirect()->back();
-    }
-
-    public function showBlog(Blog $blog)
-    {
-        return view('blogs.showBlogs', compact('blogs'));
     }
 }

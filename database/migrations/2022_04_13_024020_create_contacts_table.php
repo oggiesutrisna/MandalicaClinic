@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBlogsTable extends Migration
+class CreateContactsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateBlogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('blogs', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->text('deskripsi')->default('tidak ada deskripsi');
-            $table->string('tag')->default('tidak ada tag');
-            $table->string('gambar')->default('tidak upload gambar');
+            $table->string('nama');
+            $table->string('nohp');
+            $table->text('subjek')->default('tidak ada subjek');
+            $table->text('message')->default('tidak ada pesan');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateBlogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blogs');
+        Schema::dropIfExists('contacts');
     }
 }

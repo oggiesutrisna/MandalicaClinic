@@ -3,7 +3,7 @@
     <a href="{{ route('home') }}" class="brand-link">
         <img src="{{ asset('assets-backend/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
             class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Super User</span>
+        <span class="brand-text font-weight-light">Control Center</span>
     </a>
 
     <!-- Sidebar -->
@@ -26,7 +26,16 @@
                     <a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Dashboard
+                            {{ __('Dashboard') }}
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('contacts.index') }}"
+                        class="nav-link {{ request()->routeIs('contacts.index') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            {{ __('Pesan') }}
                         </p>
                     </a>
                 </li>
@@ -35,7 +44,7 @@
                         class="nav-link {{ request()->routeIs('pasiens.index') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
-                            Pasien
+                            {{ __('Pasien') }}
                         </p>
                     </a>
                 </li>
@@ -44,15 +53,7 @@
                         class="nav-link {{ request()->routeIs('blogs.index') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-paragraph"></i>
                         <p>
-                            Blog
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-sticky-note"></i>
-                        <p>
-                            Testimonials
+                            {{ __('Blogs') }}
                         </p>
                     </a>
                 </li>
