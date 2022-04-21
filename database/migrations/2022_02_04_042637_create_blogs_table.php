@@ -17,7 +17,7 @@ class CreateBlogsTable extends Migration
             $table->id();
             $table->string('judul');
             $table->text('deskripsi')->default('tidak ada deskripsi');
-            $table->string('tag')->default('tidak ada tag');
+            $table->text('tag')->default('tidak ada tag');
             $table->string('gambar')->default('tidak upload gambar');
             $table->timestamps();
         });

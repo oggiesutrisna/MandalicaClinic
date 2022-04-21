@@ -77,7 +77,7 @@
         <p>2. Re-Design Landing Page untuk Fitur blog yang bisa di post.</p>
         <p>3. Anda bisa menyalin (copy) qr secara native di <a href="{{ route('pasiens.index') }}">Pasien Menu</a></p>
         <p>Note : Update ini masih belum sempurna. Jika anda menemukan bug dan glitch bisa langsung lapor ke whatsapp : <a
-                href="https://api.whatsapp.com/send?phone=087846048999&text=gantengbangetsihkakak">Developer</a>
+                href="https://api.whatsapp.com/send?phone=6287846048999&text=gantengbangetsihkakak">Developer</a>
         </p>
     </div>
 @endsection

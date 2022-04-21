@@ -71,7 +71,8 @@
                     <li><a class="nav-link scrollto" href="#about">About Us</a></li>
                     <li><a class="nav-link scrollto" href="#services">Services</a></li>
                     <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                    <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+                    <li><button type="button" class="getstarted scrollto" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">Buat Appointment</button></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -92,7 +93,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img">
-                    <img src="{{ asset('assets-frontend/img/hero-img.svg') }}" class="img-fluid animated" alt="">
+                    <img src="{{ asset('assets-frontend/img/5063406.jpg') }}" class="img-fluid animated" alt="">
                 </div>
             </div>
         </div>
@@ -100,6 +101,7 @@
     </section><!-- End Hero -->
 
     <main id="main">
+        @include('sweetalert::alert')
 
         <!-- ======= About Section ======= -->
         <section id="about" class="about">
@@ -188,6 +190,47 @@
             </div>
         </section><!-- End Services Section -->
 
+        <section id="portfolio" class="portfolio">
+            <div class="container aos-init aos-animate" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Mandalica Reads</h2>
+                    <p>Sebuah tulisan blog untuk anda yang lagi suntuk.</p>
+                </div>
+
+                <div class="row aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-12">
+                    </div>
+                </div>
+
+                <div class="row portfolio-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="200"
+                    style="position: relative; height: 3753px;">
+
+                    @foreach ($blogs as $bl)
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-app"
+                            style="position: absolute; left: 0px; top: 0px;">
+                            <div class="portfolio-wrap">
+                                <img src="{{ asset('assets-frontend/img/portfolio/portfolio-1.jpg') }}"
+                                    class="img-fluid" alt="gambar tidak valid kekw!">
+                                <div class="portfolio-links">
+                                    <a href="{{ asset('assets-frontend/img/portfolio/portfolio-1.jpg') }}"
+                                        data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i
+                                            class="bi bi-plus"></i></a>
+                                    <a href="portfolio-details.html" title="More Details"><i
+                                            class="bi bi-link"></i></a>
+                                </div>
+                                <div class="portfolio-info">
+                                    <h4>{{ $bl->judul }}</h4>
+                                    <p>{{ $bl->deskripsi }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+
+            </div>
+        </section>
+
         <!-- ======= Contact Us Section ======= -->
         <section id="contact" class="contact">
             <div class="container" data-aos="fade-up">
@@ -230,6 +273,8 @@
                     <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up"
                         data-aos-delay="200">
                         <form action="{{ route('setorcontact') }}" method="POST" class="php-email-form">
+                            @csrf
+                            @method('PUT')
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="name">Nama Anda</label>
@@ -251,7 +296,8 @@
                                 <label for="name">Pesan</label>
                                 <textarea class="form-control" name="message" rows="10" required></textarea>
                             </div>
-                            <div class="text-center"><button type="SUBMIT">Kirim Pesan</button></div>
+                            <div class="text-center"><button type="submit" class="btn btn-primary">Kirim
+                                    Pesan</button></div>
                         </form>
                     </div>
 
@@ -360,6 +406,69 @@
     <!-- Template Main JS File -->
     <script src="{{ asset('assets-frontend/js/main.js') }}"></script>
 
+    {{-- Modal --}}
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Buat Appointment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ route('pasiensetor') }}" method="POST" role="form">
+                        @csrf
+                        @method('PUT')
+                        <div class="mb-3">
+                            <label for="nama" class="col-form-label">Nama</label>
+                            <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap Anda"
+                                id="nama">
+                        </div>
+                        <div class="mb-3">
+                            <label for="nohp" class="col-form-label">Nomor Handphone Aktif</label>
+                            <input type="text" name="nohp" class="form-control"
+                                placeholder="Nomor Handphone Aktif yang terpasang di whatsapp" id="nama">
+                        </div>
+                        <div class="mb-3">
+                            <label for="nohp" class="col-form-label">Tempat, Tanggal Lahir</label>
+                            <input type="date" name="ttl" class="form-control" id="nama">
+                        </div>
+                        <div class="mb-3">
+                            <label for="nohp" class="col-form-label">Jenis Kelamin</label>
+                            <select name="jeniskelamin" id="jeniskelamin" class="form-control">
+                                <option value="Laki - Laki">
+                                    Laki - Laki
+                                </option>
+                                <option value="Perempuan">
+                                    Perempuan
+                                </option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dateappointment" class="col-form-label">Tanggal Appointment</label>
+                            <input type="date" name="dateappointment" class="form-control" id="dateappointment">
+                        </div>
+                        <div class="mb-3">
+                            <label for="jenisappointment" class="col-form-label">Jenis Appointment</label>
+                            <select name="jenisappointment" id="jenisappointment" class="form-control">
+                                <option value="Swab Antigen">Swab Antigen</option>
+                                <option value="Swab PCR">Swab PCR</option>
+                                <option value="Praktek Dokter">Praktek Dokter</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="keterangan" class="col-form-label">Keterangan Tambahan (Optional)</label>
+                            <textarea class="form-control" name="keterangan" id="keterangan" cols="30" rows="10"></textarea>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button type="submit" class="btn btn-primary">Submit Appointment</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    {{-- end modal --}}
 </body>
 
 </html>

@@ -33,7 +33,7 @@
                 <li class="nav-item">
                     <a href="{{ route('contacts.index') }}"
                         class="nav-link {{ request()->routeIs('contacts.index') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-users"></i>
+                        <i class="nav-icon fas fa-envelope"></i>
                         <p>
                             {{ __('Pesan') }}
                         </p>

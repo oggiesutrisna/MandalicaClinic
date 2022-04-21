@@ -9,7 +9,8 @@
                 <label for="gambar">
                     Gambar
                 </label>
-                <img src="{{ asset('storage/' . $blog->gambar) }}" alt="file tidak di upload" width="512" height="512">
+                <img src="{{ asset('storage/blog' . $blog->gambar) }}" alt="file tidak di upload" width="256"
+                    height="256">
             </div>
             <div class="form-group">
                 <label for="judul">
@@ -21,13 +22,14 @@
                 <label for="deskripsi">
                     Deskripsi
                 </label>
-                <input type="text" value="{{ $blog->deskripsi }}" class="form-control" disabled>
+                <textarea type="text" cols="30" rows="10" class="form-control" disabled>{{ $blog->deskripsi }}
+                </textarea>
             </div>
             <div class="form-group">
                 <label for="label">
-                    Label
+                    Tag
                 </label>
-                <input type="text" value="{{ $blog->label }}" class="form-control" disabled>
+                <input type="text" value="{{ $blog->tag }}" class="form-control" disabled>
             </div>
         </div>
         <div class="card-footer">

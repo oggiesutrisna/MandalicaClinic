@@ -53,6 +53,13 @@ class PasienController extends Controller
         return redirect()->route('pasiens.index');
     }
 
+    public function setorpasien(StorePasienRequest $request)
+    {
+        Pasien::create($request->validated());
+        Alert::success('Berhasil', 'Data Pasien berhasil ditambahkan');
+        return redirect()->back();
+    }
+
     /**
      * Display the specified resource.
      *

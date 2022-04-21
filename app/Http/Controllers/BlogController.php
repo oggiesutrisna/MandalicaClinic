@@ -56,11 +56,11 @@ class BlogController extends Controller
             'judul' => 'required|max:255',
             'deskripsi' => 'required|max:255',
             'tag' => 'required|max:255',
-            'gambar' => 'required|image|max:2048',
+            'gambar' => 'required|image|mimes:jpg,png,jpeg|max:2048',
         ]);
 
         if ($request->file('gambar')) {
-            $validasidata['gambar'] = $request->file('gambar')->store('images');
+            $validasidata['gambar'] = $request->file('gambar')->store('storage/blog', 'public');
         }
 
         Blog::create($validasidata);

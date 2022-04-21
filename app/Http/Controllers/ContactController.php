@@ -16,7 +16,7 @@ class ContactController extends Controller
     public function index()
     {
         $contact = Contact::orderBy('id', 'desc')->paginate(5);
-        return view('contact.index', compact('contact'));
+        return view('contacts.index', compact('contact'));
     }
 
     /**
@@ -26,7 +26,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view('contact.create');
+        return view('contacts.create');
     }
 
     /**
@@ -46,7 +46,7 @@ class ContactController extends Controller
 
         Contact::create($validasidata);
         Alert::success('Success', 'Data Berhasil Ditambahkan');
-        return redirect()->route('contact.index');
+        return redirect()->route('contacts.index');
     }
 
     public function storecontact(Request $request)
@@ -71,7 +71,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        return view('contact.show', compact('contact'));
+        return view('contacts.show', compact('contact'));
     }
 
     /**
@@ -82,7 +82,7 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
-        return view('contact.edit', compact('contact'));
+        return view('contacts.edit', compact('contact'));
     }
 
     /**
@@ -103,7 +103,7 @@ class ContactController extends Controller
 
         $contact->update($validasidata);
         Alert::success('Success', 'Data Berhasil Diubah');
-        return redirect()->route('contact.index');
+        return redirect()->route('contacts.index');
     }
 
     /**
@@ -116,6 +116,6 @@ class ContactController extends Controller
     {
         $contact->delete();
         Alert::success('Success', 'Data Berhasil Dihapus');
-        return redirect()->route('contact.index');
+        return redirect()->route('contacts.index');
     }
 }

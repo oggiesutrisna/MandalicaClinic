@@ -30,7 +30,7 @@
                     <label for="deskripsi">
                         Deskripsi
                     </label>
-                    <textarea type="text" name="deskripsi" placeholder="Jelaskan Deskripsi Anda" class="form-control" cols="30" rows="10"
+                    <textarea name="deskripsi" placeholder="Jelaskan Deskripsi Anda" class="form-control" cols="30" rows="10"
                         required></textarea>
                 </div>
                 <div class="form-group">
@@ -41,9 +41,9 @@
                 </div>
                 <div class="form-group">
                     <label for="judul">
-                        Tags
+                        Tag
                     </label>
-                    <input type="text" name="tag" placeholder="Tags can separated by comma," class="form-control">
+                    <input type="text" name="tag" placeholder="tag is now added" class="form-control">
                 </div>
         </div>
         <div class="card-footer">

@@ -18,19 +18,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route::get('showpasien/{id}', function(Pasien $pasien) {
 //     return view('pasiens.showpasien', compact('pasien'));
 // });
 
+// Route without group
 Route::get('/blogs/post/{id}', [BlogController::class, 'showBlog'])->name('showBlog');
 Route::get('/', [BlogController::class, 'indexBlog'])->name('indexBlog');
+Route::put('storecontact', [ContactController::class, 'storecontact'])->name('setorcontact');
+Route::put('setorpasien', [PasienController::class, 'setorpasien'])->name('pasiensetor');
 
 Auth::routes();
-Route::put('storecontact', [ContactController::class, 'storecontact'])->name('setorcontact');
 
 Route::group(['middleware', 'auth'], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
