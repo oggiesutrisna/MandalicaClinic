@@ -43,7 +43,7 @@ h6,
     right: 15px;
     bottom: 15px;
     z-index: 99999;
-    background: #eb5d1e;
+    background: #ed3c0d;
     width: 40px;
     height: 40px;
     border-radius: 4px;
@@ -352,7 +352,7 @@ h6,
 #hero {
     width: 100%;
     height: 70vh;
-    background: #fef8f5;
+    background: #FFFBE7;
     border-bottom: 2px solid #fcebe3;
     margin: 72px 0 -72px 0;
 }
@@ -372,7 +372,7 @@ h6,
 }
 
 #hero .btn-get-started {
-    font-family: "Raleway", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 16px;
     letter-spacing: 1px;
@@ -382,7 +382,7 @@ h6,
     transition: 0.5s;
     margin-top: 30px;
     color: #fff;
-    background: #eb5d1e;
+    background: #c54811;
 }
 
 #hero .btn-get-started:hover {
@@ -618,7 +618,7 @@ section {
     font-size: 48px;
     line-height: 1;
     margin-bottom: 15px;
-    color: #ef7f4d;
+    color: #ed3c0d;
 }
 
 .services .title {

@@ -56,7 +56,7 @@ class PasienController extends Controller
     public function setorpasien(StorePasienRequest $request)
     {
         Pasien::create($request->validated());
-        Alert::success('Berhasil', 'Data Pasien berhasil ditambahkan');
+        Alert::success('Berhasil', 'Data Anda berhasil di kirimkan, mohon menunggu informasi lebih lanjut');
         return redirect()->back();
     }
 

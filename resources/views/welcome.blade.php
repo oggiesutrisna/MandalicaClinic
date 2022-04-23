@@ -462,7 +462,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                    <button type="submit" class="btn btn-primary">Submit Appointment</button>
+                    <button type="submit" class="btn btn-danger">Submit Appointment</button>
                 </div>
             </div>
             </form>
