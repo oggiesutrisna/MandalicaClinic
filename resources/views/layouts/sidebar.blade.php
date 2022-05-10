@@ -49,6 +49,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('obats.index') }}"
+                        class="nav-link {{ request()->routeIs('obats.index') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            {{ __('Obat') }}
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('blogs.index') }}"
                         class="nav-link {{ request()->routeIs('blogs.index') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-paragraph"></i>

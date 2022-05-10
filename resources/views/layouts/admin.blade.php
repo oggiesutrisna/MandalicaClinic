@@ -19,6 +19,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="{{ asset('assets-backend/plugins/sweetalert2/sweetalert2.min.css') }}">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ asset('assets-backend/plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets-backend/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets-backend/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
 
     {{-- DATATABLES BOOT --}}
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
@@ -84,6 +86,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="{{ asset('assets-backend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('assets-backend/js/adminlte.min.js') }}"></script>
+
+    <script src="{{ asset('assets-backend/plugins/datatables-select/js/dataTables.select.min.js') }}"></script>
+    <script src="{{ asset('assets-backend/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 
     <script src="{{ asset('assets-backend/plugins/summernote/summernote-bs4.min.js') }}"></script>
 
