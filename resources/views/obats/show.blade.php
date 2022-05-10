@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
             <label for="nama">Stok Obat</label>
-            <input type="text" class="form-control" id="kode_obat" value="{{ $obats->stok_obat }}" disabled>
+            <input type="text" class="form-control" id="stok_obat" value="{{ $obats->stok_obat }}" disabled>
         </div>
         <div class="form-group">
             <label for="nama">Jenis Obat</label>
