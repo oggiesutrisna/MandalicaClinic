@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ObatController;
 use App\Http\Controllers\PasienController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -38,6 +39,7 @@ Route::group(['middleware', 'auth'], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('pasiens', PasienController::class);
     Route::resource('blogs', BlogController::class);
+    Route::resource('obats', ObatController::class);
     Route::resource('contacts', ContactController::class);
     Route::put('storePasien', [PasienController::class, 'storePasien'])->name('setorPasien');
 });

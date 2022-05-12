@@ -96,7 +96,7 @@
                 </div>
                 <div class="form-group">
                     <label for="Keterangan">
-                        Keterangan
+                        Keterangan (Optional)
                     </label>
                     <textarea name="keterangan" id="keterangan" cols="30" rows="10" class="form-control"></textarea>
                 </div>
