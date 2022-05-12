@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreContactRequest;
+use App\Http\Requests\UpdateContactRequest;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -35,18 +37,13 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreContactRequest $request)
     {
-        $validasidata = $request->validate([
-            'nama' => 'required|max:255',
-            'nohp' => 'required|max:255',
-            'subjek' => 'required|max:255',
-            'message' => 'required|max:255',
-        ]);
-
-        Contact::create($validasidata);
-        Alert::success('Success', 'Data Berhasil Ditambahkan');
-        return redirect()->route('contacts.index');
+        Contact::create($request->all());
+        if($request->has('save_action')) {
+            Alert::success('Berhasil', 'Data berhasil ditambahkan');
+            return redirect()->route('contacts.index');
+        } else($request->has('save_action_continue'));
     }
 
     public function storecontact(Request $request)
@@ -92,16 +89,9 @@ class ContactController extends Controller
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contact $contact)
+    public function update(UpdateContactRequest $request, Contact $contact)
     {
-        $validasidata = $request->validate([
-            'nama' => 'required|max:255',
-            'nohp' => 'required|max:255',
-            'subjek' => 'required|max:255',
-            'message' => 'required|max:255',
-        ]);
-
-        $contact->update($validasidata);
+        $contact->update($request->all());
         Alert::success('Success', 'Data Berhasil Diubah');
         return redirect()->route('contacts.index');
     }
@@ -114,8 +104,11 @@ class ContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
-        $contact->delete();
-        Alert::success('Success', 'Data Berhasil Dihapus');
-        return redirect()->route('contacts.index');
+        if($contact->delete()){
+            Alert::success('Success', 'Contact deleted successfully');
+            return redirect()->route('contact.index');
+        } elseif(
+            Alert::error('Error', 'Contact not deleted'));
+            return redirect()->back()->withInput();
     }
 }

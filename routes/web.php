@@ -42,5 +42,4 @@ Route::group(['middleware', 'auth'], function () {
     Route::resource('obats', ObatController::class);
     Route::resource('contacts', ContactController::class);
     Route::put('storePasien', [PasienController::class, 'storePasien'])->name('setorPasien');
-    Route::get('datatable', [ObatController::class, 'datatable'])->name('obats.datatable');
 });

@@ -28,28 +28,42 @@
                             </tr>
                         </thead>
                         <tbody>
-
+                            @forelse ($obats as $obat)
+                                <tr>
+                                    <td>
+                                        <a href="{{ route('obats.edit', $obat->id) }}" class="btn btn-warning btn-sm">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="{{ route('obats.destroy', $obat->id) }}" method="POST"
+                                            class="d-inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger btn-sm">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $obat->nama }}</td>
+                                    <td>{{ $obat->keterangan }}</td>
+                                    <td>{{ $obat->stok }}</td>
+                                    <td>{{ $obat->harga }}</td>
+                                </tr>
+                                @empty
+                                <tr>
+                                    <td colspan="6" class="text-center">
+                                        Data tidak ditemukan
+                                    </td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>
-                <div class="card-footer">
+                <div class="card-footer clearfix">
+                    <ul class="pagination m-0 float-right">
+                        {{ $obats->links() }}
+                    </ul>
                     <a href="{{ route('obats.create') }}" class="btn btn-primary">Tambah Obat</a>
                 </div>
             </div>
-            <script>
-                $(function () {
-                    $("dataTable1").DataTable();
-                    $('dataTable').DataTable({
-                        processing: true,
-                        serverSide: true,
-                        ajax: "{{ route('obats.datatable') }}",
-                        "paging": true,
-                        "lengthChange": false,
-                        "searching": false,
-                        "ordering": true,
-                        "info": true,
-                        "autoWidth": false,
-                    });
-                });
-            </script>
         @endsection

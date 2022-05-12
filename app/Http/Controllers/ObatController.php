@@ -7,7 +7,6 @@ use App\Http\Requests\UpdateObatRequest;
 use App\Models\Obat;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
-use Yajra\DataTables\DataTables;
 
 class ObatController extends Controller
 {
@@ -18,20 +17,8 @@ class ObatController extends Controller
      */
     public function index()
     {
-        $obats = Obat::orderBy('id', 'desc')->get();
+        $obats = Obat::orderBy('id', 'desc')->paginate(5);
         return view('obats.index', compact('obats'));
-    }
-
-    public function datatable()
-    {
-        $obats = Obat::orderBy('id', 'desc')->get();
-        return DataTables::of($obats)
-            ->addColumn('action', function ($obat) {
-                return view('obats.action', compact('obat'));
-            })
-            ->addIndexColumn()
-            ->rawColumns(['action'])
-            ->make(true);
     }
 
     /**
@@ -52,21 +39,11 @@ class ObatController extends Controller
      */
     public function store(StoreObatRequest $request)
     {
-        $obat = new Obat;
-        $obat->kode_obat = $request->kode_obat;
-        $obat->nama_obat = $request->nama_obat;
-        $obat->jenis_obat = $request->jenis_obat;
-        $obat->harga_obat = $request->harga_obat;
-        $obat->stok_obat = $request->stok_obat;
-        $obat->save();
-
-        if($obat->save()){
-            Alert::success('Success', 'Data obat berhasil ditambahkan');
-            return redirect()->route('obat.index');
-    } elseif ($obat->error()) {
-        Alert::error('Error', 'Data obat gagal ditambahkan');
-        return redirect()->route('obat.index');
-    }
+        Obat::create($request->validated());
+        if($request->has('save_action')) {
+            Alert::success('Berhasil', 'Data berhasil ditambahkan');
+            return redirect()->route('obats.index');
+        } else($request->has('save_action_continue'));
     }
 
     /**
@@ -100,20 +77,12 @@ class ObatController extends Controller
      */
     public function update(UpdateObatRequest $request, Obat $obat)
     {
-        $obat->kode_obat = $request->kode_obat;
-        $obat->nama_obat = $request->nama_obat;
-        $obat->jenis_obat = $request->jenis_obat;
-        $obat->harga_obat = $request->harga_obat;
-        $obat->stok_obat = $request->stok_obat;
-        $obat->save();
+        $obat->update($request->all());
+        if($request->has('save_action')) {
+            Alert::success('Berhasil', 'Data berhasil diubah');
+            return redirect()->route('obats.index');
+        } else($request->has('save_action_continue'));
 
-        if($obat->save()){
-            Alert::success('Success', 'Data obat berhasil diubah');
-            return redirect()->route('obats.index');
-        } elseif ($obat->error()) {
-            Alert::error('Error', 'Data obat gagal diubah');
-            return redirect()->route('obats.index');
-        }
     }
 
     /**

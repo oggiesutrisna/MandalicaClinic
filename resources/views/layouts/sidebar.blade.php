@@ -51,7 +51,7 @@
                 <li class="nav-item">
                     <a href="{{ route('obats.index') }}"
                         class="nav-link {{ request()->routeIs('obats.index') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-users"></i>
+                        <i class="nav-icon fas fa-pills"></i>
                         <p>
                             {{ __('Obat') }}
                         </p>
