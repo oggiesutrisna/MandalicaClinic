@@ -36,69 +36,53 @@
                 @include('partials.flash-message')
             </div>
         </div>
-        <div class="card-body table-responsive p-0" style="height:500px;">
-            <table class="table table-head-fixed table-hover text-nowrap">
+        <div class="card-body">
+            <table id="pasientable" class="table table-stripped">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Aksi</th>
-                        <th>QR</th>
-                        <th>Nama Pasien</th>
-                        <th>No Handphone</th>
-                        <th>Tempat, Tanggal Lahir</th>
+                        <th>Nama</th>
+                        <th>Tanggal Lahir</th>
                         <th>Jenis Kelamin</th>
-                        <th>Tanggal Appointment</th>
-                        <th>Jenis Appointment</th>
+                        <th>Alamat</th>
+                        <th>No. Telepon</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
                     </tr>
-                    @forelse ($pasiens as $pas)
-                <tbody>
-                    <tr>
-                        <td>{{ $pas->id }}</td>
-                        <td>
-                            <div class="btn-group">
-                                <a href="{{ route('pasiens.show', $pas->id) }}" class="btn btn-primary">
-                                    <i class="fas fa-search"></i>
-                                </a>
-                                <a href="{{ route('pasiens.edit', $pas->id) }}" class="btn btn-warning">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <form action="{{ route('pasiens.destroy', $pas->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button onclick="deletePasien()" type="SUBMIT" class="btn btn-danger">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </form>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="card px-2 py-2">
-                                <img src="data:image/png;base64, {!! base64_encode(
-    QrCode::format('png')->size(100)->generate(route('pasiens.show', $pas->id)),
-) !!}" alt="QR Code" width="100px"
-                                    height="100px">
-                            </div>
-                        </td>
-                        <td>{{ $pas->nama }}</td>
-                        <td>{{ $pas->nohp }}</td>
-                        <td>{{ $pas->ttl }}</td>
-                        <td>{{ $pas->jeniskelamin }} </td>
-                        <td>{{ $pas->dateappointment }} </td>
-                        <td>{{ $pas->jenisappointment }} </td>
-                    @empty
-                        <td colspan="10" class="text-center">
-                            <div class="alert alert-danger">
-                                Data Pasien Kosong / Bersih (?)
-                            </div>
-                        </td>
-                        @endforelse
-                    </tr>
-                </tbody>
                 </thead>
+                <tbody>
+                    @foreach ($pasiens as $pasien)
+                        <tr>
+                            <td>{{ $pasien->id }}</td>
+                            <td>{{ $pasien->nama }}</td>
+                            <td>{{ $pasien->tanggal_lahir }}</td>
+                            <td>{{ $pasien->jenis_kelamin }}</td>
+                            <td>{{ $pasien->alamat }}</td>
+                            <td>{{ $pasien->no_telepon }}</td>
+                            <td>{{ $pasien->status }}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="{{ route('pasiens.show', $pasien->id) }}" class="btn btn-primary">
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                    <a href="{{ route('pasiens.edit', $pasien->id) }}" class="btn btn-warning">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="{{ route('pasiens.destroy', $pasien->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="SUBMIT" class="btn btn-danger">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
             </table>
         </div>
         <div class="card-footer">
-            {{ $pasiens->links() }}
+
         </div>
     </div>
     <script>

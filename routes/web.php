@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ObatController;
+use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PasienController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -32,10 +33,13 @@ Route::get('/blogs/post/{id}', [BlogController::class, 'showBlog'])->name('showB
 Route::get('/', [BlogController::class, 'indexBlog'])->name('indexBlog');
 Route::put('storecontact', [ContactController::class, 'storecontact'])->name('setorcontact');
 Route::put('setorpasien', [PasienController::class, 'setorpasien'])->name('pasiensetor');
+Route::get('viewpackages/{nama}', [PackageController::class, 'viewpackages'])->name('packagesview');
+Route::get('/en-en', [WelcomeController::class, 'en-en'])->name('en-en');
 
 Auth::routes();
 
 Route::group(['middleware', 'auth'], function () {
+    Route::resource('packages', PackageController::class);
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('pasiens', PasienController::class);
     Route::resource('blogs', BlogController::class);

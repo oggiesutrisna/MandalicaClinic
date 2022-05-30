@@ -16,6 +16,9 @@
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{ route('obats.create') }}" class="nav-link">Buat Data Obat</a>
         </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="{{ route('packages.create') }}" class="nav-link">Buat data Paket</a>
+        </li>
     </ul>
 
     <!-- Right navbar links -->

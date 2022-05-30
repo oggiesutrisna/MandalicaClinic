@@ -3,6 +3,7 @@
     Data Contact dari User
 @endsection
 @section('content')
+
     <div class="callout callout-success">
         <h5>
             Total Pesan yang terkumpul: <b>{{ DB::table('contacts')->count() }}</b>
@@ -26,8 +27,9 @@
                 @endif
             </div>
         </div>
+
         <div class="card-body">
-            <table class="table table-head-fixed table-hover text-nowrap">
+            <table id="tablepesan" class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>Aksi</th>
@@ -36,7 +38,7 @@
                         <th>Pesan</th>
                     </tr>
                 </thead>
-                @forelse ($contact as $cs)
+                @foreach ($contact as $cs)
                     <tbody>
                         <tr>
                             <td>
@@ -60,18 +62,13 @@
                             <td>{{ $cs->email }}</td>
                             <td>{{ $cs->pesan }}</td>
                         </tr>
-                    @empty
-                        <tr>
-                            <td colspan="4" class="text-center">
-                                Data Kosong
-                            </td>
-                        </tr>
-                @endforelse
+                @endforeach
                 </tbody>
             </table>
         </div>
+
         <div class="card-footer">
-            {{ $contact->links() }}
+
         </div>
     </div>
 @endsection

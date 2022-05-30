@@ -16,7 +16,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-12">
-                    <table id="dataTable" class="table table-bordered table-striped">
+                    <table id="tableobat" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th>Aksi</th>
@@ -28,7 +28,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($obats as $obat)
+                            @foreach ($obats as $obat)
                                 <tr>
                                     <td>
                                         <a href="{{ route('obats.edit', $obat->id) }}" class="btn btn-warning btn-sm">
@@ -49,21 +49,12 @@
                                     <td>{{ $obat->stok }}</td>
                                     <td>{{ $obat->harga }}</td>
                                 </tr>
-                                @empty
-                                <tr>
-                                    <td colspan="6" class="text-center">
-                                        Data tidak ditemukan
-                                    </td>
-                                </tr>
-                            @endforelse
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
-                <div class="card-footer clearfix">
-                    <ul class="pagination m-0 float-right">
-                        {{ $obats->links() }}
-                    </ul>
-                    <a href="{{ route('obats.create') }}" class="btn btn-primary">Tambah Obat</a>
+                <div class="card-footer">
+
                 </div>
             </div>
         @endsection

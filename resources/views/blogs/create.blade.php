@@ -6,6 +6,7 @@
 
     <div class="card">
         <div class="card-header">
+            {{-- Input Error Display --}}
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -15,6 +16,7 @@
                     </ul>
                 </div>
             @endif
+            {{-- End Input Error Display --}}
         </div>
 
         <div class="card-body">
@@ -30,20 +32,30 @@
                     <label for="deskripsi">
                         Deskripsi
                     </label>
-                    <textarea name="deskripsi" placeholder="Jelaskan Deskripsi Anda" class="form-control" cols="30" rows="10"
-                        required></textarea>
+                    <textarea id="summernote" name="deskripsi" required>
+                    </textarea>
                 </div>
                 <div class="form-group">
-                    <label for="gambar">
-                        Gambar
+                    <label for="Gambar">
+                        Upload Gambar
                     </label>
-                    <input type="file" name="gambar" accept="image/*" id="gambar" class="form-control" required>
+                    <input type="file" name="gambar" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="judul">
                         Tag
                     </label>
-                    <input type="text" name="tag" placeholder="tag is now added" class="form-control">
+                    <select id="select2" class="form-control select2" data-placeholder="select a tag" multiple="multiple">
+                        <option value="Mandalica">Mandalika</option>
+                        <option value="Mandalika Klinik">Mandalika Clinic</option>
+                        <option value="Bali">Bali</option>
+                        <option value="News/Berita">News/Berita</option>
+                        <option value="Tips-Trick">Tips-Trick</option>
+                        <option value="Penyakit/Disease">Penyakit/Disease</option>
+                        <option value="Rabies/Rabies Vaccine">Rabies/Rabies Vaccine</option>
+                        <option value="Nusa Tenggara Barat">Penyakit/Disease</option>
+                        <option value="Pengobatan/Medicine">Pengobatan/Medicine</option>
+                    </select>
                 </div>
         </div>
         <div class="card-footer">

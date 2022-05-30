@@ -27,8 +27,9 @@
                 @endif
             </div>
         </div>
-        <div class="card-body table-responsive p-0" style="height:500px;">
-            <table class="table table-head-fixed table-hover text-nowrap">
+
+        <div class="card-body">
+            <table id="tableblog" class="table table-stripped table-bordered">
                 <thead>
                     <tr>
                         <th>Aksi</th>
@@ -36,7 +37,7 @@
                         <th>Deskripsi</th>
                     </tr>
                 </thead>
-                @forelse ($blogs as $bs)
+                @foreach ($blogs as $bs)
                     <tbody>
                         <tr>
                             <td>
@@ -60,17 +61,11 @@
                             <td>{{ $bs->deskripsi }}</td>
                         </tr>
                     </tbody>
-                @empty
-                    <td colspan="3" class="text-center">
-                        <div class="alert alert-danger">
-                            Artikel Kosong / Bersih (?)
-                        </div>
-                    </td>
-                @endforelse
+                @endforeach
             </table>
         </div>
         <div class="card-footer">
-            {{ $blogs->links() }}
+
         </div>
     </div>
 

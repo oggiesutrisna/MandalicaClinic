@@ -8,22 +8,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mandalica SU</title>
-
+    <title>Superuser Mandalika</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@450&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{ asset('assets-backend/plugins/summernote/summernote-bs4.min.css') }}">
-
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     <link rel="stylesheet" href="{{ asset('assets-backend/plugins/sweetalert2/sweetalert2.min.css') }}">
     <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="{{ asset('assets-backend/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('assets-backend/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets-backend/plugins/fontawesome-free/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets-backend/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets-backend/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('assets-backend/plugins/summernote/summernote-bs4.min.css') }}}">
+    <link rel="stylesheet"
+        href="{{ asset('assets-backend/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('assets-backend/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('assets-backend/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
     {{-- DATATABLES BOOT --}}
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('assets-backend/css/adminlte.min.css') }}">
 </head>
@@ -79,19 +83,150 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- REQUIRED SCRIPTS -->
 
     <script src="{{ asset('assets-backend/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
-
     <!-- jQuery -->
     <script src="{{ asset('assets-backend/plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 4 -->
     <script src="{{ asset('assets-backend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('assets-backend/js/adminlte.min.js') }}"></script>
-
     <script src="{{ asset('assets-backend/plugins/datatables-select/js/dataTables.select.min.js') }}"></script>
     <script src="{{ asset('assets-backend/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets-backend/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets-backend/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets-backend/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets-backend/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets-backend/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('assets-backend/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
 
     <script src="{{ asset('assets-backend/plugins/summernote/summernote-bs4.min.js') }}"></script>
 
+    <script src="{{ asset('assets-backend/plugins/select2/js/select2.full.min.js') }}"></script>
+
+    <script>
+        $(function() {
+            // Summernote
+            $('#summernote').summernote({
+                placeholder: 'Buat Deskripsi...',
+                tabsize: 2,
+                height: 250
+            })
+
+            // select2
+            $('.select2').select2()
+
+            // select2bs4
+            $('.select2bs4').select2({
+                theme: 'bootstrap4'
+            })
+
+            // CodeMirror
+            CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                mode: "htmlmixed",
+                theme: "monokai"
+            });
+        })
+    </script>
+
+    <script>
+        $(function() {
+            $('#tablepackages').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+                "select": true,
+                "buttons": [
+                    'copy', 'excel', 'pdf'
+                ],
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Indonesian.json"
+                }
+            });
+        });
+    </script>
+    <script>
+        $(function() {
+            $('#pasientable').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+                "select": true,
+                "buttons": [
+                    'copy', 'excel', 'pdf'
+                ],
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Indonesian.json"
+                }
+            });
+        });
+    </script>
+    <script>
+        $(function() {
+            $('#tableblog').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+                "select": true,
+                "buttons": [
+                    'copy', 'excel', 'pdf'
+                ],
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Indonesian.json"
+                }
+            });
+        });
+    </script>
+    <script>
+        $(function() {
+            $('#tableobat').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+                "select": true,
+                "buttons": [
+                    'copy', 'excel', 'pdf'
+                ],
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Indonesian.json"
+                }
+            });
+        });
+    </script>
+    <script>
+        $(function() {
+            $('#tablepesan').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+                "select": true,
+                "buttons": [
+                    'copy', 'excel', 'pdf'
+                ],
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Indonesian.json"
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
