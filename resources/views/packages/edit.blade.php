@@ -6,17 +6,15 @@
 
     <div class="card">
         <div class="card-header">
-            <div class="card-tools">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-            </div>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         </div>
 
         <div class="card-body">
@@ -25,18 +23,19 @@
                 @method('PUT')
                 <div class="form-group">
                     <label for="">Nama Paket</label>
-                    <input type="text" name="name" class="form-control" placeholder="Nama Paket"
-                        value="{{ $package->name }}">
+                    <input type="text" name="nama" class="form-control" placeholder="Nama Paket"
+                        value="{{ $package->nama }}">
                 </div>
                 <div class="form-group">
                     <label for="">Harga</label>
-                    <input type="text" name="price" class="form-control" placeholder="Harga"
-                        value="{{ $package->price }}">
+                    <input type="text" name="harga" class="form-control" placeholder="Harga"
+                        value="{{ $package->harga }}">
                 </div>
                 <div class="form-group">
-                    <label for="">Deskripsi</label>
-                    <textarea name="description" id="editor1" class="form-control"
-                        placeholder="Deskripsi">{{ $package->description }}</textarea>
+                    <label for="deskripsi">Deskripsi</label>
+                    <textarea name="deskripsi" id="summernote1" class="form-control">
+                        {{ $package->deskripsi }}
+                    </textarea>
                 </div>
                 <div class="form-group">
                     <label for="">Gambar</label>

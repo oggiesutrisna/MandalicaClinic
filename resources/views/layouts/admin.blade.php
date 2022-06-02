@@ -89,6 +89,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="{{ asset('assets-backend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('assets-backend/js/adminlte.min.js') }}"></script>
+    {{-- Datatables set --}}
     <script src="{{ asset('assets-backend/plugins/datatables-select/js/dataTables.select.min.js') }}"></script>
     <script src="{{ asset('assets-backend/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('assets-backend/plugins/datatables/jquery.dataTables.min.js') }}"></script>
@@ -97,16 +98,45 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="{{ asset('assets-backend/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('assets-backend/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
     <script src="{{ asset('assets-backend/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
-
+    {{-- summernote --}}
     <script src="{{ asset('assets-backend/plugins/summernote/summernote-bs4.min.js') }}"></script>
-
+    {{-- select2 --}}
     <script src="{{ asset('assets-backend/plugins/select2/js/select2.full.min.js') }}"></script>
+    {{-- ellipsis for datatables --}}
+    <script src="{{ asset('https://cdn.datatables.net/plug-ins/1.12.1/dataRender/ellipsis.js') }}"></script>
+
+    <script>
+        $('.deleteconfirmation').click(function(event) {
+            var form = $(this).closest("form");
+            var name = $(this).data('name');
+            event.preventDefault();
+            swal({
+                    title: `Are you sure want to delete ${name}?`,
+                    text: "If you delete this, it will be gone forever.",
+                    icon: "warning",
+                    buttons: true,
+                    dangermode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        form.submit();
+                    }
+                });
+        });
+    </script>
 
     <script>
         $(function() {
             // Summernote
             $('#summernote').summernote({
                 placeholder: 'Buat Deskripsi...',
+                tabsize: 2,
+                height: 250
+            })
+
+            // Summernote for packages
+            $('#summernote1').summernote({
+                placeholder: 'Keterangan',
                 tabsize: 2,
                 height: 250
             })
@@ -132,10 +162,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             $('#tablepackages').DataTable({
                 "paging": true,
                 "lengthChange": false,
-                "searching": false,
+                "searching": true,
                 "ordering": true,
                 "info": true,
-                "autoWidth": false,
+                "autoWidth": true,
                 "responsive": true,
                 "select": true,
                 "buttons": [
@@ -152,7 +182,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             $('#pasientable').DataTable({
                 "paging": true,
                 "lengthChange": false,
-                "searching": false,
+                "searching": true,
                 "ordering": true,
                 "info": true,
                 "autoWidth": false,
@@ -172,7 +202,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             $('#tableblog').DataTable({
                 "paging": true,
                 "lengthChange": false,
-                "searching": false,
+                "searching": true,
                 "ordering": true,
                 "info": true,
                 "autoWidth": false,
@@ -192,7 +222,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             $('#tableobat').DataTable({
                 "paging": true,
                 "lengthChange": false,
-                "searching": false,
+                "searching": true,
                 "ordering": true,
                 "info": true,
                 "autoWidth": false,
@@ -212,7 +242,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             $('#tablepesan').DataTable({
                 "paging": true,
                 "lengthChange": false,
-                "searching": false,
+                "searching": true,
                 "ordering": true,
                 "info": true,
                 "autoWidth": false,

@@ -6,7 +6,7 @@
 
     <div class="callout callout-success">
         <h5>
-            Total Pesan yang terkumpul: <b>{{ DB::table('contacts')->count() }}</b>
+            Total Packages yang dibuat: <b>{{ DB::table('packages')->count() }}</b>
         </h5>
         <p>
             Fitur ini ditambahkan untuk menampilkan data contact yang terkumpul dari Pengguna
@@ -15,35 +15,39 @@
 
     <div class="card">
         <div class="card-header">
-            <div class="card-tools">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-            </div>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         </div>
+
         <div class="card-body">
             <form action="{{ route('packages.store') }}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label for="">Nama Paket</label>
-                    <input type="text" name="name" class="form-control" placeholder="Nama Paket">
+                    <label for="nama">Nama Paket</label>
+                    <input type="text" name="nama" class="form-control" placeholder="Nama Paket">
                 </div>
                 <div class="form-group">
-                    <label for="">Harga</label>
-                    <input type="text" name="price" class="form-control" placeholder="Harga">
+                    <label for="harga">Harga</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Rp.</span>
+                        </div>
+                        <input type="text" name="harga" class="form-control" placeholder="Harga">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="">Deskripsi</label>
-                    <textarea name="description" id="editor1" class="form-control" placeholder="Deskripsi"></textarea>
+                    <label for="keterangan">Keterangan</label>
+                    <textarea name="keterangan" id="summernote1" class="form-control" placeholder="Deskripsi"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="">Gambar</label>
+                    <label for="gambar">Gambar</label>
                     <input type="file" name="image" class="form-control">
                 </div>
                 <div class="form-group">
@@ -54,6 +58,7 @@
                 </div>
             </form>
         </div>
+
         <div class="card-footer">
             <a href="{{ route('packages.index') }}" class="btn btn-warning">
                 <i class="fas fa-arrow-left"></i>
@@ -61,4 +66,5 @@
             </a>
         </div>
     </div>
+
 @endsection

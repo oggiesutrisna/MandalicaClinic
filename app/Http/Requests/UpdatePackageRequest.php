@@ -24,9 +24,9 @@ class UpdatePackageRequest extends FormRequest
     public function rules()
     {
         return [
-            'nama' => 'required',
-            'harga' => 'required',
-            'keterangan' => 'required',
+            'nama' => 'max:255',
+            'harga' => 'max:255',
+            'keterangan' => 'max:255',
         ];
     }
 }

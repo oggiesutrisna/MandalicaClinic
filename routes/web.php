@@ -7,7 +7,8 @@ use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PasienController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ViewBlogsController;
+use App\Http\Controllers\ViewPackageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,9 @@ Route::put('storecontact', [ContactController::class, 'storecontact'])->name('se
 Route::put('setorpasien', [PasienController::class, 'setorpasien'])->name('pasiensetor');
 Route::get('viewpackages/{nama}', [PackageController::class, 'viewpackages'])->name('packagesview');
 Route::get('/en-en', [WelcomeController::class, 'en-en'])->name('en-en');
+
+Route::get('/mandalicareads', [ViewBlogsController::class, 'blogLandingPage'])->name('mandalicareads');
+Route::get('/mandalicapackages', [ViewPackageController::class, 'viewpackage'])->name('mandalicapackages');
 
 Auth::routes();
 

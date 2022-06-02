@@ -55,6 +55,7 @@
                         <option value="Rabies/Rabies Vaccine">Rabies/Rabies Vaccine</option>
                         <option value="Nusa Tenggara Barat">Penyakit/Disease</option>
                         <option value="Pengobatan/Medicine">Pengobatan/Medicine</option>
+                        <option value="IV Treatment">IV Treatment</option>
                     </select>
                 </div>
         </div>

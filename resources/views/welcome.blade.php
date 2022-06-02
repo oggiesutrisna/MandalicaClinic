@@ -64,7 +64,6 @@
     <meta content="Mandalica Clinic" name="author">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <meta charset="utf-8">
@@ -84,7 +83,8 @@
         @include('sweetalert::alert')
         {{-- Navigation Bar --}}
         <nav class="navbar navbar-light navbar-expand-md py-3">
-            <div class="container"><a class="navbar-brand d-flex align-items-center" href="https://wa.me/"><span
+            <div class="container"><a class="navbar-brand d-flex align-items-center"
+                    href="https://wa.me/6282298298911"><span
                         class="bs-icon-sm fa-solid fa-phone bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"
                         style="background: var(--bs-red);">
                     </span><span>Call Center</span></a><button data-bs-toggle="collapse" class="navbar-toggler"
@@ -95,17 +95,18 @@
                         <li class="nav-item">
                             <div class="btn-toolbar">
                                 <div class="btn-group" role="group"
-                                    style="color: var(--bs-blue);background: var(--bs-red);"><button
-                                        class="btn btn-primary" type="button"
+                                    style="color: var(--bs-blue);background: var(--bs-red);"><a class="btn btn-primary"
+                                        type="button" href="https://www.facebook.com/mandalicaclinic"
                                         style="background: var(--bs-red);border-color: var(--bs-red);">
                                         <i class="fa-brands fa-facebook-f"></i>
-                                    </button><button class="btn btn-primary" type="button"
+                                    </a><a class="btn btn-primary" type="button"
+                                        href="https://instagram.com/klinikmandalica?igshid=YmMyMTA2M2Y="
                                         style="background: var(--bs-red);border-color: var(--bs-red);">
                                         <i class="fa-brands fa-instagram"></i>
-                                    </button></div>
-                                <div class="btn-group" role="group"><button class="btn btn-primary" type="button"
-                                        style="background: var(--bs-red);border-color: var(--bs-red);"><i
-                                            class="fa-brands fa-google"></i></button>
+                                    </a></div>
+                                <div class="btn-group" role="group"><a class="btn btn-primary" href=""
+                                        type="button" style="background: var(--bs-red);border-color: var(--bs-red);"><i
+                                            class="fa-brands fa-google"></i></a>
                                 </div>
                             </div>
                         </li>
@@ -135,86 +136,55 @@
                         <li class="nav-item"><a class="nav-link" href="#">Our Packages</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Career</a></li>
-                    </ul><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        type="button" style="background: var(--bs-red);border-color: var(--bs-red);">Buat
+                    </ul><button class="btn btn-primary" type="button"
+                        style="background: var(--bs-red);border-color: var(--bs-red);" data-bs-target="#modalExample"
+                        data-bs-toggle="modal">Buat
                         Appointment</button>
                 </div>
             </div>
         </nav>
-        <div class="carousel slide" data-bs-ride="carousel" id="carousel-1" style="height: 600px;">
-            <div class="carousel-inner h-100">
-                <div class="carousel-item active h-100"><img class="w-100 d-block position-absolute h-100 fit-cover"
-                        src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" alt="Slide Image"
-                        style="z-index: -1;">
-                    <div class="container d-flex flex-column justify-content-center h-100">
-                        <div class="row">
-                            <div class="col-md-6 col-xl-4 offset-md-2">
-                                <div style="max-width: 350px;">
-                                    <h1 class="text-uppercase fw-bold">Layanan kesehatan terbaik di Mandalika<br></h1>
-                                    <p class="my-3">Bertempat di lokasi strategis Mandalika, Mandalica Clinic
-                                        siap memberikan layanan kesehatan profesional untuk anda dan keluarga.<br></p><a
-                                        class="btn btn-primary btn-lg me-2" role="button" href="#"
-                                        style="background: var(--bs-red);border-color: var(--bs-red);">Button</a><a
-                                        class="btn btn-outline-primary btn-lg" role="button" href="#"
-                                        style="border-color: var(--bs-red);color: var(--bs-red);">Button</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item h-100"><img class="w-100 d-block position-absolute h-100 fit-cover"
-                        src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" alt="Slide Image"
-                        style="z-index: -1;">
-                    <div class="container d-flex flex-column justify-content-center h-100">
-                        <div class="row">
-                            <div class="col-md-6 col-xl-4 offset-md-2">
-                                <div style="max-width: 350px;">
-                                    <h1 class="text-uppercase fw-bold">Layanan TERBAIK DI MANDALIKA</h1>
-                                    <p class="my-3">Tincidunt laoreet leo, adipiscing taciti tempor. Primis
-                                        senectus sapien, risus donec ad fusce augue interdum.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item h-100"><img class="w-100 d-block position-absolute h-100 fit-cover"
-                        src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" alt="Slide Image"
-                        style="z-index: -1;">
-                    <div class="container d-flex flex-column justify-content-center h-100">
-                        <div class="row">
-                            <div class="col-md-6 col-xl-4 offset-md-2">
-                                <div style="max-width: 350px;">
-                                    <h1 class="text-uppercase fw-bold">Buat APPOINTMENT SANGAT MUDAH</h1>
-                                    <p class="my-3">Anda ingin membuat appointment dengan kami, langsung klik
-                                        Buat Appointment</p>
-                                </div>
+
+        <section class="py-4 py-xl-5">
+            <div class="container">
+                <div class="border rounded border-0 d-flex flex-column justify-content-center align-items-center p-4 py-5"
+                    style="background: linear-gradient(var(--bs-red) 0%, rgba(0,123,255,0.2) 87%), url('{{ asset('assets-frontend/assets/img/slider-1.jpg') }}') center / cover;height: 500px;">
+                    <div class="row">
+                        <div
+                            class="col-md-10 col-xl-8 text-center d-flex d-sm-flex d-md-flex justify-content-center align-items-center mx-auto justify-content-md-start align-items-md-center justify-content-xl-center">
+                            <div>
+                                <h1 class="text-uppercase fw-bold mb-3" style="color: var(--bs-white)">LAYANAN KESEHATAN
+                                    TERBAIK DI MANDALIKA<br />
+                                </h1>
+                                <p class="mb-4" style="color: var(--bs-light)">Bertempat di lokasi strategis
+                                    Mandalika, Mandalica Clinic siap
+                                    memberikan layanan kesehatan profesional untuk anda dan keluarga.<br /></p><button
+                                    class="btn btn-primary fs-5 me-2 py-2 px-4" type="button"
+                                    data-bs-target="#getstarted"
+                                    style="color: var(--bs-body-bg);background: var(--bs-red);border-color: var(--bs-red);">Get
+                                    Started</button><button class="btn btn-light fs-5 py-2 px-4"
+                                    data-bs-target="#modalExample" data-bs-toggle="modal" type="button">Buat
+                                    Appointment</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev"><span
-                        class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></a><a
-                    class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next"><span
-                        class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></a></div>
-            <ol class="carousel-indicators">
-                <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
-                <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
-                <li data-bs-target="#carousel-1" data-bs-slide-to="2"></li>
-            </ol>
-        </div>
+        </section>
+
         <div class="container py-4 py-xl-5" id="getstarted">
             <div class="row mb-5">
                 <div class="col-md-8 col-xl-6 text-center mx-auto">
-                    <h2>Our Packages</h2>
+                    <a href="{{ route('mandalicapackages') }}">
+                        <h2>Our Packages</h2>
+                    </a>
                 </div>
             </div>
             <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
                 <div class="col-md-4">
                     <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
-                            src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
+                            src="{{ asset('assets-frontend/assets/img/iv-treatment.jpg') }}">
                         <div class="card-body p-4">
-                            <h4 class="card-title">Lorem libero donec</h4>
+                            <h4 class="card-title">IV Treatment</h4>
                             <div class="d-flex">
                                 <div></div>
                             </div>
@@ -223,9 +193,9 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
-                            src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
+                            src="{{ asset('assets-frontend/assets/img/swab-pcr.jpg') }}">
                         <div class="card-body p-4">
-                            <h4 class="card-title">Lorem libero donec</h4>
+                            <h4 class="card-title">COVID-19 Test</h4>
                             <div class="d-flex">
                                 <div></div>
                             </div>
@@ -234,9 +204,9 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
-                            src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
+                            src="{{ asset('assets-frontend/assets/img/praktek-dokter.jpg') }}">
                         <div class="card-body p-4">
-                            <h4 class="card-title">Lorem libero donec</h4>
+                            <h4 class="card-title">Praktek Dokter</h4>
                             <div class="d-flex">
                                 <div></div>
                             </div>
@@ -296,7 +266,9 @@
         <div class="container py-4 py-xl-5">
             <div class="row mb-5">
                 <div class="col-md-8 col-xl-6 text-center mx-auto">
-                    <h2>Mandalika Reads</h2>
+                    <a href="{{ route('mandalicareads') }}">
+                        <h2 style="color: var(--bs-primary  )">Mandalika Reads</h2>
+                    </a>
                     <p class="w-lg-50">Dapatkan informasi terkini terkait kesehatan yang terjadi di Indonesia
                         maupun Dunia.</p>
                 </div>
@@ -305,9 +277,9 @@
             <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
                 <div class="col-md-4">
                     <div class="card"><img class="card-img-top w-100 d-block fit-cover"
-                            style="height: 200px;" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
+                            style="height: 200px;" src="https://source.unsplash.com/random/?nurse">
                         <div class="card-body p-4">
-                            <h4 class="card-title">Lorem libero donec</h4>
+                            <h4 class="card-title">Presiden Jokowi tidak mewajibkan menggunakan Masker</h4>
                             <div class="d-flex">
                                 <div></div>
                             </div>
@@ -317,9 +289,9 @@
 
                 <div class="col-md-4">
                     <div class="card"><img class="card-img-top w-100 d-block fit-cover"
-                            style="height: 200px;" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
+                            style="height: 200px;" src="https://source.unsplash.com/random/?nurse">
                         <div class="card-body p-4">
-                            <h4 class="card-title">Lorem libero donec</h4>
+                            <h4 class="card-title">Penerbangan tidak perlu lagi menggunakan persyaratan Swab</h4>
                             <div class="d-flex">
                                 <div></div>
                             </div>
@@ -329,9 +301,9 @@
 
                 <div class="col-md-4">
                     <div class="card"><img class="card-img-top w-100 d-block fit-cover"
-                            style="height: 200px;" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
+                            style="height: 200px;" src="https://source.unsplash.com/random/?nurse">
                         <div class="card-body p-4">
-                            <h4 class="card-title">Lorem libero donec</h4>
+                            <h4 class="card-title">Mandalika MotoGP Afterparty, apa yang terjadi</h4>
                             <div class="d-flex">
                                 <div></div>
                             </div>
@@ -356,15 +328,16 @@
                         <div>
                             <form class="p-3 p-xl-4" method="post">
                                 <div class="mb-3"><input class="form-control" type="text" id="name-1"
-                                        name="name" placeholder="Name"></div>
+                                        name="name" placeholder="Name" required></div>
                                 <div class="mb-3"><input class="form-control" type="email" id="email-1"
-                                        name="tel" placeholder="Nomor Telepon"></div>
+                                        name="tel" placeholder="Nomor Telepon" required></div>
                                 <div class="mb-3"><input class="form-control" type="email" id="email-2"
-                                        name="email" placeholder="Email"></div>
+                                        name="email" placeholder="Email" required></div>
                                 <div class="mb-3">
                                     <textarea class="form-control" id="message-1" name="message" rows="6" placeholder="Keluhan Anda"></textarea>
                                 </div>
-                                <div><button class="btn btn-danger d-block w-100" type="submit">Send </button></div>
+                                <div><button class="btn btn-danger d-block w-100" type="submit">Kirim Pesan
+                                        Anda</button></div>
                             </form>
                         </div>
                     </div>
@@ -441,7 +414,7 @@
     <script src="{{ asset('assets-frontend/js/main.js') }}"></script>
 
     {{-- Modal --}}
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalExample" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">

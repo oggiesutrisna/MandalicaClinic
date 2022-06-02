@@ -17,7 +17,7 @@ class CreatePackagesTable extends Migration
             $table->id();
             $table->string('nama')->default('tidak diinputkan nama');
             $table->string('harga')->default('tidak diinputkan harga');
-            $table->string('keterangan')->default('tidak ada keterangan');
+            $table->text('keterangan')->default('tidak ada keterangan');
             $table->timestamps();
         });
     }
