@@ -26,7 +26,8 @@ class UpdateBlogRequest extends FormRequest
         return [
             'judul' => 'max:255',
             'deskripsi' => 'max:255',
-            'tag' => 'max:2048',
+            'tag' => 'max:255',
+            'gambar' => 'mimes:png,jpg,jpeg,gif,svg|max:2048',
         ];
     }
 }

@@ -21,10 +21,10 @@
                     @foreach ($packages as $package)
                         <tr>
                             <td>
-                                <a href="{{ route('packages.show', $package->id) }}" class="btn btn-primary">
+                                <a href="{{ route('packages.show', $package->nama) }}" class="btn btn-primary">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="{{ route('packages.edit', $package->id) }}" class="btn btn-warning">
+                                <a href="{{ route('packages.edit', $package->nama) }}" class="btn btn-warning">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('packages.destroy', $package->id) }}" method="POST"

@@ -11,7 +11,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <title>Superuser Mandalika</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@450&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     <link rel="stylesheet" href="{{ asset('assets-backend/plugins/sweetalert2/sweetalert2.min.css') }}">
@@ -111,8 +112,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             var name = $(this).data('name');
             event.preventDefault();
             swal({
-                    title: `Are you sure want to delete ${name}?`,
-                    text: "If you delete this, it will be gone forever.",
+                    title: `Anda yakin untuk menghapus ${name}?`,
+                    text: "Jika anda ingin menghapusnya, data ini akan terhapus selama - lamanya :(.",
                     icon: "warning",
                     buttons: true,
                     dangermode: true,
@@ -127,18 +128,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <script>
         $(function() {
-            // Summernote
-            $('#summernote').summernote({
-                placeholder: 'Buat Deskripsi...',
-                tabsize: 2,
-                height: 250
-            })
-
             // Summernote for packages
             $('#summernote1').summernote({
-                placeholder: 'Keterangan',
+                placeholder: 'Tulis Disini...',
                 tabsize: 2,
-                height: 250
+                height: 250,
+                counter: true,
             })
 
             // select2

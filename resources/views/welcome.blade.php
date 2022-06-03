@@ -104,8 +104,9 @@
                                         style="background: var(--bs-red);border-color: var(--bs-red);">
                                         <i class="fa-brands fa-instagram"></i>
                                     </a></div>
-                                <div class="btn-group" role="group"><a class="btn btn-primary" href=""
-                                        type="button" style="background: var(--bs-red);border-color: var(--bs-red);"><i
+                                <div class="btn-group" role="group"><a class="btn btn-primary"
+                                        href="https://goo.gl/maps/EgSzyYWg3TSkp6pF9" type="button"
+                                        style="background: var(--bs-red);border-color: var(--bs-red);"><i
                                             class="fa-brands fa-google"></i></a>
                                 </div>
                             </div>
@@ -358,15 +359,15 @@
                     <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column item">
                         <h3 class="fs-6">Tentang Mandalika Clinic</h3>
                         <ul class="list-unstyled">
-                            <li><a class="link-secondary" href="#">Company</a></li>
-                            <li><a class="link-secondary" href="#">Team</a></li>
-                            <li><a class="link-secondary" href="#">Legacy</a></li>
+                            <li><a class="link-secondary" href="#">Kenapa Mandalica Clinic</a></li>
+                            <li><a class="link-secondary" href="#">Lokasi</a></li>
+                            <li><a class="link-secondary" href="#">Visi - Misi</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column item">
                         <h3 class="fs-6">Karir</h3>
                         <ul class="list-unstyled">
-                            <li><a class="link-secondary" href="#">Job openings</a></li>
+                            <li><a class="link-secondary" href="#">Available Hirings</a></li>
                             <li><a class="link-secondary" href="#">Employee success</a></li>
                             <li><a class="link-secondary" href="#">Benefits</a></li>
                         </ul>

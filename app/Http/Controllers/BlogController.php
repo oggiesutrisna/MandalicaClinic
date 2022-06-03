@@ -17,18 +17,19 @@ class BlogController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    //  showing ke tabel admin
     public function index(Request $request)
     {
         $blogs = Blog::orderBy('id', 'DESC')->paginate(5);
         return view('blogs.index', compact('blogs'));
     }
-
+    // showing ke homepage
     public function indexBlog(Blog $blogs)
     {
         $blogs = Blog::all();
         return view('welcome', ['blogs' => $blogs]);
     }
-
+    // showing ke show.blade di admin
     public function showBlog(Blog $blogs)
     {
         $blogs = Blog::where('id', $blogs)->first();
@@ -53,29 +54,11 @@ class BlogController extends Controller
      */
     public function store(StoreBlogRequest $request)
     {
-        $blog = new Blog;
-        $blog->judul = $request->judul;
-        $blog->deskripsi = $request->deskripsi;
-        $blog->tag = $request->tag;
-        $blog->gambar = $request->gambar;
-        $blog->save();
+        $blog = Blog::create($request->validated());
 
         if ($request->file('gambar')) {
             $validasidata['gambar'] = $request->file('gambar')->store('storage/blog', 'public');
         }
-
-        if($blog->save()) {
-            Alert::success('Berhasil', 'Data Berhasil Disimpan');
-            return redirect()->route('blogs.index');
-        } else {
-            Alert::error('Gagal', 'Data Gagal Disimpan');
-        }
-        // $validasidata = $request->validate([
-        //     'judul' => 'required|max:255',
-        //     'deskripsi' => 'required|max:255',
-        //     'tag' => 'required|max:255',
-        //     'gambar' => 'required|image|mimes:jpg,png,jpeg|max:2048',
-        // ]);
 
         Alert::success('Berhasil', 'Artikel anda telah berhasil ditambahkan');
         return redirect()->route('blogs.index');

@@ -29,23 +29,30 @@
                     <input type="text" name="judul" placeholder="Judul Artikel" class="form-control" required>
                 </div>
                 <div class="form-group">
+                    <label for="slug">
+                        Slug
+                    </label>
+                    <input type="text" name="slug" placeholder="Slug" class="form-control" required>
+                </div>
+                <div class="form-group">
                     <label for="deskripsi">
                         Deskripsi
                     </label>
-                    <textarea id="summernote" name="deskripsi" required>
+                    <textarea name="deskripsi" id="summernote1" class="form-control" placeholder="Tulis Disini...">
                     </textarea>
                 </div>
                 <div class="form-group">
                     <label for="Gambar">
                         Upload Gambar
                     </label>
-                    <input type="file" name="gambar" class="form-control" required>
+                    <input type="file" name="gambar" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="judul">
+                    <label for="tag">
                         Tag
                     </label>
-                    <select id="select2" class="form-control select2" data-placeholder="select a tag" multiple="multiple">
+                    <select name="tag" id="select2" class="form-control select2" data-placeholder="select a tag"
+                        multiple="multiple">
                         <option value="Mandalica">Mandalika</option>
                         <option value="Mandalika Klinik">Mandalika Clinic</option>
                         <option value="Bali">Bali</option>
@@ -61,7 +68,7 @@
         </div>
         <div class="card-footer">
             <button class="btn btn-primary" type="SUBMIT">
-                Buat Postingan
+                Publish Postingan
             </button>
             <a href="{{ route('blogs.index') }}" class="btn btn-success">
                 Kembali

@@ -16,6 +16,7 @@ class CreateBlogsTable extends Migration
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
+            $table->string('slug')->default('tidak ada data');
             $table->text('deskripsi')->default('tidak ada deskripsi');
             $table->text('tag')->default('tidak ada tag');
             $table->string('gambar')->default('tidak upload gambar');

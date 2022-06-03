@@ -9,8 +9,9 @@ class Blog extends Model
 {
     protected $fillable = [
         'judul',
+        'slug',
         'deskripsi',
-        'tags',
+        'tag',
         'gambar',
     ];
 

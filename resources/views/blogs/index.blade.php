@@ -34,6 +34,7 @@
                     <tr>
                         <th>Aksi</th>
                         <th>Judul</th>
+                        <th>Slug</th>
                         <th>Deskripsi</th>
                     </tr>
                 </thead>
@@ -58,6 +59,7 @@
                                 </div>
                             </td>
                             <td>{{ $bs->judul }}</td>
+                            <td>{{ $bs->slug }}</td>
                             <td>{{ $bs->deskripsi }}</td>
                         </tr>
                     </tbody>

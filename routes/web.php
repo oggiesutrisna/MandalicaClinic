@@ -30,7 +30,7 @@ use App\Http\Controllers\ViewPackageController;
 // });
 
 // Route without group
-Route::get('/blogs/post/{id}', [BlogController::class, 'showBlog'])->name('showBlog');
+Route::get('/blogs/post/{judul}', [BlogController::class, 'showBlog'])->name('showBlog');
 Route::get('/', [BlogController::class, 'indexBlog'])->name('indexBlog');
 Route::put('storecontact', [ContactController::class, 'storecontact'])->name('setorcontact');
 Route::put('setorpasien', [PasienController::class, 'setorpasien'])->name('pasiensetor');
