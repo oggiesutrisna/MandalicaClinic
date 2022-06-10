@@ -194,7 +194,7 @@
                     </div>
                 </div>
                 @endforeach
-                
+
             </div>
         </div>
         <div class="container py-4 py-xl-5">
@@ -257,7 +257,7 @@
             </div>
 
             <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
-                {{-- @foreach($blogs as $bg) --}}
+                @foreach($blogs as $bg)
                 <div class="col-md-4">
                     <div class="card"><img class="card-img-top w-100 d-block fit-cover"
                             style="height: 200px;" src="https://source.unsplash.com/random/?nurse">
@@ -269,7 +269,7 @@
                         </div>
                     </div>
                 </div>
-                {{-- @endforeach --}}
+                @endforeach
             </div>
         </div>
 

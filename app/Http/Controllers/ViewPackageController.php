@@ -23,7 +23,7 @@ class ViewPackageController extends Controller
     // To Display an Package to /
     public function WelcomePage(Request $request) 
     {
-        $packages = ModelsPackage::orderBy('created_at', 'desc')->paginate(3);
+        $packages = ModelsPackage::all()->paginate(3);
         return view('welcome', compact('packages'));
     }
 

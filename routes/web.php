@@ -34,16 +34,11 @@ use App\Http\Controllers\ViewPackageController;
 Route::get('/artikel', [ViewBlogsController::class, 'welcomePage']);
 Route::get('/readartikel', [ViewBlogsController::class, 'viewBlog']);
 
-// Route For MandalicaPackages
-Route::get('/paket', [ViewPackageController::class, 'showPackage']);
-
 // Route without group
 Route::get('/', [
     ViewBlogsController::class, 'welcomePage',
     ViewPackageController::class, 'welcomePage',
 ]);
-
-
 // Mandalica Packages
 Route::get('/mandalicareads', [ViewBlogsController::class, 'blogIndex'])->name('mandalicareads');
 Route::get('/mandalicapackages', [ViewPackageController::class, 'viewpackage'])->name('mandalicapackages');
