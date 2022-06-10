@@ -20,7 +20,7 @@
             <div class="small-box bg-success">
                 <div class="inner">
                     <h3>{{ $count = DB::table('pasiens')->count() }}</h3>
-                    <p>Pasien Buat Appointment</p>
+                    <p>Total Pasien</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-stats-bars"></i>
@@ -32,8 +32,8 @@
             <!-- small box -->
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h3>{{ $count = DB::table('pasiens')->count() }}</h3>
-                    <p>Pasien Telah Sembuh</p>
+                    <h3>{{ $count = DB::table('contacts')->count() }}</h3>
+                    <p>Total Pesan</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-person-add"></i>
@@ -45,9 +45,9 @@
             <!-- small box -->
             <div class="small-box bg-danger">
                 <div class="inner">
-                    <h3>{{ $count = DB::table('pasiens')->where('status', 'belum di follow up')->count() }}</h3>
+                    <h3>{{ $count = DB::table('blogs')->count() }}</h3>
 
-                    <p>Pasien belum di follow up</p>
+                    <p>Total Artikel</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-pie-graph"></i>
@@ -59,9 +59,9 @@
             <!-- small box -->
             <div class="small-box bg-primary">
                 <div class="inner">
-                    <h3>{{ $count = DB::table('pasiens')->where('status', 'selesai')->count() }}</h3>
+                    <h3>{{ $count = DB::table('packages')->count() }}</h3>
 
-                    <p>Pasien sudah di follow up</p>
+                    <p>Total Paket</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-pie-graph"></i>

@@ -134,8 +134,8 @@
                 <div class="collapse navbar-collapse" id="navcol-3">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Our Packages</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('mandalicapackages') }}">Our Packages</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contactus">Contact Us</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Career</a></li>
                     </ul><button class="btn btn-primary" type="button"
                         style="background: var(--bs-red);border-color: var(--bs-red);" data-bs-target="#modalExample"

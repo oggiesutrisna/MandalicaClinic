@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Package;
 use Illuminate\Http\Request;
 
 class ViewPackageController extends Controller
@@ -10,4 +11,11 @@ class ViewPackageController extends Controller
     {
         return view('viewpackages');
     }
+
+    public function indexPackage()
+    {
+        $packages = Package::all();
+        return view('viewpackages', compact('packages'));
+    }
+
 }

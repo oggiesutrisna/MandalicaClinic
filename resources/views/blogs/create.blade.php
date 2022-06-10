@@ -63,12 +63,13 @@
                         <option value="Nusa Tenggara Barat">Penyakit/Disease</option>
                         <option value="Pengobatan/Medicine">Pengobatan/Medicine</option>
                         <option value="IV Treatment">IV Treatment</option>
+                        <option value="Tooth-Whitening">Tooth Whitening</option>
                     </select>
                 </div>
         </div>
         <div class="card-footer">
             <button class="btn btn-primary" type="SUBMIT">
-                Publish Postingan
+                Publish
             </button>
             <a href="{{ route('blogs.index') }}" class="btn btn-success">
                 Kembali

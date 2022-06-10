@@ -34,6 +34,10 @@
                     <input type="text" name="nama" class="form-control" placeholder="Nama Paket">
                 </div>
                 <div class="form-group">
+                    <label for="nama">Kategori</label>
+                    <input type="text" name="categories" class="form-control" placeholder="Nama Paket">
+                </div>
+                <div class="form-group">
                     <label for="harga">Harga</label>
                     <div class="input-group">
                         <div class="input-group-prepend">

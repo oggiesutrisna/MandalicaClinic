@@ -8,16 +8,16 @@
             <a href="{{ route('home') }}" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ route('pasiens.create') }}" class="nav-link">Buat Data Pasien</a>
+            <a href="{{ route('pasiens.create') }}" class="nav-link">Buat Pasien</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{ route('blogs.create') }}" class="nav-link">Buat Blog</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ route('obats.create') }}" class="nav-link">Buat Data Obat</a>
+            <a href="{{ route('obats.create') }}" class="nav-link">Buat Obat</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ route('packages.create') }}" class="nav-link">Buat data Paket</a>
+            <a href="{{ route('packages.create') }}" class="nav-link">Buat Paket</a>
         </li>
     </ul>
 

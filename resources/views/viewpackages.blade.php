@@ -55,7 +55,7 @@
                         <path
                             d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5v-1zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z">
                         </path>
-                    </svg></span><span>Mandalica Reads</span></a><button data-bs-toggle="collapse"
+                    </svg></span><span>Mandalica Packages</span></a><button data-bs-toggle="collapse"
                 class="navbar-toggler" data-bs-target="#navcol-3"><span class="visually-hidden">Toggle
                     navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-3">
@@ -78,80 +78,81 @@
                 <p class="w-lg-50">Dapatkan Paket terbaik yang kami tawarkan di Mandalika Clinic.</p>
             </div>
         </div>
-        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
-            <div class="col-lg-4">
-                <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
-                        src="https://source.unsplash.com/random/?nurse">
-                    <div class="card-body p-4">
-                        <p class="text-primary card-text mb-0">Article</p>
-                        <h4 class="card-title">Lorem libero donec</h4>
-                        <div class="d-flex">
-                            <div></div>
+        @foreach ($packages as $package)
+            <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+                <div class="col-lg-4">
+                    <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
+                            src="https://source.unsplash.com/random/?nurse">
+                        <div class="card-body p-4">
+                            <p class="text-primary card-text mb-0">Packages</p>
+                            <h4 class="card-title">IV Treatment</h4>
+                            <div class="d-flex">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
+                            src="https://source.unsplash.com/random/?nurse">
+                        <div class="card-body p-4">
+                            <p class="text-primary card-text mb-0">Package</p>
+                            <h4 class="card-title">COVID-19 Packages</h4>
+                            <div class="d-flex">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
+                            src="https://source.unsplash.com/random/?nurse">
+                        <div class="card-body p-4">
+                            <p class="text-primary card-text mb-0">Package</p>
+                            <h4 class="card-title">Alleviate Package</h4>
+                            <div class="d-flex">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
+                            src="https://source.unsplash.com/random/?nurse">
+                        <div class="card-body p-4">
+                            <p class="text-primary card-text mb-0">Package</p>
+                            <h4 class="card-title">Bali Belly Package</h4>
+                            <div class="d-flex">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
+                            src="https://source.unsplash.com/random/?nurse">
+                        <div class="card-body p-4">
+                            <p class="text-primary card-text mb-0">Package</p>
+                            <h4 class="card-title">Rabies Vaccine</h4>
+                            <div class="d-flex">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
+                            src="https://source.unsplash.com/random/?nurse">
+                        <div class="card-body p-4">
+                            <p class="text-primary card-text mb-0">Package</p>
+                            <h4 class="card-title">Tooth Whitening & Scaling</h4>
+                            <div class="d-flex">
+                                <div></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
-                        src="https://source.unsplash.com/random/?nurse">
-                    <div class="card-body p-4">
-                        <p class="text-primary card-text mb-0">Article</p>
-                        <h4 class="card-title">Lorem libero donec</h4>
-                        <div class="d-flex">
-                            <div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
-                        src="https://source.unsplash.com/random/?nurse">
-                    <div class="card-body p-4">
-                        <p class="text-primary card-text mb-0">Article</p>
-                        <h4 class="card-title">Lorem libero donec</h4>
-                        <div class="d-flex">
-                            <div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
-                        src="https://source.unsplash.com/random/?nurse">
-                    <div class="card-body p-4">
-                        <p class="text-primary card-text mb-0">Article</p>
-                        <h4 class="card-title">Lorem libero donec</h4>
-                        <div class="d-flex">
-                            <div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
-                        src="https://source.unsplash.com/random/?nurse">
-                    <div class="card-body p-4">
-                        <p class="text-primary card-text mb-0">Article</p>
-                        <h4 class="card-title">Lorem libero donec</h4>
-                        <div class="d-flex">
-                            <div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
-                        src="https://source.unsplash.com/random/?nurse">
-                    <div class="card-body p-4">
-                        <p class="text-primary card-text mb-0">Article</p>
-                        <h4 class="card-title">Lorem libero donec</h4>
-                        <div class="d-flex">
-                            <div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <section class="position-relative py-4 py-xl-5">
         <div class="container position-relative">
