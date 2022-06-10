@@ -29,18 +29,28 @@ use App\Http\Controllers\ViewPackageController;
 //     return view('pasiens.showpasien', compact('pasien'));
 // });
 
+
+// Route For Blogs
+Route::get('/artikel', [ViewBlogsController::class, 'welcomePage']);
+Route::get('/readartikel', [ViewBlogsController::class, 'viewBlog']);
+
+// Route For MandalicaPackages
+Route::get('/paket', [ViewPackageController::class, 'showPackage']);
+
 // Route without group
-Route::get('/blogs/post/{judul}', [BlogController::class, 'showBlog'])->name('showBlog');
-Route::get('/', [BlogController::class, 'indexBlog'])->name('indexBlog');
-Route::put('storecontact', [ContactController::class, 'storecontact'])->name('setorcontact');
-Route::put('setorpasien', [PasienController::class, 'setorpasien'])->name('pasiensetor');
-Route::get('viewpackages/{nama}', [PackageController::class, 'viewpackages'])->name('packagesview');
-Route::get('/en-en', [WelcomeController::class, 'en-en'])->name('en-en');
-Route::get('/viewpackages', [Controller::class, 'viewpackages'])->name('viewpackages');
+Route::get('/', [
+    ViewBlogsController::class, 'welcomePage',
+    ViewPackageController::class, 'welcomePage',
+]);
+
 
 // Mandalica Packages
-Route::get('/mandalicareads', [ViewBlogsController::class, 'blogLandingPage'])->name('mandalicareads');
+Route::get('/mandalicareads', [ViewBlogsController::class, 'blogIndex'])->name('mandalicareads');
 Route::get('/mandalicapackages', [ViewPackageController::class, 'viewpackage'])->name('mandalicapackages');
+
+Route::put('storecontact', [ContactController::class, 'storecontact'])->name('setorcontact');
+Route::put('setorpasien', [PasienController::class, 'setorpasien'])->name('pasiensetor');
+// Route::get('/en-en', [WelcomeController::class, 'en-en'])->name('en-en');
 
 Auth::routes();
 

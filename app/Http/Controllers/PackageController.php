@@ -9,12 +9,6 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class PackageController extends Controller
 {
-
-    public function viewpackages()
-    {
-        return view('showpackages', compact('packages'));
-    }
-
     /**
      * Display a listing of the resource.
      *

@@ -71,11 +71,9 @@
     <title>Mandalika Clinic</title>
     <link rel="stylesheet" href="{{ asset('assets-frontend/assets/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets-frontend/assets/css/styles.min.css') }}">
-
 </head>
 
 <body>
-
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHCF9JJ" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
 
@@ -135,6 +133,7 @@
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('mandalicapackages') }}">Our Packages</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('mandalicareads') }}">Blogs</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contactus">Contact Us</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Career</a></li>
                     </ul><button class="btn btn-primary" type="button"
@@ -181,39 +180,21 @@
                 </div>
             </div>
             <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+
+                @foreach($packages as $pkg)
                 <div class="col-md-4">
                     <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
-                            src="{{ asset('assets-frontend/assets/img/iv-treatment.jpg') }}">
+                            src="https://source.unsplash.com/random/?nurse">
                         <div class="card-body p-4">
-                            <h4 class="card-title">IV Treatment</h4>
+                            <h4 class="card-title">{{ $pkg->nama }}</h4>
                             <div class="d-flex">
                                 <div></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
-                            src="{{ asset('assets-frontend/assets/img/swab-pcr.jpg') }}">
-                        <div class="card-body p-4">
-                            <h4 class="card-title">COVID-19 Test</h4>
-                            <div class="d-flex">
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
-                            src="{{ asset('assets-frontend/assets/img/praktek-dokter.jpg') }}">
-                        <div class="card-body p-4">
-                            <h4 class="card-title">Praktek Dokter</h4>
-                            <div class="d-flex">
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+                
             </div>
         </div>
         <div class="container py-4 py-xl-5">
@@ -276,41 +257,19 @@
             </div>
 
             <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+                {{-- @foreach($blogs as $bg) --}}
                 <div class="col-md-4">
                     <div class="card"><img class="card-img-top w-100 d-block fit-cover"
                             style="height: 200px;" src="https://source.unsplash.com/random/?nurse">
                         <div class="card-body p-4">
-                            <h4 class="card-title">Presiden Jokowi tidak mewajibkan menggunakan Masker</h4>
+                            <h4 class="card-title">{{ $blogs->judul }}</h4>
                             <div class="d-flex">
                                 <div></div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-4">
-                    <div class="card"><img class="card-img-top w-100 d-block fit-cover"
-                            style="height: 200px;" src="https://source.unsplash.com/random/?nurse">
-                        <div class="card-body p-4">
-                            <h4 class="card-title">Penerbangan tidak perlu lagi menggunakan persyaratan Swab</h4>
-                            <div class="d-flex">
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card"><img class="card-img-top w-100 d-block fit-cover"
-                            style="height: 200px;" src="https://source.unsplash.com/random/?nurse">
-                        <div class="card-body p-4">
-                            <h4 class="card-title">Mandalika MotoGP Afterparty, apa yang terjadi</h4>
-                            <div class="d-flex">
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {{-- @endforeach --}}
             </div>
         </div>
 

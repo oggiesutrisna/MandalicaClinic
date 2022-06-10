@@ -2,20 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Package;
+use App\Models\Package as ModelsPackage;
 use Illuminate\Http\Request;
 
 class ViewPackageController extends Controller
 {
-    public function viewpackage()
+    // To Display when user clicked one package.
+    public function showPackage(ModelsPackage $package)
     {
-        return view('viewpackages');
+        return view('viewpackages', compact('packages'));
     }
 
-    public function indexPackage()
+    // To Display when user clicked the mandalica packages text.
+    public function indexPackage(Request $request)
     {
-        $packages = Package::all();
+        $packages = ModelsPackage::all();
         return view('viewpackages', compact('packages'));
+    }
+
+    // To Display an Package to /
+    public function WelcomePage(Request $request) 
+    {
+        $packages = ModelsPackage::orderBy('created_at', 'desc')->paginate(3);
+        return view('welcome', compact('packages'));
     }
 
 }

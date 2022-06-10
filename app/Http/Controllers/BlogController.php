@@ -23,18 +23,6 @@ class BlogController extends Controller
         $blogs = Blog::orderBy('id', 'DESC')->paginate(5);
         return view('blogs.index', compact('blogs'));
     }
-    // showing ke homepage
-    public function indexBlog(Blog $blogs)
-    {
-        $blogs = Blog::all();
-        return view('welcome', ['blogs' => $blogs]);
-    }
-    // showing ke show.blade di admin
-    public function showBlog(Blog $blogs)
-    {
-        $blogs = Blog::where('id', $blogs)->first();
-        return view('blogs.showBlogs', compact('blogs'));
-    }
 
     /**
      * Show the form for creating a new resource.

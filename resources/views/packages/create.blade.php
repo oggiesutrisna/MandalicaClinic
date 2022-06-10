@@ -35,7 +35,7 @@
                 </div>
                 <div class="form-group">
                     <label for="nama">Kategori</label>
-                    <input type="text" name="categories" class="form-control" placeholder="Nama Paket">
+                    <input type="text" name="categories" class="form-control" placeholder="Kategori Paket">
                 </div>
                 <div class="form-group">
                     <label for="harga">Harga</label>
