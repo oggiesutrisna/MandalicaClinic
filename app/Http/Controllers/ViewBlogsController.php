@@ -2,31 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Blog as ModelsBlog;
+use App\Models\Blog as Blog;
 use Illuminate\Http\Request;
 
 class ViewBlogsController extends Controller
 {
-    public function blogIndex() 
-    {
-        return view('viewblogs');
-    }
-
-    public function indexBlog(Request $request) 
-    {
-        $blogs = ModelsBlog::orderBy('created_at', 'DESC')->paginate(3);
-        return view('viewBlogs', compact('blogs'));
-    }
-
-    public function viewBlog(Request $request)
+    public function blogIndex(Blog $blogs) 
     {
         return view('viewblogs', compact('blogs'));
     }
+    
+    /**
+     * Display the specified resource
+     *
+     * @param \App\Models\Blog $blog
+     * @return \Illuminate\Http\Response
+     */
 
-    public function welcomePage(Request $request)
+    public function viewblogs(Blog $blog)
     {
-        $blogs = ModelsBlog::orderBy('id', 'desc')->paginate(3);
-        return view('welcome', compact('blogs'));
+        return view('blogs.bacablog', ['blog' => $blog]);
     }
 
+    public function indexBlog(Request $request)
+    {
+        $blogs = Blog::orderBy('created_at', 'DESC')->paginate(3);
+        return view('viewBlogs', compact('blogs'));
+    }
+    
 }

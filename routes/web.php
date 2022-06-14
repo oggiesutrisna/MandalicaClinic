@@ -21,31 +21,22 @@ use App\Http\Controllers\ViewPackageController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-// Route::get('showpasien/{id}', function(Pasien $pasien) {
-//     return view('pasiens.showpasien', compact('pasien'));
-// });
+// View Packages
+Route::get('/mandalicapackages/packages/{nama}', [ViewPackageController::class, 'showPackage'])->name('showPackage');
+// View Blogs
+Route::get('/mandalicareads/{judul}', [ViewBlogsController::class, 'viewblogs'])->name('readsmandalika');
 
-
-// Route For Blogs
-Route::get('/artikel', [ViewBlogsController::class, 'welcomePage']);
-Route::get('/readartikel', [ViewBlogsController::class, 'viewBlog']);
-
-// Route without group
-Route::get('/', [
-    ViewBlogsController::class, 'welcomePage',
-    ViewPackageController::class, 'welcomePage',
-]);
 // Mandalica Packages
-Route::get('/mandalicareads', [ViewBlogsController::class, 'blogIndex'])->name('mandalicareads');
-Route::get('/mandalicapackages', [ViewPackageController::class, 'viewpackage'])->name('mandalicapackages');
+Route::get('/mandalicareads', [ViewBlogsController::class, 'indexBlog'])->name('mandalicareads');
+Route::get('/mandalicapackages', [ViewPackageController::class, 'indexPackage'])->name('mandalicapackages');
 
+// Others
 Route::put('storecontact', [ContactController::class, 'storecontact'])->name('setorcontact');
 Route::put('setorpasien', [PasienController::class, 'setorpasien'])->name('pasiensetor');
-// Route::get('/en-en', [WelcomeController::class, 'en-en'])->name('en-en');
 
 Auth::routes();
 
@@ -58,3 +49,18 @@ Route::group(['middleware', 'auth'], function () {
     Route::resource('contacts', ContactController::class);
     Route::put('storePasien', [PasienController::class, 'storePasien'])->name('setorPasien');
 });
+
+
+
+// Route::get('showpasien/{id}', function(Pasien $pasien) {
+//     return view('pasiens.showpasien', compact('pasien'));
+// });
+
+// // Route without group
+// Route::get('/', [
+//     ViewBlogsController::class, 'welcomePage',
+// ]);
+
+// Route::get('/', [
+//     ViewPackageController::class, 'welcomePage',
+// ]);

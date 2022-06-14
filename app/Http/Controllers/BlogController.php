@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateBlogRequest;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class BlogController extends Controller
 {
@@ -43,13 +44,13 @@ class BlogController extends Controller
     public function store(StoreBlogRequest $request)
     {
         $blog = Blog::create($request->validated());
-
+        
         if ($request->file('gambar')) {
             $validasidata['gambar'] = $request->file('gambar')->store('storage/blog', 'public');
         }
 
         Alert::success('Berhasil', 'Artikel anda telah berhasil ditambahkan');
-        return redirect()->route('blogs.index');
+        return redirect()->route('blogs.index');        
     }
 
     /**

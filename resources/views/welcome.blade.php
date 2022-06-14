@@ -138,8 +138,7 @@
                         <li class="nav-item"><a class="nav-link" href="#">Career</a></li>
                     </ul><button class="btn btn-primary" type="button"
                         style="background: var(--bs-red);border-color: var(--bs-red);" data-bs-target="#modalExample"
-                        data-bs-toggle="modal">Buat
-                        Appointment</button>
+                        data-bs-toggle="modal">Buat Appointment</button>
                 </div>
             </div>
         </nav>
@@ -181,19 +180,41 @@
             </div>
             <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
 
-                @foreach($packages as $pkg)
+                {{-- @foreach($packages as $pkg) --}}
                 <div class="col-md-4">
                     <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
                             src="https://source.unsplash.com/random/?nurse">
                         <div class="card-body p-4">
-                            <h4 class="card-title">{{ $pkg->nama }}</h4>
+                            <h4 class="card-title"></h4>
                             <div class="d-flex">
                                 <div></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                @endforeach
+                <div class="col-md-4">
+                    <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
+                            src="https://source.unsplash.com/random/?nurse">
+                        <div class="card-body p-4">
+                            <h4 class="card-title"></h4>
+                            <div class="d-flex">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
+                            src="https://source.unsplash.com/random/?nurse">
+                        <div class="card-body p-4">
+                            <h4 class="card-title"></h4>
+                            <div class="d-flex">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- @endforeach --}}
 
             </div>
         </div>
@@ -257,19 +278,42 @@
             </div>
 
             <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
-                @foreach($blogs as $bg)
+
+                {{-- @foreach($blogs as $bg) --}}
                 <div class="col-md-4">
                     <div class="card"><img class="card-img-top w-100 d-block fit-cover"
-                            style="height: 200px;" src="https://source.unsplash.com/random/?nurse">
+                            style="height: 200px;" src="https://source.unsplash.com/random/?medical">
                         <div class="card-body p-4">
-                            <h4 class="card-title">{{ $blogs->judul }}</h4>
+                            <h4 class="card-title"></h4>
                             <div class="d-flex">
                                 <div></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                @endforeach
+                <div class="col-md-4">
+                    <div class="card"><img class="card-img-top w-100 d-block fit-cover"
+                            style="height: 200px;" src="https://source.unsplash.com/random/?medical">
+                        <div class="card-body p-4">
+                            <h4 class="card-title"></h4>
+                            <div class="d-flex">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card"><img class="card-img-top w-100 d-block fit-cover"
+                            style="height: 200px;" src="https://source.unsplash.com/random/?medical">
+                        <div class="card-body p-4">
+                            <h4 class="card-title"></h4>
+                            <div class="d-flex">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- @endforeach --}}
             </div>
         </div>
 

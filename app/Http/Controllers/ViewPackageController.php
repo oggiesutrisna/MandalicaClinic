@@ -20,10 +20,10 @@ class ViewPackageController extends Controller
         return view('viewpackages', compact('packages'));
     }
 
-    // To Display an Package to /
+    // To Display an Package to Home
     public function WelcomePage(Request $request) 
     {
-        $packages = ModelsPackage::all()->paginate(3);
+        $packages = ModelsPackage::all();
         return view('welcome', compact('packages'));
     }
 

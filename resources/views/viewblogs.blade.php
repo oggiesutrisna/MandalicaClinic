@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="{{ asset('assets-frontend/assets/css/Articles-Cards.css') }}">
 </head>
 
+<style>
+    a {
+        color: #000000;
+        text-decoration: none;
+    }
+</style>
+
 <body>
     <nav class="navbar navbar-light navbar-expand-md py-3">
         <div class="container"><a class="navbar-brand d-flex align-items-center"
@@ -61,15 +68,14 @@
                     navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-3">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('mandalicapackages') }}">Our
-                            Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('mandalicapackages') }}">Our Packages</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ route('mandalicareads') }}">Blogs</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Career</a></li>
                 </ul><button class="btn btn-primary" type="button"
                     style="background: var(--bs-red);border-color: var(--bs-red);" data-bs-target="#modalExample"
-                    data-bs-toggle="modal">Buat
-                    Appointment</button>
+                    data-bs-toggle="modal">Buat Appointment</button>
             </div>
         </div>
     </nav>
@@ -82,13 +88,15 @@
             </div>
         </div>
         <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
-            @foreach($blogs as $blg)
+            @foreach($blogs as $bg)
             <div class="col-lg-4">
                 <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
                         src="https://source.unsplash.com/random/?nurse">
                     <div class="card-body p-4">
                         <p class="text-primary card-text mb-0">{{ $bg->tag }}</p>
-                        <h4 class="card-title">{{ $bg->judul }}</h4>
+                        <a href="{{ route('readsmandalika', $bg->judul) }}">
+                            <h4 class="card-title">{{ $bg->judul }}</h4>
+                        </a>
                         <div class="d-flex">
                             <div></div>
                         </div>
