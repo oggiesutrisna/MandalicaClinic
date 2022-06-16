@@ -21,14 +21,15 @@ class Blog extends Model
         'id',
     ];
 
-    public function sluggable(): array {
+    public function sluggable(): array
+    {
         return [
             'slug' => [
                 'source' => 'title'
             ]
         ];
     }
-    
+
     use HasFactory;
     use Sluggable;
 }

@@ -17,6 +17,10 @@
                 {{ $package->harga }}
             </div>
             <div class="form-group">
+                <label for="harga">Example Slug</label>
+                {{ $package->slug }}
+            </div>
+            <div class="form-group">
                 <label for="keterangan">Deskripsi</label>
                 {!! $package->keterangan !!}
             </div>

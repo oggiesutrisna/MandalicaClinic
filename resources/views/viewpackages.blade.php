@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="{{ asset('assets-frontend/assets/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets-frontend/assets/css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('assets-frontend/assets/css/styles.min.css') }}">
+    <style>
+        a {
+            color: #000000;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -61,7 +67,7 @@
             <div class="collapse navbar-collapse" id="navcol-3">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">Our Packages</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ route('mandalicapackages') }}">Our Packages</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('mandalicareads') }}">Blogs</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Career</a></li>
@@ -80,13 +86,15 @@
             </div>
         </div>
         <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
-                @foreach ($packages as $package)
+                @foreach ($packages as $pkg)
                 <div class="col-lg-4">
                     <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
                             src="https://source.unsplash.com/random/?nurse">
                         <div class="card-body p-4">
-                            <p class="text-primary card-text mb-0">{{ $package->categories }}</p>
-                            <h4 class="card-title">{{ $package->nama }}</h4>
+                            <p class="text-primary card-text mb-0">{{ $pkg->categories }}</p>
+                            <a href="{{ route('showpackage', $pkg->slug ) }}">
+                                <h4 class="card-title">{{ $pkg->nama }}</h4>
+                            </a>
                             <div class="d-flex">
                                 <div></div>
                             </div>

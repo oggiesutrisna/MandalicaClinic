@@ -15,10 +15,11 @@ class CreatePackagesTable extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
-            $table->string('nama')->default('tidak diinputkan nama');
-            $table->string('categories')->default('tidak ada kategori');
-            $table->string('harga')->default('tidak diinputkan harga');
-            $table->text('keterangan')->default('tidak ada keterangan');
+            $table->string('slug');
+            $table->string('nama');
+            $table->string('categories')->nullable();
+            $table->string('harga');
+            $table->text('keterangan');
             $table->timestamps();
         });
     }

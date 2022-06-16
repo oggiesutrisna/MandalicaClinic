@@ -27,15 +27,15 @@
         </div>
 
         <div class="card-body">
-            <form action="{{ route('packages.store') }}" method="POST">
+            <form action="{{ route('packages.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="nama">Nama Paket</label>
-                    <input type="text" name="nama" class="form-control" placeholder="Nama Paket">
+                    <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Paket">
                 </div>
                 <div class="form-group">
-                    <label for="nama">Kategori</label>
-                    <input type="text" name="categories" class="form-control" placeholder="Kategori Paket">
+                    <label for="categories">Kategori</label>
+                    <input type="text" name="categories" id="categories" class="form-control" placeholder="Kategori Paket">
                 </div>
                 <div class="form-group">
                     <label for="harga">Harga</label>

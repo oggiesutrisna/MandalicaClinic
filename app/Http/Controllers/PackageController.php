@@ -5,7 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Package;
 use App\Http\Requests\StorePackageRequest;
 use App\Http\Requests\UpdatePackageRequest;
+use Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Str;
+
 
 class PackageController extends Controller
 {
@@ -16,7 +20,7 @@ class PackageController extends Controller
      */
     public function index()
     {
-        $packages = Package::all();
+        $packages = Package::orderBy('id', 'desc')->get();
         return view('packages.index', compact('packages'));
     }
 
@@ -33,12 +37,25 @@ class PackageController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorePackageRequest  $request
+     * @param  \App\Http\Requests\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePackageRequest $request)
+    public function store(Request $request)
     {
-        $package = Package::create($request->validated());
+        $request->validate([
+            'nama' => 'required',
+            'harga' => 'required',
+            'keterangan' => 'required',
+        ]);
+
+        $inputdata = [
+            'slug' => SlugService::createSlug(Package::class, 'slug', $request->nama),
+            'nama' => $request->nama,
+            'harga' => $request->harga,
+            'keterangan' => $request->keterangan,
+        ];
+        Package::create($inputdata);
+        // Alert if success
         Alert::success('Success', 'Data berhasil ditambahkan');
         return redirect()->route('packages.index');
     }

@@ -26,7 +26,8 @@ Route::get('/', function () {
 });
 
 // View Packages
-Route::get('/mandalicapackages/packages/{nama}', [ViewPackageController::class, 'showPackage'])->name('showPackage');
+Route::get('/mandalicapackages/packages/{slug}', [ViewPackageController::class, 'showpackage'])->name('showpackage');
+
 // View Blogs
 Route::get('/mandalicareads/{judul}', [ViewBlogsController::class, 'viewblogs'])->name('readsmandalika');
 
@@ -50,7 +51,7 @@ Route::group(['middleware', 'auth'], function () {
     Route::put('storePasien', [PasienController::class, 'storePasien'])->name('setorPasien');
 });
 
-
+// Others
 
 // Route::get('showpasien/{id}', function(Pasien $pasien) {
 //     return view('pasiens.showpasien', compact('pasien'));
