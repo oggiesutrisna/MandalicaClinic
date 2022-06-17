@@ -46,12 +46,14 @@ class PackageController extends Controller
             'nama' => 'required',
             'harga' => 'required',
             'keterangan' => 'required',
+            'categories' => 'required',
         ]);
 
         $inputdata = [
             'slug' => SlugService::createSlug(Package::class, 'slug', $request->nama),
             'nama' => $request->nama,
             'harga' => $request->harga,
+            'categories' => $request->categories,
             'keterangan' => $request->keterangan,
         ];
         Package::create($inputdata);

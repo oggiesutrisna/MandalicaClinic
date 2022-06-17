@@ -86,7 +86,7 @@
             </div>
         </div>
         <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
-                @foreach ($packages as $pkg)
+                @foreach ($package as $pkg)
                 <div class="col-lg-4">
                     <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
                             src="https://source.unsplash.com/random/?nurse">

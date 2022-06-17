@@ -9,7 +9,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 class Package extends Model
 {
     protected $fillable = [
-        'nama', 'harga', 'keterangan', 'slug', 'categories',
+        'categories', 'nama', 'harga', 'keterangan', 'slug',
     ];
 
     public function sluggable(): array
@@ -21,6 +21,6 @@ class Package extends Model
         ];
     }
 
-    use Sluggable;
     use HasFactory;
+    use Sluggable;
 }

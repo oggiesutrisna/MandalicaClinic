@@ -1,4 +1,4 @@
-<?php
+\<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -17,7 +17,7 @@ class CreatePackagesTable extends Migration
             $table->id();
             $table->string('slug');
             $table->string('nama');
-            $table->string('categories')->nullable();
+            $table->string('categories');
             $table->string('harga');
             $table->text('keterangan');
             $table->timestamps();
