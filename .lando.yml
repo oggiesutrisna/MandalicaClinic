@@ -1,0 +1,23 @@
+name: MandalicaClinic
+recipe: laravel
+config:
+  webroot: public
+  php: "8.1"
+  via: nginx
+  database: mariadb
+  cache: redis
+
+services:
+  node:
+    type: node:16
+  mailhog:
+    type: mailhog
+    portforward: 1025
+    hogfrom:
+      - appserver
+
+tooling:
+  node:
+    service: node
+  npm:
+    service: node

@@ -26,7 +26,7 @@ Route::get('/', function () {
 });
 
 // View Packages
-Route::get('/mandalicapackages/packages/{slug}', [ViewPackageController::class, 'showpackage'])->name('showpackage');
+Route::get('/mandalicapackages/packages/{package}', [ViewPackageController::class, 'showpackage'])->name('showpackage');
 
 // View Blogs
 Route::get('/mandalicareads/{judul}', [ViewBlogsController::class, 'viewblogs'])->name('readsmandalika');
