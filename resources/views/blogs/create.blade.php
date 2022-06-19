@@ -29,12 +29,6 @@
                     <input type="text" name="judul" placeholder="Judul Artikel" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="slug">
-                        Slug
-                    </label>
-                    <input type="text" name="slug" placeholder="Slug" class="form-control" required>
-                </div>
-                <div class="form-group">
                     <label for="deskripsi">
                         Deskripsi
                     </label>
@@ -42,17 +36,10 @@
                     </textarea>
                 </div>
                 <div class="form-group">
-                    <label for="Gambar">
-                        Upload Gambar
-                    </label>
-                    <input type="file" name="gambar" class="form-control">
-                </div>
-                <div class="form-group">
                     <label for="tag">
                         Tag
                     </label>
-                    <select name="tag" id="select2" class="form-control select2" data-placeholder="select a tag"
-                        multiple="multiple">
+                    <select name="tag" id="select2" class="form-control select2" data-placeholder="select a tag" multiple="multiple">
                         <option value="Mandalica">Mandalika</option>
                         <option value="Mandalika Klinik">Mandalika Clinic</option>
                         <option value="Bali">Bali</option>
@@ -65,6 +52,12 @@
                         <option value="IV Treatment">IV Treatment</option>
                         <option value="Tooth-Whitening">Tooth Whitening</option>
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="Gambar">
+                        Upload Gambar
+                    </label>
+                    <input type="file" name="gambar" class="form-control">
                 </div>
         </div>
         <div class="card-footer">

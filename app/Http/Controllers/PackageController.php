@@ -56,6 +56,7 @@ class PackageController extends Controller
             'categories' => $request->categories,
             'keterangan' => $request->keterangan,
         ];
+
         Package::create($inputdata);
         // Alert if success
         Alert::success('Success', 'Data berhasil ditambahkan');

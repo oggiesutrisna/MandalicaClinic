@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 
-
 class Blog extends Model
 {
+    use HasFactory;
+    use Sluggable;
     protected $fillable = [
         'judul',
         'slug',
@@ -25,11 +26,18 @@ class Blog extends Model
     {
         return [
             'slug' => [
-                'source' => 'title'
+                'source' => 'judul'
             ]
         ];
     }
 
-    use HasFactory;
-    use Sluggable;
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
 }

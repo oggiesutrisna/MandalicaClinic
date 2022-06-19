@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>
-        Laravel Debug Mode : by SleepingMonkey-
+        SleepingMonkey- test
     </h1>
     <h2>
         Nama : {{ $package->nama }}

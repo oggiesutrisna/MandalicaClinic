@@ -27,7 +27,7 @@ class StoreBlogRequest extends FormRequest
             'judul' => 'required|max:255',
             'deskripsi' => 'required|max:1000',
             'tag' => 'required',
-            'slug' => 'required|max:255',
+            'slug' => 'max:255',
             'gambar' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];
     }

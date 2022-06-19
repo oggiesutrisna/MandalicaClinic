@@ -7,27 +7,26 @@ use Illuminate\Http\Request;
 
 class ViewBlogsController extends Controller
 {
-    public function blogIndex(Blog $blogs) 
-    {
-        return view('viewblogs', compact('blogs'));
-    }
-    
+
     /**
      * Display the specified resource
      *
      * @param \App\Models\Blog $blog
      * @return \Illuminate\Http\Response
      */
-
     public function viewblogs(Blog $blog)
     {
-        return view('blogs.bacablog', ['blog' => $blog]);
+        return view('blogs.bacablog', compact('blog'));
     }
 
+    /**
+     * @param Request $request
+     *
+     */
     public function indexBlog(Request $request)
     {
         $blogs = Blog::orderBy('created_at', 'DESC')->paginate(3);
         return view('viewBlogs', compact('blogs'));
     }
-    
+
 }

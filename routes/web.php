@@ -29,7 +29,7 @@ Route::get('/', function () {
 Route::get('/mandalicapackages/packages/{package}', [ViewPackageController::class, 'showpackage'])->name('showpackage');
 
 // View Blogs
-Route::get('/mandalicareads/{judul}', [ViewBlogsController::class, 'viewblogs'])->name('readsmandalika');
+Route::get('/mandalicareads/reads/{blog}', [ViewBlogsController::class, 'viewblogs'])->name('readsmandalika');
 
 // Mandalica Packages
 Route::get('/mandalicareads', [ViewBlogsController::class, 'indexBlog'])->name('mandalicareads');

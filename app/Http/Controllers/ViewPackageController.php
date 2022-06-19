@@ -18,15 +18,15 @@ class ViewPackageController extends Controller
         return view('packages.bacapaket', compact('package'));
     }
 
-    public function indexPackage(Request $request)
+    public function indexPackage(Package $package)
     {
-        $packages = Package::orderBy('id', 'asc')->get();
+        $package = Package::orderBy('id', 'asc')->get();
         return view('viewpackages', compact('package'));
     }
 
-    public function WelcomePage(Request $request)
+    public function WelcomePage(Package $package)
     {
-        $packages = Package::all();
+        $package = Package::all();
         return view('welcome', compact('package'));
     }
 

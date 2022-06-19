@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreBlogRequest;
 use App\Http\Requests\UpdateBlogRequest;
 use App\Models\Blog;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use RealRashid\SweetAlert\Facades\Alert;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
@@ -42,9 +40,25 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBlogRequest $request)
+    public function store(Request $request)
     {
-        $blog = Blog::create($request->validated());
+        $request->validate([
+            'judul' => 'required|max:255',
+            'deskripsi' => 'required|max:1000',
+            'tag' => 'required',
+            'gambar' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
+
+        $inputblog = [
+            'slug' => SlugService::createSlug(Blog::class, 'slug', $request->judul),
+            'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi,
+            'tag' => $request->tag,
+            'gambar' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ];
+
+        Blog::create($inputblog);
+
         if ($request->file('gambar')) {
             $validasidata['gambar'] = $request->file('gambar')->store('storage/blog', 'public');
         }
