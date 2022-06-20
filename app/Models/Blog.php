@@ -10,16 +10,13 @@ class Blog extends Model
 {
     use HasFactory;
     use Sluggable;
+
     protected $fillable = [
         'judul',
         'slug',
         'deskripsi',
         'tag',
         'gambar',
-    ];
-
-    protected $guarded = [
-        'id',
     ];
 
     public function sluggable(): array

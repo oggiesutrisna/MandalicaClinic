@@ -94,7 +94,7 @@
                         src="https://source.unsplash.com/random/?nurse">
                     <div class="card-body p-4">
                         <p class="text-primary card-text mb-0">{{ $bg->tag }}</p>
-                        <a href="{{ route('readsmandalika', $bg->judul) }}">
+                        <a href="{{ route('readsmandalika', $bg->slug) }}">
                             <h4 class="card-title">{{ $bg->judul }}</h4>
                         </a>
                         <div class="d-flex">

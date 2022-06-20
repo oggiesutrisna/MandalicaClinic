@@ -54,7 +54,7 @@ class BlogController extends Controller
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
             'tag' => $request->tag,
-            'gambar' => $request->gambar,
+            'gambar' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];
 
         Blog::create($inputblog);
@@ -99,9 +99,11 @@ class BlogController extends Controller
     public function update(UpdateBlogRequest $request, Blog $blog)
     {
         $blog->update($request->all());
+        // Validasi Gambar
         if ($request->file('gambar')) {
             $validasidata['gambar'] = $request->file('gambar')->store('storage/blog', 'public');
         }
+        // Always Berhasil kok, tidak ada yang lebih
         Alert::success('Berhasil', 'Artikel anda berhasil di edit');
         return redirect()->route('blogs.index');
     }
