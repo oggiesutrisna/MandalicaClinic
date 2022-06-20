@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ViewPackageController extends Controller
 {
-      /**
+    /**
      * Display the specified resource.
      *
      * @param  \App\Models\Package  $package

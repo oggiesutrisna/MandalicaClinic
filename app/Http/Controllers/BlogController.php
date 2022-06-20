@@ -44,7 +44,7 @@ class BlogController extends Controller
     {
         $request->validate([
             'judul' => 'required|max:255',
-            'deskripsi' => 'required|max:1000',
+            'deskripsi' => 'required',
             'tag' => 'required',
             'gambar' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
@@ -54,7 +54,7 @@ class BlogController extends Controller
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
             'tag' => $request->tag,
-            'gambar' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'gambar' => $request->gambar,
         ];
 
         Blog::create($inputblog);
