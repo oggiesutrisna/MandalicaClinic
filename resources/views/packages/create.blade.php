@@ -52,7 +52,7 @@
                 </div>
                 <div class="form-group">
                     <label for="gambar">Gambar</label>
-                    <input type="file" name="image" class="form-control">
+                    <input type="file" id="gambar" name="image" class="form-control">
                 </div>
                 <div class="form-group">
                     <button type="SUBMIT" class="btn btn-primary">

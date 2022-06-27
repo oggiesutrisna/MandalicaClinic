@@ -15,10 +15,11 @@ class CreatePackagesTable extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->string('nama');
             $table->string('categories');
             $table->string('harga');
+            $table->string('image')->default('tidak ada gambar yang di upload');
             $table->text('keterangan');
             $table->timestamps();
         });

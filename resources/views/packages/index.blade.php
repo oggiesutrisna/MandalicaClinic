@@ -14,6 +14,7 @@
                         <th>Aksi</th>
                         <th>ID</th>
                         <th>Nama</th>
+                        <th>Gambar</th>
                         <th>Keterangan</th>
                     </tr>
                 </thead>
@@ -21,7 +22,7 @@
                     @foreach ($packages as $package)
                         <tr>
                             <td>
-                                <a href="{{ route('packages.show', $package->id) }}" class="btn btn-primary">
+                                <a href="{{ route('packages.show', $package->slug) }}" class="btn btn-primary">
                                     <i class="fas fa-eye"></i>
                                 </a>
                                 <a href="{{ route('packages.edit', $package->id) }}" class="btn btn-warning">
@@ -38,6 +39,7 @@
                             </td>
                             <td>{{ $package->id }}</td>
                             <td>{{ $package->nama }}</td>
+                            <td>{{ $package->image }}</td>
                             <td>{{ $package->keterangan }}</td>
                         </tr>
                     @endforeach
@@ -45,7 +47,7 @@
             </table>
         </div>
         <div class="card-footer">
-
+            <a href="{{ route('home') }}" class="btn btn-primary">Kembali</a>
         </div>
     </div>
 @endsection
