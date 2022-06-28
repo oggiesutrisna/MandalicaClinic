@@ -13,6 +13,11 @@ class Obat extends Model
         'jenis_obat',
         'harga_obat',
         'stok_obat',
+        'keterangan'
+    ];
+
+    protected $guarded = [
+        'id',
     ];
 
     use HasFactory;

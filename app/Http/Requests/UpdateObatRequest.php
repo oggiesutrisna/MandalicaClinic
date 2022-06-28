@@ -29,6 +29,7 @@ class UpdateObatRequest extends FormRequest
             'jenis_obat' => 'required',
             'harga_obat' => 'required',
             'stok_obat' => 'required',
+            'keterangan' => 'required',
         ];
     }
 }

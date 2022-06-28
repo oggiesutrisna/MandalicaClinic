@@ -24,11 +24,12 @@ class StoreObatRequest extends FormRequest
     public function rules()
     {
         return [
-            'kode_obat' => 'required|unique:obats',
-            'nama_obat' => 'required',
-            'jenis_obat' => 'required',
-            'harga_obat' => 'required',
-            'stok_obat' => 'required',
+            'kode_obat' => 'required|max:30',
+            'nama_obat' => 'required|max:255',
+            'jenis_obat' => 'required|max:255',
+            'harga_obat' => 'required|max:12',
+            'stok_obat' => 'required|max:12',
+            'keterangan' => 'required|max:255',
         ];
     }
 }

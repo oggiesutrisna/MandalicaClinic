@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreObatRequest;
 use App\Http\Requests\UpdateObatRequest;
 use App\Models\Obat;
-use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class ObatController extends Controller
@@ -17,8 +16,8 @@ class ObatController extends Controller
      */
     public function index()
     {
-        $obats = Obat::orderBy('id', 'desc')->paginate(5);
-        return view('obats.index', compact('obats'));
+        $obat = Obat::orderBy('id', 'desc')->paginate(5);
+        return view('obats.index', compact('obat'));
     }
 
     /**
@@ -40,10 +39,8 @@ class ObatController extends Controller
     public function store(StoreObatRequest $request)
     {
         Obat::create($request->validated());
-        if($request->has('save_action')) {
-            Alert::success('Berhasil', 'Data berhasil ditambahkan');
-            return redirect()->route('obats.index');
-        } else($request->has('save_action_continue'));
+        Alert::success('success', 'data obat berhasil disimpan');
+        return view('obats.index');
     }
 
     /**
@@ -78,11 +75,8 @@ class ObatController extends Controller
     public function update(UpdateObatRequest $request, Obat $obat)
     {
         $obat->update($request->all());
-        if($request->has('save_action')) {
-            Alert::success('Berhasil', 'Data berhasil diubah');
-            return redirect()->route('obats.index');
-        } else($request->has('save_action_continue'));
-
+        Alert::success('success', 'data anda berhasil di ubah');
+        return view('obats.edit');
     }
 
     /**

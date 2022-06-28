@@ -24,17 +24,16 @@
 
         <div class="card-body">
             <form action="{{ route('obats.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf {{-- Form protection --}}
-                @method('PUT') <!-- Method yang digunakan untuk menambahkan data -->
-                <div class="row"> {{-- Row 1 --}}
-                    <div class="col-md-6"> {{-- Kolom 1 --}}
+                @csrf
+                <div class="row">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label for="nama">
                                 Nama Obat
                             </label>
-                            <input type="text" name="nama" placeholder="Nama obat"
-                                class="form-control @if ($errors->has('nama')) is-invalid @endif"
-                                value="{{ old('nama') }}">
+                            <input type="text" name="nama_obat" placeholder="Nama obat"
+                                class="form-control @if ($errors->has('nama_obat')) is-invalid @endif"
+                                value="{{ old('nama_obat') }}">
                         </div>
                         <div class="form-group">
                             <label for="nama">
@@ -45,10 +44,10 @@
                                 value="{{ old('kode_obat') }}">
                         </div>
                         <div class="form-group">
-                            <label for="nama">
+                            <label for="jenis_obat">
                                 Jenis Obat
                             </label>
-                            <select class="form-control @if ($errors->has('jenis_obat')) is-invalid @endif"
+                            <select name="jenis_obat" class="form-control @if ($errors->has('jenis_obat')) is-invalid @endif"
                                 id="jenis_obat">
                                 <option value="Obat Cair">Obat Cair</option>
                                 <option value="Tablet">Tablet</option>
@@ -68,8 +67,8 @@
                             <input type="number" class="form-control @if ($errors->has('stok_obat')) is-invalid @endif"
                                 name="stok_obat" value="{{ old('stok_obat') }}" placeholder="Stok obat">
                         </div>
-                        <div class="form-group ">
-                            <label for="stok_obat">Harga Obat</label>
+                        <div class="form-group">
+                            <label for="harga_obat">Harga Obat</label>
                             <input type="number" class="form-control @if ($errors->has('harga_obat')) is-invalid @endif"
                                 name="harga_obat" value="{{ old('harga_obat') }}" placeholder="Harga obat"
                                 value="{{ old('harga_obat') }}" name="stok_obat" id="stok_obat">

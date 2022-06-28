@@ -28,13 +28,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($obats as $obat)
+                            @foreach ($obat as $ob)
                                 <tr>
                                     <td>
-                                        <a href="{{ route('obats.edit', $obat->id) }}" class="btn btn-warning btn-sm">
+                                        <a href="{{ route('obats.edit', $ob->id) }}" class="btn btn-warning btn-sm">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <form action="{{ route('obats.destroy', $obat->id) }}" method="POST"
+                                        <form action="{{ route('obats.destroy', $ob->id) }}" method="POST"
                                             class="d-inline">
                                             @csrf
                                             @method('DELETE')
@@ -44,10 +44,10 @@
                                         </form>
                                     </td>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $obat->nama }}</td>
-                                    <td>{{ $obat->keterangan }}</td>
-                                    <td>{{ $obat->stok }}</td>
-                                    <td>{{ $obat->harga }}</td>
+                                    <td>{{ $ob->nama_obat }}</td>
+                                    <td>{{ $ob->keterangan }}</td>
+                                    <td>{{ $ob->stok_obat }}</td>
+                                    <td>{{ $ob->harga_obat }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
