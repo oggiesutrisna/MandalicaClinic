@@ -74,6 +74,12 @@
 </head>
 
 <body>
+    <style>
+        a {
+            color: #000000;
+            text-decoration: none;
+        }
+    </style>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHCF9JJ" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
 
@@ -180,40 +186,23 @@
             </div>
             <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
 
-                {{-- @foreach($packages as $pkg) --}}
+                @foreach($package as $pkg)
                 <div class="col-md-4">
                     <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
                             src="https://source.unsplash.com/random/?nurse">
                         <div class="card-body p-4">
-                            <h4 class="card-title"></h4>
+                            <h4 class="card-title">
+                            <a style="" href="{{ route('showpackage', $pkg->slug) }}">
+                                {{ $pkg->nama }}
+                                </a>
+                            </h4>
                             <div class="d-flex">
                                 <div></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
-                            src="https://source.unsplash.com/random/?nurse">
-                        <div class="card-body p-4">
-                            <h4 class="card-title"></h4>
-                            <div class="d-flex">
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
-                            src="https://source.unsplash.com/random/?nurse">
-                        <div class="card-body p-4">
-                            <h4 class="card-title"></h4>
-                            <div class="d-flex">
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
                 {{-- @endforeach --}}
 
             </div>
@@ -279,41 +268,21 @@
 
             <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
 
-                {{-- @foreach($blogs as $bg) --}}
+                @foreach($blog as $bg)
                 <div class="col-md-4">
                     <div class="card"><img class="card-img-top w-100 d-block fit-cover"
                             style="height: 200px;" src="https://source.unsplash.com/random/?medical">
                         <div class="card-body p-4">
-                            <h4 class="card-title"></h4>
+                            <a href="{{ route('viewblogs', $bg->slug) }}">
+                                <h4 class="card-title">{{ $bg->judul }}</h4>
+                            </a>
                             <div class="d-flex">
                                 <div></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card"><img class="card-img-top w-100 d-block fit-cover"
-                            style="height: 200px;" src="https://source.unsplash.com/random/?medical">
-                        <div class="card-body p-4">
-                            <h4 class="card-title"></h4>
-                            <div class="d-flex">
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card"><img class="card-img-top w-100 d-block fit-cover"
-                            style="height: 200px;" src="https://source.unsplash.com/random/?medical">
-                        <div class="card-body p-4">
-                            <h4 class="card-title"></h4>
-                            <div class="d-flex">
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{-- @endforeach --}}
+                @endforeach
             </div>
         </div>
 

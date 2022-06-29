@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ViewBlogsController;
 use App\Http\Controllers\ViewPackageController;
+use App\Http\Controllers\WelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,15 +22,17 @@ use App\Http\Controllers\ViewPackageController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [WelcomeController::class, 'welcomepage']);
 
 // View Packages
 Route::get('/mandalicapackages/packages/{package}', [ViewPackageController::class, 'showpackage'])->name('showpackage');
 
 // View Blogs
-Route::get('/mandalicareads/articles/{blog}', [ViewBlogsController::class, 'viewblogs'])->name('readsmandalika');
+Route::get('/mandalicareads/articles/{blog}', [ViewBlogsController::class, 'viewblogs'])->name('viewblogs');
 
 // Mandalica Packages
 Route::get('/mandalicareads', [ViewBlogsController::class, 'indexBlog'])->name('mandalicareads');

@@ -137,7 +137,7 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-md-8 col-lg-8 col-xl-6 col-xxl-6">
                     <div>
-                        <form class="p-3 p-xl-4" method="post">
+                        <form class="p-3 p-xl-4" method="POST">
                             <div class="mb-3"><input class="form-control" type="text" id="name-1" name="name" placeholder="Name"></div>
                             <div class="mb-3"><input class="form-control" type="email" id="email-1" name="tel" placeholder="Nomor Telepon"></div>
                             <div class="mb-3"><input class="form-control" type="email" id="email-2" name="email" placeholder="Email"></div>
