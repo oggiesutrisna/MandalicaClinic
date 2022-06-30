@@ -13,10 +13,10 @@ class WelcomeController extends Controller
         return view('welcomeenglish');
     }
 
-    public function welcomepage() 
+    public function welcomepage()
     {
-        $package = Package::all();
-        $blog = Blog::all();
+        $package = Package::orderBy('id', 'desc')->paginate(3);
+        $blog = Blog::orderBy('id', 'desc')->paginate(3);
         return view('welcome', compact('blog', 'package'));
     }
 }
