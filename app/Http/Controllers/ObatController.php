@@ -87,12 +87,8 @@ class ObatController extends Controller
      */
     public function destroy(Obat $obat)
     {
-        if($obat->delete()){
-            Alert::success('Success', 'Data obat berhasil dihapus');
-            return redirect()->route('obats.index');
-        } elseif ($obat->error()) {
-            Alert::error('Error', 'Data obat gagal dihapus');
-            return redirect()->route('obats.index');
-        }
+        $obat->delete();
+        Alert::success('Success', 'Data obat berhasil dihapus');
+        return redirect()->route('obats.index');
     }
 }

@@ -116,12 +116,8 @@ class BlogController extends Controller
      */
     public function destroy(Blog $blog)
     {
-        if($blog->delete()) {
-            Alert::success('Berhasil', 'Artikel anda berhasil di hapus');
-            return redirect()->route('blogs.index');
-        } else {
-            Alert::error('Gagal', 'Artikel anda gagal di hapus');
-        }
-        return redirect()->back();
+        $blog->delete();
+        Alert::success('Berhasil', 'Artikel anda berhasil di hapus');
+        return redirect()->route('blogs.index');
     }
 }

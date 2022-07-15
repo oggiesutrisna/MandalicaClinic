@@ -108,11 +108,8 @@ class PackageController extends Controller
      */
     public function destroy(Package $package)
     {
-        if($package->delete()) {
-            Alert::success('Berhasil', 'Data berhasil dihapus');
-            return redirect()->route('packages.index');
-        } else(
-            Alert::error('Gagal', 'Data gagal dihapus')
-        );
+        $package->delete();
+        Alert::success('Berhasil', 'Data berhasil dihapus');
+        return redirect()->route('packages.index');
     }
 }
