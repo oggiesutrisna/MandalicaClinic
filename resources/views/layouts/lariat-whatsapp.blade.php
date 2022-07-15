@@ -11,17 +11,17 @@
         <div class="row d-flex justify-content-center">
             <div class="col-md-8 col-lg-8 col-xl-6 col-xxl-6">
                 <div>
-                    <form class="p-3 p-xl-4" method="post">
+                    <form action="{{ route('contacts.store') }}" class="p-3 p-xl-4" method="post">
                         <div class="mb-3"><input class="form-control" type="text" id="name-1"
-                                                 name="name" placeholder="Name"></div>
-                        <div class="mb-3"><input class="form-control" type="email" id="email-1"
-                                                 name="tel" placeholder="Nomor Telepon"></div>
-                        <div class="mb-3"><input class="form-control" type="email" id="email-2"
-                                                 name="email" placeholder="Email"></div>
+                                                 name="nama" placeholder="Name"></div>
+                        <div class="mb-3"><input class="form-control" type="text" id="email-1"
+                                                 name="nohp" placeholder="Nomor Telepon"></div>
+                        <div class="mb-3"><input class="form-control" type="text" id="email-2"
+                                                 name="subjek" placeholder="Subject"></div>
                         <div class="mb-3">
-                            <textarea class="form-control" id="message-1" name="message" rows="6" placeholder="Keluhan Anda"></textarea>
+                            <textarea class="form-control" id="message" name="message" rows="6" placeholder="Keluhan Anda"></textarea>
                         </div>
-                        <div><button class="btn btn-danger d-block w-100" type="submit">Send </button></div>
+                        <div><button class="btn btn-danger d-block w-100" type="submit">Send Messages</button></div>
                     </form>
                 </div>
             </div>

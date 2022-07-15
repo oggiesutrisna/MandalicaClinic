@@ -16,8 +16,8 @@
             <div class="collapse navbar-collapse" id="navcol-3">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('mandalicapackages') }}">Our Packages</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="{{ route('mandalicareads') }}">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('mandalicapackages') ? 'active' : '' }}" href="{{ route('mandalicapackages') }}">Our Packages</a></li>
+                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('mandalicareads') ? 'active' : '' }}" href="{{ route('mandalicareads') }}">Blogs</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Career</a></li>
                 </ul><button class="btn btn-primary" type="button"
