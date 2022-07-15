@@ -27,3 +27,5 @@
         </div>
     </div>
 @endsection
+@extends('layouts.lariat-modal')
+

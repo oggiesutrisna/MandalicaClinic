@@ -3,9 +3,9 @@
         <div class="row mb-5">
             <div class="col-md-8 col-xl-6 text-center mx-auto">
                 <h2>Kesehatan Anda dimulai disini</h2>
-                <p class="w-lg-50">Buat Appointment lewat whatsapp atau email kami.</p><button
-                    class="btn btn-primary" type="button"
-                    style="border-color: var(--bs-red);background: var(--bs-red);">Whatsapp Sekarang</button>
+                <p class="w-lg-50">Buat Appointment lewat whatsapp atau email kami.</p><a
+                    class="btn btn-primary" type="button" href="https://wa.me/6282298298911"
+                    style="border-color: var(--bs-red);background: var(--bs-red);">Whatsapp Sekarang</a>
             </div>
         </div>
         <div class="row d-flex justify-content-center">

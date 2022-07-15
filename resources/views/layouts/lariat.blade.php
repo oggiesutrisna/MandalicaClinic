@@ -73,6 +73,7 @@
 
     @include('layouts.lariat-whatsapp')
     @include('layouts.lariat-footer')
+    @extends('layouts.lariat-modal')
     <script src="{{ asset('assets-frontend/assets/bootstrap/css/bootstrap.min.css') }}"></script>
     <script src="{{ asset('assets-frontend/assets/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="https://kit.fontawesome.com/a610d66868.js" crossorigin="anonymous"></script>
