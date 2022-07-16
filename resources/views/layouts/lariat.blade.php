@@ -5,6 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Mandalica Reads</title>
+    <meta content="Bertempat di lokasi strategis Mandalika, Mandalica Clinic siap memberikan layanan kesehatan profesional untuk anda dan keluarga." name="description">
+    <meta content="Layanan kesehatan terbaik di Mandalika" name="keywords">
+    <meta content="Mandalica Clinic" name="author">
+    <meta content="Mandalica Clinic, Klinik Mandalika, Clinic Mandalica, Circuit Mandalica, gp mandalica, mandalica cake, mandalika">
     <link rel="stylesheet" href="{{ asset('assets-frontend/assets/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets-frontend/assets/css/styles.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets-frontend/assets/bootstrap/css/bootstrap.min.css') }}">

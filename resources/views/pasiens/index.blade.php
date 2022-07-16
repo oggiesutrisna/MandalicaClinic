@@ -40,12 +40,12 @@
             <table id="pasientable" class="table table-stripped">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>No</th>
                         <th>Nama</th>
                         <th>Tanggal Lahir</th>
                         <th>Jenis Kelamin</th>
+                        <th>Tanggal Buat Appointment</th>
                         <th>Alamat</th>
-                        <th>No. Telepon</th>
                         <th>Status</th>
                         <th>Aksi</th>
                     </tr>
@@ -55,10 +55,10 @@
                         <tr>
                             <td>{{ $pasien->id }}</td>
                             <td>{{ $pasien->nama }}</td>
-                            <td>{{ $pasien->tanggal_lahir }}</td>
-                            <td>{{ $pasien->jenis_kelamin }}</td>
+                            <td>{{ $pasien->ttl }}</td>
+                            <td>{{ $pasien->jeniskelamin }}</td>
+                            <td>{{ $pasien->dateappointment }}</td>
                             <td>{{ $pasien->alamat }}</td>
-                            <td>{{ $pasien->no_telepon }}</td>
                             <td>{{ $pasien->status }}</td>
                             <td>
                                 <div class="btn-group">

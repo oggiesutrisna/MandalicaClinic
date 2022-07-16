@@ -53,15 +53,14 @@
     </script>
 
     <!-- End Google Tag Manager -->
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>Mandalica Clinic</title>
-    <meta
-        content="Bertempat di lokasi strategis Mandalika, Mandalica Clinic siap memberikan layanan kesehatan profesional untuk anda dan keluarga."
-        name="description">
+    <meta content="Bertempat di lokasi strategis Mandalika, Mandalica Clinic siap memberikan layanan kesehatan profesional untuk anda dan keluarga." name="description">
     <meta content="Layanan kesehatan terbaik di Mandalika" name="keywords">
     <meta content="Mandalica Clinic" name="author">
+    <meta content="Mandalica Clinic, Klinik Mandalika, Clinic Mandalica, Circuit Mandalica, gp mandalica, mandalica cake, mandalika">
 
     <!-- Google Fonts -->
 
@@ -409,8 +408,12 @@
                                 placeholder="Nomor Handphone Aktif yang terpasang di whatsapp" id="nama">
                         </div>
                         <div class="mb-3">
-                            <label for="nohp" class="col-form-label">Tempat, Tanggal Lahir</label>
+                            <label for="dateappointment" class="col-form-label">Tempat, Tanggal Lahir</label>
                             <input type="date" name="ttl" class="form-control" id="nama">
+                        </div>
+                        <div class="mb-3">
+                            <label for="alamat" class="col-form-label">Alamat Lengkap</label>
+                            <textarea class="form-control" name="alamat" id="alamat" cols="30" rows="10" placeholder="Tulis Alamat Lengkap Anda"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="nohp" class="col-form-label">Jenis Kelamin</label>
@@ -432,6 +435,9 @@
                             <select name="jenisappointment" id="jenisappointment" class="form-control">
                                 <option value="Swab Antigen">Swab Antigen</option>
                                 <option value="Swab PCR">Swab PCR</option>
+                                <option value="Alleviate Package">Alleviate Package</option>
+                                <option value="Abbreviation Package">Abbreviation Package</option>
+                                <option value="IV Treatment">IV Treatment</option>
                                 <option value="Praktek Dokter">Praktek Dokter</option>
                             </select>
                         </div>
