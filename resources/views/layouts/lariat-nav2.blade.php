@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light navbar-expand-lg sticky-top bg-white py-3">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span
                     class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"
                     style="background: var(--bs-red);border-color: var(--bs-red);"><svg
                         xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
@@ -18,8 +18,8 @@
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link {{ request()->routeIs('mandalicapackages') ? 'active' : '' }}" href="{{ route('mandalicapackages') }}">Our Packages</a></li>
                     <li class="nav-item"><a class="nav-link {{ request()->routeIs('mandalicareads') ? 'active' : '' }}" href="{{ route('mandalicareads') }}">Blogs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Career</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#career">Career</a></li>
                 </ul><button class="btn btn-primary" type="button"
                     style="background: var(--bs-red);border-color: var(--bs-red);" data-bs-target="#modalExample"
                     data-bs-toggle="modal">Buat Appointment</button>

@@ -120,7 +120,7 @@
         </nav>
         {{-- Navigation Bar End --}}
         <nav class="navbar navbar-light navbar-expand-lg sticky-top bg-white py-3">
-            <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span
+            <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span
                         class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"
                         style="background: var(--bs-red);border-color: var(--bs-red);"><svg
                             xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
@@ -136,7 +136,7 @@
                         navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-3">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('mandalicapackages') }}">Our Packages</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('mandalicareads') }}">Blogs</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contactus">Contact Us</a></li>
@@ -151,23 +151,21 @@
         <section class="py-4 py-xl-5">
             <div class="container">
                 <div class="border rounded border-0 d-flex flex-column justify-content-center align-items-center p-4 py-5"
-                    style="background: linear-gradient(var(--bs-red) 0%, rgba(0,123,255,0.2) 87%), url('{{ asset('assets-frontend/assets/img/slider-1.jpg') }}') center / cover;height: 500px;">
+                    style="background: linear-gradient(var(--bs-red) 0%, rgba(0,123,255,0.2) 50%), url('{{ asset('assets-frontend/assets/img/slider-1.jpg') }}') center / cover;height: 500px;">
                     <div class="row">
                         <div
                             class="col-md-10 col-xl-8 text-center d-flex d-sm-flex d-md-flex justify-content-center align-items-center mx-auto justify-content-md-start align-items-md-center justify-content-xl-center">
                             <div>
-                                <h1 class="text-uppercase fw-bold mb-3" style="color: var(--bs-white)">LAYANAN KESEHATAN
-                                    TERBAIK DI MANDALIKA<br />
+                                <h1 class="text-uppercase fw-bold mb-3" style="color: var(--bs-white)">BEST AND RESPONSIVE HEALTH SERVICE IN MANDALIKA<br />
                                 </h1>
-                                <p class="mb-4" style="color: var(--bs-light)">Bertempat di lokasi strategis
-                                    Mandalika, Mandalica Clinic siap
-                                    memberikan layanan kesehatan profesional untuk anda dan keluarga.<br /></p><button
+                                <p class="mb-4" style="color: var(--bs-light)">Located in a strategic location
+                                    Mandalika, Mandalica Clinic is ready
+                                    provide professional health services for you and your family.<br /></p><button
                                     class="btn btn-primary fs-5 me-2 py-2 px-4" type="button"
                                     data-bs-target="#getstarted"
                                     style="color: var(--bs-body-bg);background: var(--bs-red);border-color: var(--bs-red);">Get
                                     Started</button><button class="btn btn-light fs-5 py-2 px-4"
-                                    data-bs-target="#modalExample" data-bs-toggle="modal" type="button">Buat
-                                    Appointment</button>
+                                    data-bs-target="#modalExample" data-bs-toggle="modal" type="button">Make an Appointment</button>
                             </div>
                         </div>
                     </div>
@@ -179,7 +177,7 @@
             <div class="row mb-5">
                 <div class="col-md-8 col-xl-6 text-center mx-auto">
                     <a href="{{ route('mandalicapackages') }}">
-                        <h2>Our Packages</h2>
+                        <h2>Packages</h2>
                     </a>
                 </div>
             </div>
@@ -188,7 +186,7 @@
                 @foreach($package as $pkg)
                 <div class="col-md-4">
                     <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;"
-                            src="#">
+                            src="https://source.unsplash.com/random/?health">
                         <div class="card-body p-4">
                             <h4 class="card-title">
                             <a style="" href="{{ route('showpackage', $pkg->slug) }}">
@@ -209,7 +207,7 @@
         <div class="container py-4 py-xl-5">
             <div class="row mb-5">
                 <div class="col-md-8 col-xl-6 text-center mx-auto">
-                    <h2>Kenapa Mandalika Clinic ?</h2>
+                    <h2>Why Mandalika Clinic ?</h2>
                 </div>
             </div>
             <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
@@ -220,9 +218,9 @@
                                 style="border-color: var(--bs-blue);background: var(--bs-red);">
                                 <i class="fa-solid fa-briefcase-medical"></i>
                             </div>
-                            <h4 class="card-title">Layanan Medis Terbaik</h4>
-                            <p class="card-text">Di Mandalica Clinic kami melayani perawatan kesehatan anda dan
-                                keluarga dengan layanan medis terbaik</p>
+                            <h4 class="card-title">Best Medical Service</h4>
+                            <p class="card-text">At Mandalica Clinic we serve your health care and
+                                family with the best medical services</p>
                         </div>
                     </div>
                 </div>
@@ -233,9 +231,9 @@
                                 style="background: var(--bs-red);">
                                 <i class="fa-solid fa-users"></i>
                             </div>
-                            <h4 class="card-title">Pasien yang Utama</h4>
-                            <p class="card-text">Mengutamakan pulihnya kesehatan pasien dan disiplin follow up
-                                sebagai prioritas</p>
+                            <h4 class="card-title">Patient is Important</h4>
+                            <p class="card-text">Prioritizing the patient's health recovery and follow-up discipline
+                                as priority</p>
                         </div>
                     </div>
                 </div>
@@ -246,9 +244,9 @@
                                 style="background: var(--bs-red);">
                                 <i class="fa-solid fa-people-group"></i>
                             </div>
-                            <h4 class="card-title">Tim yang Professional</h4>
-                            <p class="card-text">Tim Medis Professional, melayani dengan ramah untuk memastikan
-                                kenyamanan anda.</p>
+                            <h4 class="card-title">Professional team is matter</h4>
+                            <p class="card-text">Professional Medical Team, friendly service to ensure
+                                your convenience.</p>
                         </div>
                     </div>
                 </div>
@@ -260,8 +258,8 @@
                     <a href="{{ route('mandalicareads') }}">
                         <h2 style="color: var(--bs-primary  )">Mandalika Reads</h2>
                     </a>
-                    <p class="w-lg-50">Dapatkan informasi terkini terkait kesehatan yang terjadi di Indonesia
-                        maupun Dunia.</p>
+                    <p class="w-lg-50">Get the latest information related to health that is happening in Indonesia
+                        as well as the World.</p>
                 </div>
             </div>
 
@@ -270,7 +268,7 @@
                 @foreach($blog as $bg)
                 <div class="col-md-4">
                     <div class="card"><img class="card-img-top w-100 d-block fit-cover"
-                            style="height: 200px;" src="https://source.unsplash.com/random/?medical">
+                            style="height: 200px;" src="https://source.unsplash.com/random/?hospital">
                         <div class="card-body p-4">
                             <a href="{{ route('viewblogs', $bg->slug) }}">
                                 <h4 class="card-title">{{ $bg->judul }}</h4>
@@ -298,7 +296,7 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-8 col-lg-8 col-xl-6 col-xxl-6">
                         <div>
-                            <form class="p-3 p-xl-4" method="post">
+                            <form action="#" class="p-3 p-xl-4" method="POST">
                                 <div class="mb-3"><input class="form-control" type="text" id="name-1"
                                         name="name" placeholder="Name" required></div>
                                 <div class="mb-3"><input class="form-control" type="email" id="email-1"
