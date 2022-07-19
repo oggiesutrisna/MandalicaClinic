@@ -69,6 +69,8 @@
     })(window, document, 'script', 'dataLayer', 'GTM-WHCF9JJ');
 </script>
 
+<script defer data-domain="mandalica-clinic.com" src="https://plausible.io/js/plausible.js"></script>
+
 <body>
     @include('layouts.lariat-nav1')
     @include('layouts.lariat-nav2')
