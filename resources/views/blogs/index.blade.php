@@ -38,7 +38,7 @@
                         <th>Deskripsi</th>
                     </tr>
                 </thead>
-                @foreach ($blogs as $bs)
+                @foreach ($blog as $bs)
                     <tbody>
                         <tr>
                             <td>

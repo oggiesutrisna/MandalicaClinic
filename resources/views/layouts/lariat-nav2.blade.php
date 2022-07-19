@@ -21,7 +21,7 @@
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#career">Career</a></li>
                 </ul><button class="btn btn-primary" type="button"
-                    style="background: var(--bs-red);border-color: var(--bs-red);" data-bs-target="#modalExample"
+                    style="background: var(--bs-red);border-color: var(--bs-red);" data-bs-target="#modalexample"
                     data-bs-toggle="modal">Make Appointment</button>
             </div>
         </div>

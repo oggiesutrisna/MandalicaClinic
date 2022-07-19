@@ -19,17 +19,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($packages as $package)
+                    @foreach ($package as $pkg)
                         <tr>
                             <td>
-                                <a href="{{ route('packages.show', $package->slug) }}" class="btn btn-primary">
+                                <a href="{{ route('packages.show', $pkg->slug) }}" class="btn btn-primary">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="{{ route('packages.edit', $package->id) }}" class="btn btn-warning">
+                                <a href="{{ route('packages.edit', $pkg->id) }}" class="btn btn-warning">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <form action="{{ route('packages.destroy', $package->id) }}" method="POST"
-                                    class="d-inline" onclick="deleteconfirmation">
+                                <form action="{{ route('packages.destroy', $pkg->id) }}" method="POST"
+                                    class="d-inline">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">
@@ -37,10 +37,10 @@
                                     </button>
                                 </form>
                             </td>
-                            <td>{{ $package->id }}</td>
-                            <td>{{ $package->nama }}</td>
-                            <td>{{ $package->image }}</td>
-                            <td>{{ $package->keterangan }}</td>
+                            <td>{{ $pkg->id }}</td>
+                            <td>{{ $pkg->nama }}</td>
+                            <td>{{ $pkg->image }}</td>
+                            <td>{{ $pkg->keterangan }}</td>
                         </tr>
                     @endforeach
                 </tbody>

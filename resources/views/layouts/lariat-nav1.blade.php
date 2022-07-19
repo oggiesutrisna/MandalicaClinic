@@ -20,7 +20,7 @@
                                     style="background: var(--bs-red);border-color: var(--bs-red);">
                                     <i class="fa-brands fa-instagram"></i>
                                 </a></div>
-                            <div class="btn-group" role="group"><a class="btn btn-primary" href="" type="button"
+                            <div class="btn-group" role="group"><a class="btn btn-primary" href="https://goo.gl/maps/EgSzyYWg3TSkp6pF9" type="button"
                                     style="background: var(--bs-red);border-color: var(--bs-red);"><i
                                         class="fa-brands fa-google"></i></a>
                             </div>

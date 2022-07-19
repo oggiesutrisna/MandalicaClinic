@@ -20,8 +20,8 @@ class BlogController extends Controller
     //  showing ke tabel admin
     public function index(Request $request)
     {
-        $blogs = Blog::orderBy('id', 'DESC')->paginate(5);
-        return view('blogs.index', compact('blogs'));
+        $blog = Blog::orderBy('id', 'DESC')->paginate(5);
+        return view('blogs.index', compact('blog'));
     }
 
     /**

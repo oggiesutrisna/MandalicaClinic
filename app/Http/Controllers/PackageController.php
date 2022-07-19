@@ -20,8 +20,8 @@ class PackageController extends Controller
      */
     public function index()
     {
-        $packages = Package::orderBy('id', 'desc')->get();
-        return view('packages.index', compact('packages'));
+        $package = Package::orderBy('id', 'desc')->get();
+        return view('packages.index', compact('package'));
     }
 
     /**
@@ -109,7 +109,6 @@ class PackageController extends Controller
     public function destroy(Package $package)
     {
         $package->delete();
-        Alert::success('Berhasil', 'Data berhasil dihapus');
-        return redirect()->route('packages.index');
+        return redirect()->route('packages.index')->with('Success', 'Data Paket Anda Berhasil Dihapus');
     }
 }
