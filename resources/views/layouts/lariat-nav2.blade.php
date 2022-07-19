@@ -22,7 +22,7 @@
                     <li class="nav-item"><a class="nav-link" href="#career">Career</a></li>
                 </ul><button class="btn btn-primary" type="button"
                     style="background: var(--bs-red);border-color: var(--bs-red);" data-bs-target="#modalExample"
-                    data-bs-toggle="modal">Buat Appointment</button>
+                    data-bs-toggle="modal">Make Appointment</button>
             </div>
         </div>
     </nav>

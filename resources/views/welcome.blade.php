@@ -131,7 +131,7 @@
                             <path
                                 d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5v-1zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z">
                             </path>
-                        </svg></span><span>Mandalica Clinic</span></a><button data-bs-toggle="collapse"
+                        </svg></span><span>Mandalika Clinic</span></a><button data-bs-toggle="collapse"
                     class="navbar-toggler" data-bs-target="#navcol-3"><span class="visually-hidden">Toggle
                         navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-3">
@@ -148,30 +148,21 @@
             </div>
         </nav>
 
-        <section class="py-4 py-xl-5">
-            <div class="container">
-                <div class="border rounded border-0 d-flex flex-column justify-content-center align-items-center p-4 py-5"
-                    style="background: linear-gradient(var(--bs-red) 0%, rgba(0,123,255,0.2) 50%), url('{{ asset('assets-frontend/assets/img/slider-1.jpg') }}') center / cover;height: 500px;">
-                    <div class="row">
-                        <div
-                            class="col-md-10 col-xl-8 text-center d-flex d-sm-flex d-md-flex justify-content-center align-items-center mx-auto justify-content-md-start align-items-md-center justify-content-xl-center">
-                            <div>
-                                <h1 class="text-uppercase fw-bold mb-3" style="color: var(--bs-white)">BEST AND RESPONSIVE HEALTH SERVICE IN MANDALIKA<br />
-                                </h1>
-                                <p class="mb-4" style="color: var(--bs-light)">Located in a strategic location
-                                    Mandalika, Mandalica Clinic is ready
-                                    provide professional health services for you and your family.<br /></p><button
-                                    class="btn btn-primary fs-5 me-2 py-2 px-4" type="button"
-                                    data-bs-target="#getstarted"
-                                    style="color: var(--bs-body-bg);background: var(--bs-red);border-color: var(--bs-red);">Get
-                                    Started</button><button class="btn btn-light fs-5 py-2 px-4"
-                                    data-bs-target="#modalExample" data-bs-toggle="modal" type="button">Make an Appointment</button>
-                            </div>
-                        </div>
-                    </div>
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+              <div class="col-10 col-sm-8 col-lg-6">
+                <img src="https://source.unsplash.com/random/?doctors" class="d-block mx-lg-auto img-fluid rounded" alt="Mandalika Clinic" width="700" height="650" loading="lazy">
+              </div>
+              <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Your Fast and Responsive Health Center in Mandalika</h1>
+                <p class="lead">Get Fast and Responsive Health Center with Professional Team in Mandalika Clinic</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                  <button type="button" data-bs-target="exampleModal" class="btn btn-danger btn-lg px-4 me-md-2">Make Appointment</button>
+                  <button type="button" class="btn btn-outline-secondary btn-lg px-4">Get Started</button>
                 </div>
+              </div>
             </div>
-        </section>
+          </div>
 
         <div class="container py-4 py-xl-5" id="getstarted">
             <div class="row mb-5">
@@ -189,7 +180,7 @@
                             src="https://source.unsplash.com/random/?health">
                         <div class="card-body p-4">
                             <h4 class="card-title">
-                            <a style="" href="{{ route('showpackage', $pkg->slug) }}">
+                            <a href="{{ route('showpackage', $pkg->slug) }}">
                                 {{ $pkg->nama }}
                                 </a>
                             </h4>
@@ -204,6 +195,9 @@
 
             </div>
         </div>
+
+        {{-- Start Featurette --}}
+        {{-- End Featurette --}}
         <div class="container py-4 py-xl-5">
             <div class="row mb-5">
                 <div class="col-md-8 col-xl-6 text-center mx-auto">
@@ -256,7 +250,7 @@
             <div class="row mb-5">
                 <div class="col-md-8 col-xl-6 text-center mx-auto">
                     <a href="{{ route('mandalicareads') }}">
-                        <h2 style="color: var(--bs-primary  )">Mandalika Reads</h2>
+                        <h2 style="color::#000000  )">Mandalika Reads</h2>
                     </a>
                     <p class="w-lg-50">Get the latest information related to health that is happening in Indonesia
                         as well as the World.</p>
